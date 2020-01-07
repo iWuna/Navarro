@@ -91,12 +91,12 @@
 	if(byond_version < RECOMMENDED_VERSION)
 		world.log << "Your server's byond version does not meet the recommended requirements for this server. Please update BYOND"
 
+	TgsNew(minimum_required_security_level = TGS_SECURITY_TRUSTED)
+
 	callHook("startup")
 	//Emergency Fix
 	load_mods()
 	//end-emergency fix
-
-	TgsNew(minimum_required_security_level = TGS_SECURITY_TRUSTED)
 
 	. = ..()
 
