@@ -30,12 +30,12 @@
 	output += "<div align='center'>"
 //	output += "<i>[GLOB.using_map.get_map_info()]</i>"
 	output +="<hr>"
-	output += "<a href='byond://?src=\ref[src];show_preferences=1'>Setup Character</A> "
+	output += "<a href='byond://?src=\ref[src];show_preferences=1'>Настройка Персонажа</A> "
 
 	if(GAME_STATE > RUNLEVEL_LOBBY)
 		output += "<a href='byond://?src=\ref[src];manifest=1'>View the Crew Manifest</A> "
 
-	output += "<a href='byond://?src=\ref[src];observe=1'>Observe</A> "
+	output += "<a href='byond://?src=\ref[src];observe=1'>Наблюдать</A> "
 
 	if(!IsGuestKey(src.key))
 		establish_db_connection()
@@ -58,15 +58,15 @@
 	output += "<hr>Current character: <b>[client.prefs.real_name]</b>[client.prefs.job_high ? ", [client.prefs.job_high]" : null]<br>"
 	if(GAME_STATE <= RUNLEVEL_LOBBY)
 		if(ready)
-			output += "<a class='linkOn' href='byond://?src=\ref[src];ready=0'>Un-Ready</a>"
+			output += "<a class='linkOn' href='byond://?src=\ref[src];ready=0'>Не готов!</a>"
 		else
-			output += "<a href='byond://?src=\ref[src];ready=1'>Ready Up</a>"
+			output += "<a href='byond://?src=\ref[src];ready=1'>Готов!</a>"
 	else
-		output += "<a href='byond://?src=\ref[src];late_join=1'>Join Game!</A>"
+		output += "<a href='byond://?src=\ref[src];late_join=1'>Присоединиться!</A>"
 
 	output += "</div>"
 
-	panel = new(src, "Welcome","Welcome to [GLOB.using_map.full_name]", 320, 160, src)
+	panel = new(src, "Welcome","Добро пожаловать на [GLOB.using_map.full_name]", 320, 160, src)
 	panel.set_window_options("can_close=0")
 	panel.set_content(JOINTEXT(output))
 	panel.open()
@@ -78,13 +78,13 @@
 		if(check_rights(R_INVESTIGATE, 0, src))
 			stat("Game Mode:", "[SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])")
 		else
-			stat("Game Mode:", PUBLIC_GAME_MODE)
+			stat("Игровой режим:", PUBLIC_GAME_MODE)
 		var/extra_antags = list2params(additional_antag_types)
-		stat("Added Antagonists:", extra_antags ? extra_antags : "None")
+		stat("Добавлены Антагонисты:", extra_antags ? extra_antags : "Нет")
 
 		if(GAME_STATE <= RUNLEVEL_LOBBY)
-			stat("Time To Start:", "[round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]")
-			stat("Players: [totalPlayers]", "Players Ready: [totalPlayersReady]")
+			stat("Времени до старта:", "[round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]")
+			stat("Игроков: [totalPlayers]", "Игроков готово: [totalPlayersReady]")
 			totalPlayers = 0
 			totalPlayersReady = 0
 			for(var/mob/new_player/player in GLOB.player_list)
@@ -373,8 +373,8 @@
 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
 
 	var/list/header = list("<html><body><center>")
-	header += "<b>Welcome, [name].<br></b>"
-	header += "Round Duration: [roundduration2text()]<br>"
+	header += "<b>Приветствуем, [name].<br></b>"
+	header += "Длительность раунда: [roundduration2text()]<br>"
 
 	if(evacuation_controller.has_evacuated())
 		header += "<font color='red'><b>The [station_name()] has been evacuated.</b></font><br>"
@@ -404,7 +404,7 @@
 	if(LAZYLEN(job_summaries))
 		dat += job_summaries
 	else
-		dat += "<tr><td>No available positions.</td></tr>"
+		dat += "<tr><td>Нет доступных ролей.</td></tr>"
 	// END TORCH JOBS
 
 	// SUBMAP JOBS
