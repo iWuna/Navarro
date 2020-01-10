@@ -5,7 +5,7 @@
 
 /datum/map/torch/get_map_info()
 	. = list()
-	. += "Поздравляем с вашим трудоустройством на борт NTSS Dagon."
+	. += "Поздравляем с вашим трудоустройством на борт ГЭК Наварро."
 	. += "Это судно класса Эпсилон, оборудованное по последнему слову медицины, науки, и охранного снаряжения для всех ваших нужд!"
 	. += ""
 	. += "Это вновь введенное в эксплуатацию научное судно, реконструированное, для исследования далекого космоса."
@@ -13,17 +13,17 @@
 	return jointext(., "<br>")
 
 /datum/map/torch/send_welcome()
-	var/welcome_text = "<center><img src = bluentlogo.png /><br /><font size = 3><b>NTSS Dagon</b> Sensor Readings:</font><br>"
-	welcome_text += "Report generated on [stationdate2text()] at [stationtime2text()]</center><br /><br />"
-	welcome_text += "<hr>Current system:<br /><b>[system_name()]</b><br /><br>"
+	var/welcome_text = "<center><img src = bluentlogo.png /><br /><font size = 3><b>ГЭК Наварро</b> Отчет сенсоров:</font><br>"
+	welcome_text += "Отчёт составлен [stationdate2text()] в [stationtime2text()]</center><br /><br />"
+	welcome_text += "<hr>Текущая система:<br /><b>[system_name()]</b><br /><br>"
 
 	var/list/space_things = list()
 	var/obj/effect/overmap/visitable/torch = map_sectors["1"]
 
-	welcome_text += "Current Coordinates:<br /><b>[torch.x]:[torch.y]</b><br /><br>"
-	welcome_text += "Next system targeted for jump:<br /><b>[generate_system_name()]</b><br /><br>"
-	welcome_text += "Travel time to Sol:<br /><b>[rand(15,45)] days</b><br /><br>"
-	welcome_text += "Time since last port visit:<br /><b>[rand(60,180)] days</b><br /><hr>"
+	welcome_text += "Текущие координаты:<br /><b>[torch.x]:[torch.y]</b><br /><br>"
+	welcome_text += "Следующая система отмеченная для прыжка:<br /><b>[generate_system_name()]</b><br /><br>"
+	welcome_text += "До Солнечной Системы:<br /><b>[rand(15,45)] дней</b><br /><br>"
+	welcome_text += "Времени с последней стыковки в порту:<br /><b>[rand(60,180)] дней</b><br /><hr>"
 	welcome_text += "Scan results show the following points of interest:<br />"
 
 	for(var/zlevel in map_sectors)
@@ -54,5 +54,5 @@
 		welcome_text += "<br>No distress calls logged.<br />"
 	welcome_text += "<hr>"
 
-	post_comm_message("NTSS Dagon Sensor Readings", welcome_text)
+	post_comm_message("Отчет сенсоров ГЭК Наварро", welcome_text)
 	minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")

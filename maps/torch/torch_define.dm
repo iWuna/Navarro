@@ -1,6 +1,6 @@
 /datum/map/torch
-	name = "Dagon"
-	full_name = "NTSS Dagon"
+	name = "Navarro"
+	full_name = "SEV Navarro"
 	path = "torch"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
@@ -14,21 +14,21 @@
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
 	default_spawn = "Cryogenic Storage"
 
-	station_name  = "NTSS Dagon"
-	station_short = "Dagon"
+	station_name  = "SEV Navarro"
+	station_short = "Navarro"
 	dock_name     = "TBD"
 	boss_name     = "Central Command"
 	boss_short    = "Central"
-	company_name  = "NanoTrasen"
-	company_short = "NT"
+	company_name  = "Центральное Правительство Солнечной Системы"
+	company_short = "Ц.П.С.С"
 
-	map_admin_faxes = list("Corporate Central Office")
+	map_admin_faxes = list("Solar Goverment Central Office")
 
 	//These should probably be moved into the evac controller...
-	shuttle_docked_message = "Attention all hands: Jump preparation complete. The bluespace drive is now spooling up, secure all stations for departure. Time to jump: approximately %ETD%."
-	shuttle_leaving_dock = "Attention all hands: Jump initiated, exiting bluespace in %ETA%."
-	shuttle_called_message = "Attention all hands: Jump sequence initiated. Transit procedures are now in effect. Jump in %ETA%."
-	shuttle_recall_message = "Attention all hands: Jump sequence aborted, return to normal operating conditions."
+	shuttle_docked_message = "Внимание всему экипажу: подготовка к Прыжку, завершена. Двигатель Блюспейс запускается, подготовить сдуно к прыжку. Время до прыжка: приблизительно %ETD%."
+	shuttle_leaving_dock = "Внимание всему экипажу: Прыжок инициирован, выход из Блюспейс через %ETA%."
+	shuttle_called_message = "Внимание всему экипажу: Jump sequence initiated. Transit procedures are now in effect. Jump in %ETA%."
+	shuttle_recall_message = "Внимание всему экипажу: Прыжок отменен, всем вернуться к штатному исполнению обязательств."
 
 	evac_controller_type = /datum/evacuation_controller/starship
 

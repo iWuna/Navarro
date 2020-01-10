@@ -36,8 +36,8 @@
 	return
 
 /client/verb/forum()
-	set name = "Forum"
-	set desc = "Visit the Discord."
+	set name = "Discord"
+	set desc = "Посетить наш Дискорд."
 	set hidden = 1
 	if( config.forumurl )
 		if(alert("This will open the Discord invite link in your browser. Are you sure?",,"Yes","No")=="No")

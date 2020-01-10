@@ -1,4 +1,4 @@
-/var/server_name = "The Fluffy Frontier"
+/var/server_name = "\[RU]Navarro - F13 side server"
 
 /var/game_id = null
 /hook/global_init/proc/generate_gameid()

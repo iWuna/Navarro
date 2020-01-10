@@ -830,8 +830,8 @@
 							"<span class='warning'>You frantically wave \the [src] above your head!</span>")
 
 /obj/item/toy/torchmodel
-	name = "table-top NTSS Dagon model"
-	desc = "This is a replica of the NTSS Dagon, in 1:250th scale, on a handsome wooden stand. Small lights blink on the hull and at the engine exhaust."
+	name = "модель ГЭК Наварро"
+	desc = "Это уменьшенная модель судна Наварро, в соотношении 1:250, на потрясной деревянной ножке. Небольшие огоньки мигают в корпусе и отделе двигателя."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "torch_model_figure"
 
