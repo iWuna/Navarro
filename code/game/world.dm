@@ -78,6 +78,8 @@
 	diary = file("data/logs/[date_string].log")
 	diary << "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(world.timeofday, "hh:mm.ss")][log_end]\n---------------------[log_end]"
 	changelog_hash = md5('html/changelog.html')					//used for telling if the changelog has changed recently
+	
+	TgsNew(minimum_required_security_level = TGS_SECURITY_TRUSTED)
 
 	if(config && config.server_name != null && config.server_suffix && world.port > 0)
 		// dumb and hardcoded but I don't care~
@@ -91,12 +93,11 @@
 	if(byond_version < RECOMMENDED_VERSION)
 		world.log << "Your server's byond version does not meet the recommended requirements for this server. Please update BYOND"
 
+
 	callHook("startup")
 	//Emergency Fix
 	load_mods()
 	//end-emergency fix
-
-	TgsNew(minimum_required_security_level = TGS_SECURITY_TRUSTED)
 
 	. = ..()
 
