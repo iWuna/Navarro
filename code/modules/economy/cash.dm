@@ -1,6 +1,6 @@
 /obj/item/weapon/spacecash
-	name = "0 thalers"
-	desc = "It's worth 0 thalers."
+	name = "0 кредитов"
+	desc = "Ценность: 0 кредитов."
 	gender = PLURAL
 	icon = 'icons/obj/items.dmi'
 	icon_state = "spacecash1"
@@ -47,9 +47,9 @@
 		return list(icon_state)
 
 /obj/item/weapon/spacecash/bundle
-	name = "pile of thalers"
+	name = "куча кредитов"
 	icon_state = ""
-	desc = "They are worth 0 Thalers."
+	desc = "Ценность: 0 кредитов."
 	worth = 0
 
 /obj/item/weapon/spacecash/bundle/Initialize()
@@ -82,11 +82,11 @@
 		banknote.transform = M
 		src.overlays += banknote
 
-	src.desc = "They are worth [worth] [GLOB.using_map.local_currency_name]."
+	src.desc = "Ценность: [worth] [GLOB.using_map.local_currency_name]."
 	if(worth in denominations)
 		src.SetName("[worth] [GLOB.using_map.local_currency_name]")
 	else
-		src.SetName("pile of [worth] [GLOB.using_map.local_currency_name]")
+		src.SetName("куча [worth] [GLOB.using_map.local_currency_name]")
 
 	if(overlays.len <= 2)
 		w_class = ITEM_SIZE_TINY
@@ -113,51 +113,51 @@
 		qdel(src)
 
 /obj/item/weapon/spacecash/bundle/c1
-	name = "1 Thaler"
+	name = "1 Кредит"
 	icon_state = "spacecash1"
-	desc = "It's worth 1 credit."
+	desc = "Ценность: 1 кредит."
 	worth = 1
 
 /obj/item/weapon/spacecash/bundle/c10
-	name = "10 Thaler"
+	name = "10 Кредитов"
 	icon_state = "spacecash10"
-	desc = "It's worth 10 Thalers."
+	desc = "Ценность: 10 кредитов."
 	worth = 10
 
 /obj/item/weapon/spacecash/bundle/c20
-	name = "20 Thaler"
+	name = "20 Кредитов"
 	icon_state = "spacecash20"
-	desc = "It's worth 20 Thalers."
+	desc = "Ценность: 20 кредитов."
 	worth = 20
 
 /obj/item/weapon/spacecash/bundle/c50
-	name = "50 Thaler"
+	name = "50 Кредитов"
 	icon_state = "spacecash50"
-	desc = "It's worth 50 Thalers."
+	desc = "Ценность: 50 кредитов."
 	worth = 50
 
 /obj/item/weapon/spacecash/bundle/c100
-	name = "100 Thaler"
+	name = "100 Кредитов"
 	icon_state = "spacecash100"
-	desc = "It's worth 100 Thalers."
+	desc = "Ценность: 100 кредитов."
 	worth = 100
 
 /obj/item/weapon/spacecash/bundle/c200
-	name = "200 Thaler"
+	name = "200 Кредитов"
 	icon_state = "spacecash200"
-	desc = "It's worth 200 Thalers."
+	desc = "Ценность: 200 кредитов."
 	worth = 200
 
 /obj/item/weapon/spacecash/bundle/c500
-	name = "500 Thaler"
+	name = "500 Кредитов"
 	icon_state = "spacecash500"
-	desc = "It's worth 500 Thalers."
+	desc = "Ценность: 500 кредитов."
 	worth = 500
 
 /obj/item/weapon/spacecash/bundle/c1000
-	name = "1000 Thaler"
+	name = "1000 Кредитов"
 	icon_state = "spacecash1000"
-	desc = "It's worth 1000 Thalers."
+	desc = "Ценность: 1000 кредитов."
 	worth = 1000
 
 proc/spawn_money(var/sum, spawnloc, mob/living/carbon/human/human_user as mob)
@@ -175,12 +175,12 @@ proc/spawn_money(var/sum, spawnloc, mob/living/carbon/human/human_user as mob)
 	return
 
 /obj/item/weapon/spacecash/ewallet
-	name = "Charge card"
+	name = "Дебетовая карточка"
 	icon_state = "efundcard"
-	desc = "A card that holds an amount of money."
+	desc = "Карта привязанная к счёту."
 	var/owner_name = "" //So the ATM can set it so the EFTPOS can put a valid name on transactions.
 
 /obj/item/weapon/spacecash/ewallet/examine(mob/user, distance)
 	. = ..(user)
 	if (distance > 2 && user != loc) return
-	to_chat(user, "<span class='notice'>Charge card's owner: [src.owner_name]. [GLOB.using_map.local_currency_name] remaining: [src.worth].</span>")
+	to_chat(user, "<span class='notice'>Держатель карточки: [src.owner_name]. [GLOB.using_map.local_currency_name] осталось: [src.worth].</span>")

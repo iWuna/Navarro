@@ -527,7 +527,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	log_and_message_admins("has respawned [player_key] as [new_character.real_name].")
 
-	to_chat(new_character, "You have been fully respawned. Enjoy the game.")
+	to_chat(new_character, "Вас зареспавнили. Наслаждайтесь игрой.")
 	SSstatistics.add_field_details("admin_verb","RSPCH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return new_character
 
@@ -594,11 +594,11 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	//New message handling
 	post_comm_message(customname, replacetext(input, "\n", "<br/>"))
 
-	switch(alert("Should this be announced to the general population?",,"Yes","No"))
-		if("Yes")
+	switch(alert("Стоит ли объявлять об этом всем?",,"Да","Нет"))
+		if("Да")
 			command_announcement.Announce(input, customname, new_sound = GLOB.using_map.command_report_sound, msg_sanitized = 1);
-		if("No")
-			minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")
+		if("Нет")
+			minor_announcement.Announce(message = "Отчет от [GLOB.using_map.company_name] доступен на всех коммуникационных консолях.")
 
 	log_admin("[key_name(src)] has created a command report: [input]")
 	message_admins("[key_name_admin(src)] has created a command report", 1)

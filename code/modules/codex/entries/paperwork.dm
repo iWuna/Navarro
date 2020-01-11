@@ -23,17 +23,17 @@
 \[list\] - \[/list\] : A list. (Does not work with crayons)<br>
 \[*\] : A dot used for lists. (Does not work with crayons)<br>
 \[logo\] - Inserts EXO logo image.<br>
-\[ntlogo\] - Inserts the NT logo image.<br>
-\[bluelogo\] - Inserts blue NT logo image.<br>
+\[ntlogo\] - Вставляет лого НТ.<br>
+\[bluelogo\] - Вставляет голубое лого НТ.<br>
 \[solcrest\] - Inserts SCG crest image.<br>
 \[eclogo\] - Inserts the Expeditionary Corps logo.<br>
 \[daislogo\] - Inserts the Deimos Advanced Information Systems logo.<br>
 \[xynlogo\] - Inserts the Xyngergy logo.<br>
 \[iccgseal\] - Inserts ICCG seal.<br>
-\[fleetlogo\] - Inserts the logo of the SCG Fleet.<br>
+\[fleetlogo\] - Вставляет эмблему флота ЦПСС.<br>
 \[sfplogo\] - Inserts the logo of the Sol Federal Police.<br><br>
 <b>Digital exclusive commands (NanoWord, emails, reports, text files, etc):</b><br>
 \[pre\] - \[/pre\] : Adds preformatted text, forcing the text to be fixed width.<br>
-\[fontred\] - \[/font\] : Makes the text red.<br>
-\[fontblue\] - \[/font\] : Makes the text blue.<br>
-\[fontgreen\] - \[/font\] : Makes the text green.<br><br>"}
+\[fontred\] - \[/font\] : Делает текст красным.<br>
+\[fontblue\] - \[/font\] : Делает текст голубым.<br>
+\[fontgreen\] - \[/font\] : Делает текст зеленым.<br><br>"}

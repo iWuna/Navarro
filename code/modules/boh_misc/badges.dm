@@ -3,8 +3,8 @@
 /////////
 
 /obj/item/clothing/accessory/badge/firearm
-	name = "firearm permit"
-	desc = "This gold trimmed badge marks the holder as authorized to carry a firearm."
+	name = "разрешение на ношение оружия"
+	desc = "Этот бейдж несет информацию о том, что его владелец имеет разрешение на ношение оружия."
 	badge_string = ""
 
 /////////
@@ -12,6 +12,6 @@
 /////////
 
 /obj/item/clothing/accessory/badge/firearm/bar
-	name = "firearm permit"
-	desc = "This gold trimmed badge marks the holder as authorized to carry a shotgun within the bar."
+	name = "разрешение на ношение оружия"
+	desc = "Этот бейдж несет информацию о том, что его владелец имеет разрешение на ношение оружия, в пределах бара."
 	badge_string = "Barkeep"

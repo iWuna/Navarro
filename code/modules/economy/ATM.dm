@@ -6,8 +6,8 @@
 /obj/item/weapon/card/id/var/money = 2000
 
 /obj/machinery/atm
-	name = "automatic teller machine"
-	desc = "For all your monetary needs!"
+	name = "Банкомат"
+	desc = "Для всех ваших капиталистических нужд!"
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "atm"
 	anchored = 1
@@ -97,7 +97,7 @@
 				else
 					playsound(loc, 'sound/items/polaroid2.ogg', 50, 1)
 
-				to_chat(user, "<span class='info'>You insert [I] into [src].</span>")
+				to_chat(user, "<span class='info'>Вы вставили [I] в [src].</span>")
 				src.attack_hand(user)
 				qdel(I)
 	else
@@ -118,11 +118,11 @@
 		var/list/t = list()
 
 		if(authenticated_account)
-			t += "<span class='highlight'>Welcome <b>[authenticated_account.owner_name]</b>.</span><BR>"
+			t += "<span class='highlight'>Добро пожаловать, <b>[authenticated_account.owner_name]</b>.</span><BR>"
 		else
-			t += "<span class='highlight'>Welcome. Please login below.</span><BR>"
+			t += "<span class='highlight'>Добро пожаловать. Авторизируйтесь.</span><BR>"
 
-		t += "<div class='statusDisplay'><span class='highlight'><b>Card: </b></span>"
+		t += "<div class='statusDisplay'><span class='highlight'><b>Карта: </b></span>"
 		if(emagged > 0)
 			t += "<span class='bad'><b>LOCKED</b><br>Unauthorized terminal access detected!<br>This ATM has been locked down.</span></div><BR>"
 		else
