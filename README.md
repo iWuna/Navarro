@@ -1,6 +1,6 @@
-# [RU]The Fluffy Frontier
+# [RU]SEV Navarro
 
-[Code of The Fluffy Frontier](https://github.com/Low3/The-Fluffy-Frontier) - [Code of Original BoH](https://github.com/BoHBranch/BoH-Bay) - [Discord](https://discord.gg/5GvhwtY)
+[Code of SEV Navarro](https://github.com/iWuna/Navarro) - [Code of Original BoH](https://github.com/BoHBranch/BoH-Bay) - [Discord](https://discord.gg/GEMmJYV)
 
 This is a fork of Baystation12's (And Bastion of Hestia's) code for BYOND on Space Station 13.
 
