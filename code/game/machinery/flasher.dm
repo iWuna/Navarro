@@ -1,8 +1,8 @@
 // It is a gizmo that flashes a small area
 
 /obj/machinery/flasher
-	name = "mounted flash"
-	desc = "A wall-mounted flashbulb device."
+	name = "настенная вспышка"
+	desc = "Вспышка встроенная в стену."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "mflash1"
 	var/range = 2 //this is roughly the size of brig cell
@@ -102,7 +102,7 @@
 	..(severity)
 
 /obj/machinery/flasher/portable //Portable version of the flasher. Only flashes when anchored
-	name = "portable flasher"
+	name = "Мобильная Вспышка"
 	desc = "A portable flashing device. Wrench to activate and deactivate. Cannot detect slow movements."
 	icon_state = "pflash1"
 	strength = 8
@@ -118,7 +118,7 @@
 		var/mob/living/carbon/M = AM
 		if(!MOVING_DELIBERATELY(M))
 			flash()
-	
+
 	if(isanimal(AM))
 		flash()
 
@@ -141,7 +141,7 @@
 	cooldown = 5 SECONDS
 
 /decl/public_access/public_method/flasher_flash
-	name = "flash"
+	name = "вспышка"
 	desc = "Performs a flash, if possible."
 	call_proc = /obj/machinery/flasher/proc/flash
 

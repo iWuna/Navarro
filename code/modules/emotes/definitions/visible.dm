@@ -131,7 +131,7 @@
 
 /decl/emote/visible/wave
 	key = "wave"
-	emote_message_3p_target = "USER waves at TARGET."
+	emote_message_3p_target = "USER машет TARGET."
 	emote_message_3p = "USER waves."
 
 /decl/emote/visible/glare
@@ -141,24 +141,24 @@
 
 /decl/emote/visible/stare
 	key = "stare"
-	emote_message_3p_target = "USER stares at TARGET."
+	emote_message_3p_target = "USER пялится на TARGET."
 	emote_message_3p = "USER stares."
 
 /decl/emote/visible/look
 	key = "look"
-	emote_message_3p_target = "USER looks at TARGET."
+	emote_message_3p_target = "USER смотрит на TARGET."
 	emote_message_3p = "USER looks."
 
 /decl/emote/visible/point
 	key = "point"
 	check_restraints = TRUE
-	emote_message_3p_target = "USER points to TARGET."
+	emote_message_3p_target = "USER показывает на TARGET."
 	emote_message_3p = "USER points."
 
 /decl/emote/visible/raise
 	key = "raise"
 	check_restraints = TRUE
-	emote_message_3p = "USER raises a hand."
+	emote_message_3p = "USER поднимает руку."
 
 /decl/emote/visible/grin
 	key = "grin"
@@ -171,8 +171,8 @@
 
 /decl/emote/visible/smile
 	key = "smile"
-	emote_message_3p_target = "USER smiles at TARGET."
-	emote_message_3p = "USER smiles."
+	emote_message_3p_target = "USER улыбается TARGET."
+	emote_message_3p = "USER улыбается."
 
 /decl/emote/visible/pale
 	key = "pale"
@@ -184,14 +184,14 @@
 
 /decl/emote/visible/wink
 	key = "wink"
-	emote_message_3p_target = "USER winks at TARGET."
-	emote_message_3p = "USER winks."
+	emote_message_3p_target = "USER подмигивает TARGET."
+	emote_message_3p = "USER подмигивает."
 
 /decl/emote/visible/hug
 	key = "hug"
 	check_restraints = TRUE
-	emote_message_3p_target = "USER hugs TARGET."
-	emote_message_3p = "USER hugs USER_SELF."
+	emote_message_3p_target = "USER обнимает TARGET."
+	emote_message_3p = "USER обнимает USER_SELF."
 
 /decl/emote/visible/dap
 	key = "dap"

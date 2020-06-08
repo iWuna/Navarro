@@ -308,7 +308,7 @@
 				if(M.client && M.client.get_preference_value(/datum/client_preference/examine_messages) == GLOB.PREF_SHOW)
 					if(M.is_blind() || is_invisible_to(M))
 						continue
-					to_chat(M, "<span class='subtle'><b>\The [src]</b> looks at \the [A].</span>")
+					to_chat(M, "<span class='subtle'><b>[src]</b> смотрит на [A].</span>")
 
 	var/distance = INFINITY
 	if(isghost(src) || stat == DEAD)
@@ -323,7 +323,7 @@
 		crash_with("Improper /examine() override: [log_info_line(A)]")
 
 /mob/verb/pointed(atom/A as mob|obj|turf in view())
-	set name = "Point To"
+	set name = "Указать на"
 	set category = "Object"
 
 	if(!src || !isturf(src.loc) || !(A in view(src.loc)))

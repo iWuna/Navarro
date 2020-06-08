@@ -4,16 +4,16 @@
 #define TAG_RELIGION  "religion"
 
 #define ALL_CULTURAL_TAGS list( \
-	TAG_CULTURE =   "Culture", \
-	TAG_HOMEWORLD = "Residence", \
-	TAG_FACTION =   "Faction", \
-	TAG_RELIGION =  "Beliefs" \
+	TAG_CULTURE =   "Культура", \
+	TAG_HOMEWORLD = "Гражданство", \
+	TAG_FACTION =   "Фракция", \
+	TAG_RELIGION =  "Вера" \
 	)
 
 // Cultural IDs.
 #define FACTION_SOL_CENTRAL    "Sol Central Government"
 #define FACTION_INDIE_CONFED  "Gilgamesh Colonial Confederation"
-#define FACTION_NANOTRASEN     "NanoTrasen"
+#define FACTION_NANOTRASEN     "НаноТрезен"
 #define FACTION_FREETRADE      "Free Trade Union"
 #define FACTION_HEPHAESTUS     "Hephaestus Industries"
 #define FACTION_XYNERGY        "Xynergy"
@@ -23,16 +23,16 @@
 #define FACTION_PCRC           "Proxima Centauri Risk Control"
 #define FACTION_CORPORATE       "Expeditionary Corps Organisation"
 #define FACTION_DAIS           "Deimos Advanced Information Systems"
-#define FACTION_OTHER          "Other Faction"
+#define FACTION_OTHER          "Дркгая фракция"
 #define FACTION_TEST_SUBJECTS  "Test Subjects"
 #define FACTION_SPACECOPS  "Sol Federal Police"
 
-#define HOME_SYSTEM_EARTH      "Earth"
-#define HOME_SYSTEM_LUNA       "Luna"
-#define HOME_SYSTEM_MARS       "Mars"
+#define HOME_SYSTEM_EARTH      "Земля"
+#define HOME_SYSTEM_LUNA       "Луна"
+#define HOME_SYSTEM_MARS       "Марс"
 #define HOME_SYSTEM_VENUS      "Venus"
 #define HOME_SYSTEM_CERES      "Ceres"
-#define HOME_SYSTEM_PLUTO      "Pluto"
+#define HOME_SYSTEM_PLUTO      "Плутон"
 #define HOME_SYSTEM_TAU_CETI   "Ceti Epsilon"
 #define HOME_SYSTEM_HELIOS	   "Eos"
 #define HOME_SYSTEM_TERRA 	   "Terra"
@@ -45,8 +45,8 @@
 #define HOME_SYSTEM_GAIA       "Gaia"
 #define HOME_SYSTEM_MAGNITKA   "Magnitka"
 #define HOME_SYSTEM_STATELESS  "Stateless"
-#define HOME_SYSTEM_OTHER      "Other System"
-#define HOME_SYSTEM_DEEP_SPACE "Deep Space"
+#define HOME_SYSTEM_OTHER      "Другая система"
+#define HOME_SYSTEM_DEEP_SPACE "Глубокий Космос"
 
 #define CULTURE_OTHER          "Other Culture"
 #define CULTURE_HUMAN          "Humankind"
@@ -73,21 +73,22 @@
 #define CULTURE_ALIUM          "Mysterious Aliens"
 #define CULTURE_CULTIST        "Blood Cult"
 #define RELIGION_OTHER         "Other Religion"
-#define RELIGION_JUDAISM       "Judaism"
+#define RELIGION_JUDAISM       "Иудаизм"
 #define RELIGION_HINDUISM      "Hinduism"
-#define RELIGION_BUDDHISM      "Buddhism"
+#define RELIGION_BUDDHISM      "Будизм"
 #define RELIGION_SIKHISM       "Sikhism"
-#define RELIGION_JAINISM       "Jainism"
-#define RELIGION_ISLAM         "Islam"
-#define RELIGION_CHRISTIANITY  "Christianity"
+#define RELIGION_JAINISM       "Джпйнизм"
+#define RELIGION_ISLAM         "Ислам"
+#define RELIGION_CHRISTIANITY  "Христианство"
 #define RELIGION_BAHAI_FAITH   "Baha'i Faith"
 #define RELIGION_AGNOSTICISM   "Agnosticism"
-#define RELIGION_DEISM         "Deism"
-#define RELIGION_ATHEISM       "Atheism"
+#define RELIGION_DEISM         "Деизм"
+#define RELIGION_ATHEISM       "Атеизм"
 #define RELIGION_THELEMA       "Thelema"
-#define RELIGION_SPIRITUALISM  "Spiritualism"
-#define RELIGION_SHINTO        "Shinto"
-#define RELIGION_TAOISM        "Taoism"
+#define RELIGION_SPIRITUALISM  "Спиритуализм"
+#define RELIGION_SHINTO        "Шинто"
+#define RELIGION_TAOISM        "Таосизм"
+#define RELIGION_UNITOLOGY     "Юнитология"
 
 // Skrellian cultures.
 #define CULTURE_SKRELL_QERR     "Qerr-Katish"

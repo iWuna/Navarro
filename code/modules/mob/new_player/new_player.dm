@@ -33,7 +33,7 @@
 	output += "<a href='byond://?src=\ref[src];show_preferences=1'>Настройка Персонажа</A> "
 
 	if(GAME_STATE > RUNLEVEL_LOBBY)
-		output += "<a href='byond://?src=\ref[src];manifest=1'>View the Crew Manifest</A> "
+		output += "<a href='byond://?src=\ref[src];manifest=1'>осмотреть список экипажа</A> "
 
 	output += "<a href='byond://?src=\ref[src];observe=1'>Наблюдать</A> "
 
@@ -55,7 +55,7 @@
 			else
 				output += "<a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A> "
 
-	output += "<hr>Current character: <b>[client.prefs.real_name]</b>[client.prefs.job_high ? ", [client.prefs.job_high]" : null]<br>"
+	output += "<hr>Текущий персонаж: <b>[client.prefs.real_name]</b>[client.prefs.job_high ? ", [client.prefs.job_high]" : null]<br>"
 	if(GAME_STATE <= RUNLEVEL_LOBBY)
 		if(ready)
 			output += "<a class='linkOn' href='byond://?src=\ref[src];ready=0'>Не готов!</a>"
@@ -76,7 +76,7 @@
 
 	if(statpanel("Lobby"))
 		if(check_rights(R_INVESTIGATE, 0, src))
-			stat("Game Mode:", "[SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])")
+			stat("Игровой режим:", "[SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])")
 		else
 			stat("Игровой режим:", PUBLIC_GAME_MODE)
 		var/extra_antags = list2params(additional_antag_types)
@@ -90,8 +90,8 @@
 			for(var/mob/new_player/player in GLOB.player_list)
 				var/highjob
 				if(player.client && player.client.prefs && player.client.prefs.job_high)
-					highjob = " as [player.client.prefs.job_high]"
-				stat("[player.key]", (player.ready)?("(Playing[highjob])"):(null))
+					highjob = " как [player.client.prefs.job_high]"
+				stat("[player.key]", (player.ready)?("(Играет[highjob])"):(null))
 				totalPlayers++
 				if(player.ready)totalPlayersReady++
 
@@ -117,7 +117,7 @@
 
 	if(href_list["observe"])
 		if(GAME_STATE < RUNLEVEL_LOBBY)
-			to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
+			to_chat(src, "<span class='warning'>Дождитесь запуска основных систем сервера...</span>")
 			return
 
 		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
@@ -354,7 +354,7 @@
 		else
 			AnnounceCyborg(character, job, spawnpoint.msg)
 		matchmaker.do_matchmaking()
-	log_and_message_admins("has joined the round as [character.mind.assigned_role].", character)
+	log_and_message_admins("заходит в игру как [character.mind.assigned_role].", character)
 
 	if(character.needs_wheelchair())
 		equip_wheelchair(character)
@@ -367,7 +367,7 @@
 		if(character.mind.role_alt_title)
 			rank = character.mind.role_alt_title
 		// can't use their name here, since cyborg namepicking is done post-spawn, so we'll just say "A new Cyborg has arrived"/"A new Android has arrived"/etc.
-		GLOB.global_announcer.autosay("A new[rank ? " [rank]" : " visitor" ] [join_message ? join_message : "has arrived"].", "Arrivals Announcement Computer")
+		GLOB.global_announcer.autosay("A new[rank ? " [rank]" : " visitor" ] [join_message ? join_message : "has arrived"].", "Система Оповещения")
 
 /mob/new_player/proc/LateChoices()
 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
@@ -377,7 +377,7 @@
 	header += "Длительность раунда: [roundduration2text()]<br>"
 
 	if(evacuation_controller.has_evacuated())
-		header += "<font color='red'><b>The [station_name()] has been evacuated.</b></font><br>"
+		header += "<font color='red'><b>[station_name()] эвакуирован.</b></font><br>"
 	else if(evacuation_controller.is_evacuating())
 		if(evacuation_controller.emergency_evacuation) // Emergency shuttle is past the point of no recall
 			header += "<font color='red'>The [station_name()] is currently undergoing evacuation procedures.</font><br>"
@@ -385,8 +385,8 @@
 			header += "<font color='red'>The [station_name()] is currently undergoing crew transfer procedures.</font><br>"
 
 	var/list/dat = list()
-	dat += "Choose from the following open/valid positions:<br>"
-	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Hide":"Show"] unavailable jobs.</a><br>"
+	dat += "Выберите одну их доступных позиций:<br>"
+	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Скрыть":"Показать"] недоступные роли.</a><br>"
 	dat += "<table>"
 	dat += "<tr><td colspan = 3><b>[GLOB.using_map.station_name]:</b></td></tr>"
 

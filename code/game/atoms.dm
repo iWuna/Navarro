@@ -254,7 +254,7 @@ its easier to just keep the beam vertical.
 			f_name = "a "
 		f_name += "<font color ='[blood_color]'>stained</font> [name][infix]!"
 
-	to_chat(user, "\icon[src] That's [f_name] [suffix]")
+	to_chat(user, "\icon[src] Это [f_name] [suffix]")
 	to_chat(user, desc)
 	return TRUE
 
@@ -429,8 +429,8 @@ its easier to just keep the beam vertical.
 /atom/attack_hand(mob/user)
 	..()
 	if(LAZYLEN(climbers) && !(user in climbers))
-		user.visible_message("<span class='warning'>[user.name] shakes \the [src].</span>", \
-					"<span class='notice'>You shake \the [src].</span>")
+		user.visible_message("<span class='warning'>[user.name] трясёт [src].</span>", \
+					"<span class='notice'>Вы трясёте [src].</span>")
 		object_shaken()
 
 // Called when hitting the atom with a grab.
@@ -440,8 +440,8 @@ its easier to just keep the beam vertical.
 
 /atom/proc/climb_on()
 
-	set name = "Climb"
-	set desc = "Climbs onto an object."
+	set name = "Забраться"
+	set desc = "Забраться куда-либо."
 	set category = "Object"
 	set src in oview(1)
 
@@ -452,12 +452,12 @@ its easier to just keep the beam vertical.
 		return 0
 
 	if (!user.Adjacent(src))
-		to_chat(user, "<span class='danger'>You can't climb there, the way is blocked.</span>")
+		to_chat(user, "<span class='danger'>Вы не можете забраться сюда, путь заблокирован.</span>")
 		return 0
 
 	var/obj/occupied = turf_is_crowded(user)
 	if(occupied)
-		to_chat(user, "<span class='danger'>There's \a [occupied] in the way.</span>")
+		to_chat(user, "<span class='danger'>Тут [occupied] на вашем пути.</span>")
 		return 0
 	return 1
 
@@ -472,7 +472,7 @@ its easier to just keep the beam vertical.
 	if (user.incapacitated())
 		return 0
 	if (issilicon(user))
-		to_chat(user, "<span class='notice'>You need hands for this.</span>")
+		to_chat(user, "<span class='notice'>Вам необходимы руки для этого.</span>")
 		return 0
 	return 1
 
@@ -494,7 +494,7 @@ its easier to just keep the beam vertical.
 		return 0
 
 	add_fingerprint(user)
-	user.visible_message("<span class='warning'>\The [user] starts climbing onto \the [src]!</span>")
+	user.visible_message("<span class='warning'>[user] начинает забираться на [src]!</span>")
 	LAZYDISTINCTADD(climbers,user)
 
 	if(!do_after(user,(issmall(user) ? MOB_CLIMB_TIME_SMALL : MOB_CLIMB_TIME_MEDIUM) * climb_speed_mult, src))
@@ -514,7 +514,7 @@ its easier to just keep the beam vertical.
 	user.forceMove(target_turf)
 
 	if (get_turf(user) == target_turf)
-		user.visible_message("<span class='warning'>\The [user] climbs onto \the [src]!</span>")
+		user.visible_message("<span class='warning'>[user] забирается на [src]!</span>")
 	LAZYREMOVE(climbers,user)
 	return 1
 

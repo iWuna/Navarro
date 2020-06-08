@@ -3,7 +3,7 @@
  *  A vending machine
  */
 /obj/machinery/vending
-	name = "Vendomat"
+	name = "Торгомат"
 	desc = "A generic vending machine."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "generic"
@@ -185,7 +185,7 @@
 			return FALSE
 		coin = W
 		categories |= CAT_COIN
-		to_chat(user, "<span class='notice'>You insert \the [W] into \the [src].</span>")
+		to_chat(user, "<span class='notice'>Вы вставляете [W] в [src].</span>")
 		SSnano.update_uis(src)
 		return TRUE
 	if((user.a_intent == I_HELP) && attempt_to_stock(W, user))
@@ -222,7 +222,7 @@
 		to_chat(usr, "\icon[cashmoney] <span class='warning'>That is not enough money.</span>")
 		return 0
 
-	visible_message("<span class='info'>\The [usr] inserts some cash into \the [src].</span>")
+	visible_message("<span class='info'>[usr] вставляет немного денег в [src].</span>")
 	cashmoney.worth -= currently_vending.price
 
 	if(cashmoney.worth <= 0)
@@ -241,14 +241,14 @@
  * successful, 0 if failed.
  */
 /obj/machinery/vending/proc/pay_with_ewallet(var/obj/item/weapon/spacecash/ewallet/wallet)
-	visible_message("<span class='info'>\The [usr] swipes \the [wallet] through \the [src].</span>")
+	visible_message("<span class='info'>[usr] проводит [wallet] по [src].</span>")
 	if(currently_vending.price > wallet.worth)
-		src.status_message = "Insufficient funds on chargecard."
+		src.status_message = "Недостаточно средств на карте."
 		src.status_error = 1
 		return 0
 	else
 		wallet.worth -= currently_vending.price
-		credit_purchase("[wallet.owner_name] (chargecard)")
+		credit_purchase("[wallet.owner_name] (карточка)")
 		return 1
 
 /**
@@ -416,7 +416,7 @@
 
 /obj/machinery/vending/proc/vend(var/datum/stored_items/vending_products/R, mob/user)
 	if((!allowed(user)) && !emagged && scan_id)	//For SECURE VENDING MACHINES YEAH
-		to_chat(user, "<span class='warning'>Access denied.</span>")//Unless emagged of course
+		to_chat(user, "<span class='warning'>Доступ запрещён.</span>")//Unless emagged of course
 		flick(src.icon_deny,src)
 		return
 	src.vend_ready = 0 //One thing at a time!!

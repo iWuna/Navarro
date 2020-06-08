@@ -25,7 +25,7 @@
 	. += "Персонажи с активированными отношениями распределяются в случайном порядке после появления. Вы можете разорвать отношения, когда впервые открываете информационное окно отношений, но после этого оно становится окончательным."
 	. += "<hr>"
 	. += "<br><b>Что они знают о вас? Это общая информация, которую будут знать все ваши отношения. <a href='?src=\ref[src];relation_info=["general"]'>Edit</a>"
-	. += "<br><i>[pref.relations_info["general"] ? pref.relations_info["general"] : "Nothing specific."]</i>"
+	. += "<br><i>[pref.relations_info["general"] ? pref.relations_info["general"] : "Ничего особенного."]</i>"
 	. += "<hr>"
 	for(var/T in subtypesof(/datum/relation))
 		var/datum/relation/R = T
@@ -38,7 +38,7 @@
 			. += "<span class='linkOn'>Выключено</span>"
 		. += "<br><i>[initial(R.desc)]</i>"
 		. += "<br><b>Что они знают о вас?</b><a href='?src=\ref[src];relation_info=[initial(R.name)]'>Редактировать</a>"
-		. += "<br><i>[pref.relations_info[initial(R.name)] ? pref.relations_info[initial(R.name)] : "Nothing specific."]</i>"
+		. += "<br><i>[pref.relations_info[initial(R.name)] ? pref.relations_info[initial(R.name)] : "Ничего особенного."]</i>"
 		. += "<hr>"
 	. = jointext(.,null)
 

@@ -38,7 +38,7 @@
 	var/datum/species/species = all_species[pref.species]
 
 	if(!(species && species.has_organ[BP_POSIBRAIN]))
-		. += "<b>Your Species Has No Laws</b><br>"
+		. += "<b>У вашей расы нет ограничений. Слава людям.</b><br>"
 	else
 		. += "<b>Shackle: </b>"
 		if(!pref.is_shackled)

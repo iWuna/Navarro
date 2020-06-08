@@ -130,16 +130,16 @@ var/global/list/additional_antag_types = list()
 		usr.client.holder.show_game_mode(usr)
 
 /datum/game_mode/proc/announce() //to be called when round starts
-	to_world("<B>The current game mode is [capitalize(name)]!</B>")
+	to_world("<B>Текущий игровой режим [capitalize(name)]!</B>")
 	if(round_description) to_world("[round_description]")
 	if(round_autoantag) to_world("Antagonists will be added to the round automagically as needed.")
 	if(antag_templates && antag_templates.len)
-		var/antag_summary = "<b>Possible antagonist types:</b> "
+		var/antag_summary = "<b>Возможные антагонисты:</b> "
 		var/i = 1
 		for(var/datum/antagonist/antag in antag_templates)
 			if(i > 1)
 				if(i == antag_templates.len)
-					antag_summary += " and "
+					antag_summary += " и "
 				else
 					antag_summary += ", "
 			antag_summary += "[antag.role_text_plural]"
@@ -492,7 +492,7 @@ var/global/list/additional_antag_types = list()
 //Reports player logouts//
 //////////////////////////
 proc/display_roundstart_logout_report()
-	var/msg = "<span class='notice'><b>Roundstart logout report</b>\n\n"
+	var/msg = "<span class='notice'><b>Отчёт о вышедших</b>\n\n"
 	for(var/mob/living/L in SSmobs.mob_list)
 
 		if(L.ckey)
@@ -502,32 +502,32 @@ proc/display_roundstart_logout_report()
 					found = 1
 					break
 			if(!found)
-				msg += "<b>[L.name]</b> ([L.ckey]), the [L.job] (<font color='#ffcc00'><b>Disconnected</b></font>)\n"
+				msg += "<b>[L.name]</b> ([L.ckey]), как [L.job] (<font color='#ffcc00'><b>Отключился</b></font>)\n"
 
 		if(L.ckey && L.client)
 			if(L.client.inactivity >= (ROUNDSTART_LOGOUT_REPORT_TIME / 2))	//Connected, but inactive (alt+tabbed or something)
-				msg += "<b>[L.name]</b> ([L.ckey]), the [L.job] (<font color='#ffcc00'><b>Connected, Inactive</b></font>)\n"
+				msg += "<b>[L.name]</b> ([L.ckey]), как [L.job] (<font color='#ffcc00'><b>В сети, не активен.</b></font>)\n"
 				continue //AFK client
 			if(L.stat)
 				if(L.stat == UNCONSCIOUS)
-					msg += "<b>[L.name]</b> ([L.ckey]), the [L.job] (Dying)\n"
+					msg += "<b>[L.name]</b> ([L.ckey]), как [L.job] (Умирает)\n"
 					continue //Unconscious
 				if(L.stat == DEAD)
-					msg += "<b>[L.name]</b> ([L.ckey]), the [L.job] (Dead)\n"
+					msg += "<b>[L.name]</b> ([L.ckey]), как [L.job] (Мёртв)\n"
 					continue //Dead
 
 			continue //Happy connected client
 		for(var/mob/observer/ghost/D in SSmobs.mob_list)
 			if(D.mind && (D.mind.original == L || D.mind.current == L))
 				if(L.stat == DEAD)
-					msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] (Dead)\n"
+					msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), как [L.job] (Мёртв)\n"
 					continue //Dead mob, ghost abandoned
 				else
 					if(D.can_reenter_corpse)
-						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] (<font color='red'><b>Adminghosted</b></font>)\n"
+						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), как [L.job] (<font color='red'><b>Педаль-гостанулся</b></font>)\n"
 						continue //Lolwhat
 					else
-						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] (<font color='red'><b>Ghosted</b></font>)\n"
+						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), как [L.job] (<font color='red'><b>Гостанулся</b></font>)\n"
 						continue //Ghosted while alive
 
 	msg += "</span>" // close the span from right at the top
@@ -544,26 +544,26 @@ proc/display_roundstart_logout_report()
 		return
 
 	var/obj_count = 1
-	to_chat(player.current, "<span class='notice'>Your current objectives:</span>")
+	to_chat(player.current, "<span class='notice'>Твои текущие задачи:</span>")
 	for(var/datum/objective/objective in player.objectives)
-		to_chat(player.current, "<B>Objective #[obj_count]</B>: [objective.explanation_text]")
+		to_chat(player.current, "<B>Задача #[obj_count]</B>: [objective.explanation_text]")
 		obj_count++
 
 /mob/verb/check_round_info()
-	set name = "Check Round Info"
+	set name = "Проверить информацию о раунде"
 	set category = "OOC"
 
 	GLOB.using_map.map_info(src)
 
 	if(!SSticker.mode)
-		to_chat(usr, "Something is terribly wrong; there is no gametype.")
+		to_chat(usr, "Бляздец что-то сломалось.")
 		return
 
 	if(SSticker.master_mode != "secret")
-		to_chat(usr, "<b>The roundtype is [capitalize(SSticker.mode.name)]</b>")
+		to_chat(usr, "<b>Игровой режим [capitalize(SSticker.mode.name)]</b>")
 		if(SSticker.mode.round_description)
 			to_chat(usr, "<i>[SSticker.mode.round_description]</i>")
 		if(SSticker.mode.extended_round_description)
 			to_chat(usr, "[SSticker.mode.extended_round_description]")
 	else
-		to_chat(usr, "<i>Shhhh</i>. It's a secret.")
+		to_chat(usr, "<i>Тссс</i>. Это секрет.")

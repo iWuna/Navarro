@@ -163,19 +163,19 @@
 	var/size
 	switch(src.w_class)
 		if(ITEM_SIZE_TINY)
-			size = "tiny"
+			size = "крохотный"
 		if(ITEM_SIZE_SMALL)
-			size = "small"
+			size = "маленький"
 		if(ITEM_SIZE_NORMAL)
-			size = "normal-sized"
+			size = "средний"
 		if(ITEM_SIZE_LARGE)
-			size = "large"
+			size = "большой"
 		if(ITEM_SIZE_HUGE)
-			size = "bulky"
+			size = "крупный"
 		if(ITEM_SIZE_HUGE + 1 to INFINITY)
-			size = "huge"
+			size = "огромный"
 	var/desc_comp = "" //For "description composite"
-	desc_comp += "It is a [size] item."
+	desc_comp += "Размер предмета: [size]."
 
 	if(hasHUD(user, HUD_SCIENCE)) //Mob has a research scanner active.
 		desc_comp += "<BR>*--------* <BR>"
@@ -457,7 +457,7 @@ var/list/global/slot_flags_enumeration = list(
 /obj/item/verb/verb_pickup()
 	set src in oview(1)
 	set category = "Object"
-	set name = "Pick up"
+	set name = "Подобрать"
 
 	if(!(usr)) //BS12 EDIT
 		return
@@ -809,7 +809,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		. = "\icon[src] \a [src]"
 	var/ID = GetIdCard()
 	if(ID)
-		. += "  <a href='?src=\ref[ID];look_at_id=1'>\[Look at ID\]</a>"
+		. += "  <a href='?src=\ref[ID];look_at_id=1'>\[Посмотреть на паспорт\]</a>"
 
 /obj/item/proc/on_active_hand()
 

@@ -1,8 +1,8 @@
 /obj/machinery/button
-	name = "button"
+	name = "кнопка"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "launcherbtt"
-	desc = "A remote control switch for something."
+	desc = "Кнопка для управления чем-то."
 	anchored = 1
 	power_channel = ENVIRON
 	idle_power_usage = 10

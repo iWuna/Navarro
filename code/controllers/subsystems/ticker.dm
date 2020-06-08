@@ -257,13 +257,13 @@ Helpers
 	mode = mode_datum
 	master_mode = mode_to_try
 	if(mode_to_try == "secret")
-		to_world("<B>The current game mode is - Secret!</B>")
+		to_world("<B>Текущий игровой режим - Секрет!</B>")
 		var/list/mode_names = list()
 		for (var/mode_tag in base_runnable_modes)
 			var/datum/game_mode/M = gamemode_cache[mode_tag]
 			if(M)
 				mode_names += M.name
-		to_world("<B>Possibilities:</B> [english_list(mode_names)]")
+		to_world("<B>Возможно это:</B> [english_list(mode_names)]")
 	else
 		mode.announce()
 

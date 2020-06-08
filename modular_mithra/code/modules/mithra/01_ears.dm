@@ -1,6 +1,6 @@
 // Global stuff that will put us on the map
 /datum/category_group/player_setup_category/Mithra
-	name = "Genemods"
+	name = "Генетические модификации"
 	sort_order = 9
 	category_item_type = /datum/category_item/player_setup_item/vore
 
@@ -118,13 +118,13 @@
 
 
 /datum/category_item/player_setup_item/vore/ears/content(var/mob/user)
-	. += "<h2>Genemod Selection</h2>"
+	. += "<h2>Выбор генетических модификаций</h2>"
 
 	if(!pref.preview_icon)
 		pref.update_preview_icon()
  	user << browse_rsc(pref.preview_icon, "previewicon.png")
 
-	. += "<b>Preview</b><br>"
+	. += "<b>Предосмотр</b><br>"
 	. += "<div class='statusDisplay'><center><img src=previewicon.png width=[pref.preview_icon.Width()] height=[pref.preview_icon.Height()]></center></div>"
 	. += "<br><a href='?src=\ref[src];toggle_clothing=1'>[pref.dress_mob ? "Hide equipment" : "Show equipment"]</a><br>"
 
@@ -135,14 +135,14 @@
 
 	else if(pref.ear_style)
 		ear_display = "REQUIRES UPDATE"
-	. += "<b>Ears</b><br>"
-	. += " Style: <a href='?src=\ref[src];ear_style=1'>[ear_display]</a><br>"
+	. += "<b>Ушки</b><br>"
+	. += " Стиль: <a href='?src=\ref[src];ear_style=1'>[ear_display]</a><br>"
 	if(ear_styles_list[pref.ear_style])
 		var/datum/sprite_accessory/ears/ear = ear_styles_list[pref.ear_style]
 		if (ear.do_colouration)
-			. += "<a href='?src=\ref[src];ear_color=1'>Change Color</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_ears, 2)][num2hex(pref.g_ears, 2)][num2hex(pref.b_ears, 2)]'><table style='display:inline;' bgcolor='#[num2hex(pref.r_ears, 2)][num2hex(pref.g_ears, 2)][num2hex(pref.b_ears, 2)]'><tr><td>__</td></tr></table> </font><br>"
+			. += "<a href='?src=\ref[src];ear_color=1'>Сменить цвет</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_ears, 2)][num2hex(pref.g_ears, 2)][num2hex(pref.b_ears, 2)]'><table style='display:inline;' bgcolor='#[num2hex(pref.r_ears, 2)][num2hex(pref.g_ears, 2)][num2hex(pref.b_ears, 2)]'><tr><td>__</td></tr></table> </font><br>"
 		if (ear.extra_overlay)
-			. += "<a href='?src=\ref[src];ear_color2=1'>Change Secondary Color</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_ears2, 2)][num2hex(pref.g_ears2, 2)][num2hex(pref.b_ears2, 2)]'><table style='display:inline;' bgcolor='#[num2hex(pref.r_ears2, 2)][num2hex(pref.g_ears2, 2)][num2hex(pref.b_ears2, 2)]'><tr><td>__</td></tr></table> </font><br>"
+			. += "<a href='?src=\ref[src];ear_color2=1'>Сменить второй цвет</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_ears2, 2)][num2hex(pref.g_ears2, 2)][num2hex(pref.b_ears2, 2)]'><table style='display:inline;' bgcolor='#[num2hex(pref.r_ears2, 2)][num2hex(pref.g_ears2, 2)][num2hex(pref.b_ears2, 2)]'><tr><td>__</td></tr></table> </font><br>"
 
 	var/tail_display = "Normal"
 	if(pref.tail_style && (pref.tail_style in tail_styles_list))
@@ -150,15 +150,15 @@
 		tail_display = instance.name
 	else if(pref.tail_style)
 		tail_display = "REQUIRES UPDATE"
-	. += "<b>Tail</b><br>"
-	. += " Style: <a href='?src=\ref[src];tail_style=1'>[tail_display]</a><br>"
+	. += "<b>Хвост</b><br>"
+	. += " Стиль: <a href='?src=\ref[src];tail_style=1'>[tail_display]</a><br>"
 
 	if(tail_styles_list[pref.tail_style])
 		var/datum/sprite_accessory/tail/T = tail_styles_list[pref.tail_style]
 		if (T.do_colouration)
-			. += "<a href='?src=\ref[src];tail_color=1'>Change Color</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_tail, 2)][num2hex(pref.g_tail, 2)][num2hex(pref.b_tail, 2)]'><table style='display:inline;' bgcolor='#[num2hex(pref.r_tail, 2)][num2hex(pref.g_tail, 2)][num2hex(pref.b_tail, 2)]'><tr><td>__</td></tr></table> </font><br>"
+			. += "<a href='?src=\ref[src];tail_color=1'>Сменить цвет</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_tail, 2)][num2hex(pref.g_tail, 2)][num2hex(pref.b_tail, 2)]'><table style='display:inline;' bgcolor='#[num2hex(pref.r_tail, 2)][num2hex(pref.g_tail, 2)][num2hex(pref.b_tail, 2)]'><tr><td>__</td></tr></table> </font><br>"
 		if (T.extra_overlay)
-			. += "<a href='?src=\ref[src];tail_color2=1'>Change Secondary Color</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_tail2, 2)][num2hex(pref.g_tail2, 2)][num2hex(pref.b_tail2, 2)]'><table style='display:inline;' bgcolor='#[num2hex(pref.r_tail2, 2)][num2hex(pref.g_tail2, 2)][num2hex(pref.b_tail2, 2)]'><tr><td>__</td></tr></table> </font><br>"
+			. += "<a href='?src=\ref[src];tail_color2=1'>Сменить второй цвет</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_tail2, 2)][num2hex(pref.g_tail2, 2)][num2hex(pref.b_tail2, 2)]'><table style='display:inline;' bgcolor='#[num2hex(pref.r_tail2, 2)][num2hex(pref.g_tail2, 2)][num2hex(pref.b_tail2, 2)]'><tr><td>__</td></tr></table> </font><br>"
 
 	var/wing_display = "Normal"
 	if(pref.wing_style && (pref.wing_style in wing_styles_list))
@@ -166,13 +166,13 @@
 		wing_display = instance.name
 	else if(pref.wing_style)
 		wing_display = "REQUIRES UPDATE"
-	. += "<b>Wing</b><br>"
-	. += " Style: <a href='?src=\ref[src];wing_style=1'>[wing_display]</a><br>"
+	. += "<b>Крылья</b><br>"
+	. += " Стиль: <a href='?src=\ref[src];wing_style=1'>[wing_display]</a><br>"
 
 	if(wing_styles_list[pref.wing_style])
 		var/datum/sprite_accessory/wing/T = wing_styles_list[pref.wing_style]
 		if (T.do_colouration)
-			. += "<a href='?src=\ref[src];wing_color=1'>Change Color</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_wing, 2)][num2hex(pref.g_wing, 2)][num2hex(pref.b_wing, 2)]'><table style='display:inline;' bgcolor='#[num2hex(pref.r_wing, 2)][num2hex(pref.g_wing, 2)][num2hex(pref.b_wing, 2)]'><tr><td>__</td></tr></table> </font><br>"
+			. += "<a href='?src=\ref[src];wing_color=1'>Сменить цвет</a> <font face='fixedsys' size='3' color='#[num2hex(pref.r_wing, 2)][num2hex(pref.g_wing, 2)][num2hex(pref.b_wing, 2)]'><table style='display:inline;' bgcolor='#[num2hex(pref.r_wing, 2)][num2hex(pref.g_wing, 2)][num2hex(pref.b_wing, 2)]'><tr><td>__</td></tr></table> </font><br>"
 
 /datum/category_item/player_setup_item/vore/ears/OnTopic(var/href,var/list/href_list, var/mob/user)
 	if(!CanUseTopic(user))
@@ -187,14 +187,14 @@
 				pretty_ear_styles[instance.name] = path
 
 		// Present choice to user
-		var/new_ear_style = input(user, "Pick ears", "Character Preference", pref.ear_style) as null|anything in pretty_ear_styles
+		var/new_ear_style = input(user, "Выьрать ушки", "Character Preference", pref.ear_style) as null|anything in pretty_ear_styles
 		if(new_ear_style)
 			pref.ear_style = pretty_ear_styles[new_ear_style]
 
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["ear_color"])
-		var/new_earc = input(user, "Choose your character's ear colour:", "Character Preference",
+		var/new_earc = input(user, "Выберите цвет ушек персонажа:", "Character Preference",
 			rgb(pref.r_ears, pref.g_ears, pref.b_ears)) as color|null
 		if(new_earc)
 			pref.r_ears = hex2num(copytext(new_earc, 2, 4))
@@ -203,7 +203,7 @@
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["ear_color2"])
-		var/new_earc2 = input(user, "Choose your character's ear colour:", "Character Preference",
+		var/new_earc2 = input(user, "Выберите цвет ушек персонажа:", "Character Preference",
 			rgb(pref.r_ears2, pref.g_ears2, pref.b_ears2)) as color|null
 		if(new_earc2)
 			pref.r_ears2 = hex2num(copytext(new_earc2, 2, 4))
@@ -220,14 +220,14 @@
 				pretty_tail_styles[instance.name] = path
 
 		// Present choice to user
-		var/new_tail_style = input(user, "Pick tails", "Character Preference", pref.tail_style) as null|anything in pretty_tail_styles
+		var/new_tail_style = input(user, "Выбрать хвост", "Character Preference", pref.tail_style) as null|anything in pretty_tail_styles
 		if(new_tail_style)
 			pref.tail_style = pretty_tail_styles[new_tail_style]
 
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["tail_color"])
-		var/new_tailc = input(user, "Choose your character's tail colour:", "Character Preference",
+		var/new_tailc = input(user, "Выберите цвет хвоста персонажа:", "Character Preference",
 			rgb(pref.r_tail, pref.g_tail, pref.b_tail)) as color|null
 		if(new_tailc)
 			pref.r_tail = hex2num(copytext(new_tailc, 2, 4))
@@ -236,7 +236,7 @@
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["tail_color2"])
-		var/new_tailc2 = input(user, "Choose your character's secondary tail colour:", "Character Preference",
+		var/new_tailc2 = input(user, "Выберите цвет хвоста персонажа:", "Character Preference",
 			rgb(pref.r_tail2, pref.g_tail2, pref.b_tail2)) as color|null
 		if(new_tailc2)
 			pref.r_tail2 = hex2num(copytext(new_tailc2, 2, 4))
@@ -253,14 +253,14 @@
 				pretty_wing_styles[instance.name] = path
 
 		// Present choice to user
-		var/new_wing_style = input(user, "Pick wings", "Character Preference", pref.wing_style) as null|anything in pretty_wing_styles
+		var/new_wing_style = input(user, "Выбрать крылья", "Character Preference", pref.wing_style) as null|anything in pretty_wing_styles
 		if(new_wing_style)
 			pref.wing_style = pretty_wing_styles[new_wing_style]
 
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["wing_color"])
-		var/new_wingc = input(user, "Choose your character's wing colour:", "Character Preference",
+		var/new_wingc = input(user, "Выбрать цвет крыльев персонажа:", "Character Preference",
 			rgb(pref.r_wing, pref.g_wing, pref.b_wing)) as color|null
 		if(new_wingc)
 			pref.r_wing = hex2num(copytext(new_wingc, 2, 4))

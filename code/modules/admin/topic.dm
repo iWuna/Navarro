@@ -980,7 +980,7 @@
 		if(!check_rights(R_ADMIN))	return
 
 		if(SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
+			return alert(usr, "Игра уже началась.", null, null, null, null)
 		if(SSticker.master_mode != "secret")
 			return alert(usr, "The game mode has to be secret!", null, null, null, null)
 		var/dat = {"<B>What game mode do you want to force secret to be? Use this if you want to change the game mode, but want the players to believe it's secret. This will only work if the current game mode is secret.</B><HR>"}
@@ -994,11 +994,11 @@
 		if(!check_rights(R_ADMIN|R_SERVER))	return
 
 		if (SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
+			return alert(usr, "Игра уже началась.", null, null, null, null)
 		SSticker.master_mode = href_list["c_mode2"]
 		SSticker.bypass_gamemode_vote = 1
 		log_and_message_admins("set the mode as [SSticker.master_mode].")
-		to_world("<span class='notice'><b>The mode is now: [SSticker.master_mode]</b></span>")
+		to_world("<span class='notice'><b>Теперь игровой режим: [SSticker.master_mode]</b></span>")
 		Game() // updates the main game menu
 		world.save_mode(SSticker.master_mode)
 		.(href, list("c_mode"=1))
@@ -1007,7 +1007,7 @@
 		if(!check_rights(R_ADMIN|R_SERVER))	return
 
 		if(SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
+			return alert(usr, "Игра уже началась.", null, null, null, null)
 		if(SSticker.master_mode != "secret")
 			return alert(usr, "The game mode has to be secret!", null, null, null, null)
 		secret_force_mode = href_list["f_secret2"]
