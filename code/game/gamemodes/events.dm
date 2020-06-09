@@ -145,7 +145,7 @@ Would like to add a law like "Law x is _______" where x = a number, and _____ is
 					M.add_ion_law("THE [uppertext(station_name())] IS BUILT FOR [who2]")
 				if(7)
 					to_chat(M, "<br>")
-					to_chat(M, "<span class='danger'>YOU ARE [amount] [who2]...LAWS UPDATED</span>")
+					to_chat(M, "<span class='danger'>ТЫ [amount] [who2]...ЗАКОНЫ ОБНОВЛЕНЫ</span>")
 					to_chat(M, "<br>")
 					M.add_ion_law("YOU ARE [amount] [who2]")
 				if(8)

@@ -1,9 +1,9 @@
 
 /client/verb/who()
-	set name = "Who"
+	set name = "Проверить онлайн"
 	set category = "OOC"
 
-	var/msg = "<b>Current Players:</b>\n"
+	var/msg = "<b>Текущие игроки:</b>\n"
 
 	var/list/Lines = list()
 
@@ -11,23 +11,23 @@
 		for(var/client/C in GLOB.clients)
 			var/entry = "\t[C.key]"
 			if(!C.mob) //If mob is null, print error and skip rest of info for client.
-				entry += " - <font color='red'><i>HAS NO MOB</i></font>"
+				entry += " - <font color='red'><i>НЕ ИМЕЕТ МОБА</i></font>"
 				Lines += entry
 				continue
 
 			entry += " - Playing as [C.mob.real_name]"
 			switch(C.mob.stat)
 				if(UNCONSCIOUS)
-					entry += " - <font color='darkgray'><b>Unconscious</b></font>"
+					entry += " - <font color='darkgray'><b>без сознания</b></font>"
 				if(DEAD)
 					if(isghost(C.mob))
 						var/mob/observer/ghost/O = C.mob
 						if(O.started_as_observer)
-							entry += " - <font color='gray'>Observing</font>"
+							entry += " - <font color='gray'>Наблюдает</font>"
 						else
-							entry += " - <font color='black'><b>DEAD</b></font>"
+							entry += " - <font color='black'><b>МЁРТВ</b></font>"
 					else
-						entry += " - <font color='black'><b>DEAD</b></font>"
+						entry += " - <font color='black'><b>МЁРТВ</b></font>"
 
 			var/age
 			if(isnum(C.player_age))
@@ -43,7 +43,7 @@
 			entry += " - [age]"
 
 			if(is_special_character(C.mob))
-				entry += " - <b><font color='red'>Antagonist</font></b>"
+				entry += " - <b><font color='red'>Антагонист</font></b>"
 			if(C.is_afk())
 				entry += " (AFK - [C.inactivity2text()])"
 			entry += " (<A HREF='?_src_=holder;adminmoreinfo=\ref[C.mob]'>?</A>)"
@@ -56,12 +56,12 @@
 	for(var/line in sortList(Lines))
 		msg += "[line]\n"
 
-	msg += "<b>Total Players: [length(Lines)]</b>"
+	msg += "<b>Всего игроков: [length(Lines)]</b>"
 	to_chat(src, msg)
 
 /client/verb/staffwho()
 	set category = "Admin"
-	set name = "Staffwho"
+	set name = "Администрация онлайн"
 
 	var/list/msg = list()
 	var/active_staff = 0
@@ -83,13 +83,13 @@
 			if(C.is_afk())
 				line += " (AFK - [C.inactivity2text()])"
 			if(isghost(C.mob))
-				line += " - Observing"
+				line += " - Наблюдает"
 			else if(istype(C.mob,/mob/new_player))
-				line += " - Lobby"
+				line += " - В Лобби"
 			else
-				line += " - Playing"
+				line += " - Играет"
 			if(C.is_stealthed())
-				line += " (Stealthed)"
+				line += " (СТЕЛС)"
 			if(C.get_preference_value(/datum/client_preference/show_ooc) == GLOB.PREF_HIDE)
 				line += " <font color='#002eb8'><b><s>(OOC)</s></b></font>"
 			if(C.get_preference_value(/datum/client_preference/show_looc) == GLOB.PREF_HIDE)
@@ -106,5 +106,5 @@
 
 	if(config.admin_irc)
 		to_chat(src, "<span class='info'>Adminhelps are also sent to IRC. If no admins are available in game try anyway and an admin on IRC may see it and respond.</span>")
-	to_chat(src, "<b>Current Staff ([active_staff]/[total_staff]):</b>")
+	to_chat(src, "<b>Текущая администрация ([active_staff]/[total_staff]):</b>")
 	to_chat(src, jointext(msg,"\n"))

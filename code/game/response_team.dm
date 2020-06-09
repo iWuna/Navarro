@@ -7,15 +7,15 @@ var/ert_base_chance = 10 // Default base chance. Will be incremented by incremen
 var/can_call_ert
 
 /client/proc/response_team()
-	set name = "Dispatch Emergency Response Team"
+	set name = "Начать набор в КБР"
 	set category = "Special Verbs"
 	set desc = "Send an emergency response team"
 
 	if(!holder)
-		to_chat(usr, "<span class='danger'>Only administrators may use this command.</span>")
+		to_chat(usr, "<span class='danger'>Только администрация может использовать данную команду.</span>")
 		return
 	if(GAME_STATE < RUNLEVEL_GAME)
-		to_chat(usr, "<span class='danger'>The game hasn't started yet!</span>")
+		to_chat(usr, "<span class='danger'>Игра ещё не началась!</span>")
 		return
 	if(send_emergency_team)
 		to_chat(usr, "<span class='danger'>[GLOB.using_map.boss_name] has already dispatched an emergency response team!</span>")
@@ -38,7 +38,7 @@ var/can_call_ert
 
 client/verb/JoinResponseTeam()
 
-	set name = "Join Response Team"
+	set name = "Присоединиться к КБР"
 	set category = "IC"
 
 	if(!MayRespawn(1))
@@ -47,13 +47,13 @@ client/verb/JoinResponseTeam()
 
 	if(isghost(usr) || isnewplayer(usr))
 		if(!send_emergency_team)
-			to_chat(usr, "No emergency response team is currently being sent.")
+			to_chat(usr, "На данный момент нет необходимости в КБР.")
 			return
 		if(jobban_isbanned(usr, MODE_ERT) || jobban_isbanned(usr, "Security Officer"))
-			to_chat(usr, "<span class='danger'>You are jobbanned from the emergency reponse team!</span>")
+			to_chat(usr, "<span class='danger'>У вас бан на участие в КБР!</span>")
 			return
 		if(GLOB.ert.current_antagonists.len >= GLOB.ert.hard_cap)
-			to_chat(usr, "The emergency response team is already full!")
+			to_chat(usr, "Команда Быстрого Реагирования уже готова!")
 			return
 		GLOB.ert.create_default(usr)
 	else

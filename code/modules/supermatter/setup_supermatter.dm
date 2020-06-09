@@ -18,7 +18,7 @@
 	if (!istype(src,/datum/admins))
 		src = usr.client.holder
 	if (!istype(src,/datum/admins))
-		to_chat(usr, "Error: you are not an admin!")
+		to_chat(usr, "ОШИБКА: вы не администратор!")
 		return
 
 	var/response = input(usr, "Are you sure? This will start up the engine with selected gas as coolant.", "Engine setup") as null|anything in list("N2", "CO2", "PH", "H2", "Abort")

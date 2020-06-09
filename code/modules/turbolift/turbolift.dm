@@ -51,7 +51,7 @@
 				next_process = world.time + move_delay
 		if(LIFT_WAITING_A)
 			var/area/turbolift/origin = locate(current_floor.area_ref)
-			control_panel_interior.visible_message("<b>The elevator</b> announces, \"[origin.lift_announce_str]\"")
+			control_panel_interior.visible_message("<b>Лифт</b> объявляет, \"[origin.lift_announce_str]\"")
 			next_process = world.time + floor_wait_delay
 			busy_state = LIFT_WAITING_B
 		if(LIFT_WAITING_B)
@@ -84,7 +84,7 @@
 		else // We failed to close the doors - probably, someone is blocking them; stop trying to move
 			doors_closing = 0
 			open_doors()
-			control_panel_interior.audible_message("\The [current_floor.ext_panel] buzzes loudly.")
+			control_panel_interior.audible_message("[current_floor.ext_panel] громко жужжит.")
 			playsound(control_panel_interior.loc, "sound/machines/buzz-two.ogg", 50, 1)
 			return 0
 
@@ -128,7 +128,7 @@
 		SSmachines.makepowernets()
 
 	current_floor = next_floor
-	control_panel_interior.visible_message("The elevator [moving_upwards ? "rises" : "descends"] smoothly.")
+	control_panel_interior.visible_message("Лифт медленно[moving_upwards ? "поднимается" : "опускается"].")
 
 	return 1
 

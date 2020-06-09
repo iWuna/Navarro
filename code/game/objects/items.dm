@@ -181,19 +181,19 @@
 		desc_comp += "<BR>*--------* <BR>"
 
 		if(origin_tech)
-			desc_comp += "<span class='notice'>Testing potentials:</span><BR>"
+			desc_comp += "<span class='notice'>Потенциал изучения:</span><BR>"
 			//var/list/techlvls = params2list(origin_tech)
 			for(var/T in origin_tech)
-				desc_comp += "Tech: Level [origin_tech[T]] [CallTechName(T)] <BR>"
+				desc_comp += "Технология: Уровень [origin_tech[T]] [CallTechName(T)] <BR>"
 		else
-			desc_comp += "No tech origins detected.<BR>"
+			desc_comp += "Технологии не обнаружены.<BR>"
 
 		if(LAZYLEN(matter))
-			desc_comp += "<span class='notice'>Extractable materials:</span><BR>"
+			desc_comp += "<span class='notice'>Возможные ресурсы:</span><BR>"
 			for(var/mat in matter)
 				desc_comp += "[SSmaterials.get_material_by_name(mat)]<BR>"
 		else
-			desc_comp += "<span class='danger'>No extractable materials detected.</span><BR>"
+			desc_comp += "<span class='danger'>Возможных ресурсов не обнаружено.</span><BR>"
 		desc_comp += "*--------*"
 
 	return ..(user, distance, "", desc_comp)
@@ -208,10 +208,10 @@
 		if (user.hand)
 			temp = H.organs_by_name[BP_L_HAND]
 		if(temp && !temp.is_usable())
-			to_chat(user, "<span class='notice'>You try to move your [temp.name], but cannot!</span>")
+			to_chat(user, "<span class='notice'>Вы пытаетесь двигать [temp.name], но не можете!</span>")
 			return
 		if(!temp)
-			to_chat(user, "<span class='notice'>You try to use your hand, but realize it is no longer attached!</span>")
+			to_chat(user, "<span class='notice'>Вы попытались двигать своей рукой, но осознали что её у вас нет!</span>")
 			return
 
 	var/old_loc = loc
@@ -464,22 +464,22 @@ var/list/global/slot_flags_enumeration = list(
 	if(!CanPhysicallyInteract(usr))
 		return
 	if((!istype(usr, /mob/living/carbon)) || (istype(usr, /mob/living/carbon/brain)))//Is humanoid, and is not a brain
-		to_chat(usr, "<span class='warning'>You can't pick things up!</span>")
+		to_chat(usr, "<span class='warning'>Вы не можете подбирать предметы!</span>")
 		return
 	if( usr.stat || usr.restrained() )//Is not asleep/dead and is not restrained
-		to_chat(usr, "<span class='warning'>You can't pick things up!</span>")
+		to_chat(usr, "<span class='warning'>Вы не можете подбирать предметы!</span>")
 		return
 	if(src.anchored) //Object isn't anchored
-		to_chat(usr, "<span class='warning'>You can't pick that up!</span>")
+		to_chat(usr, "<span class='warning'>Вы не можете это поднять!</span>")
 		return
 	if(!usr.hand && usr.r_hand) //Right hand is not full
-		to_chat(usr, "<span class='warning'>Your right hand is full.</span>")
+		to_chat(usr, "<span class='warning'>Твоя правая рука заполнена.</span>")
 		return
 	if(usr.hand && usr.l_hand) //Left hand is not full
-		to_chat(usr, "<span class='warning'>Your left hand is full.</span>")
+		to_chat(usr, "<span class='warning'>Твоя левая рука заполнена.</span>")
 		return
 	if(!istype(src.loc, /turf)) //Object is on a turf
-		to_chat(usr, "<span class='warning'>You can't pick that up!</span>")
+		to_chat(usr, "<span class='warning'>Вы не можете это поднять!</span>")
 		return
 	//All checks are done, time to pick it up!
 	usr.UnarmedAttack(src)
@@ -562,20 +562,20 @@ var/list/global/slot_flags_enumeration = list(
 
 		if(H != user)
 			for(var/mob/O in (viewers(M) - user - M))
-				O.show_message("<span class='danger'>[M] has been stabbed in the eye with [src] by [user].</span>", 1)
+				O.show_message("<span class='danger'>[user] колет [M], в глаза используя [src].</span>", 1)
 			to_chat(M, "<span class='danger'>[user] stabs you in the eye with [src]!</span>")
-			to_chat(user, "<span class='danger'>You stab [M] in the eye with [src]!</span>")
+			to_chat(user, "<span class='danger'>Вы укололи [M] в глаза используя [src]!</span>")
 		else
 			user.visible_message( \
-				"<span class='danger'>[user] has stabbed themself with [src]!</span>", \
-				"<span class='danger'>You stab yourself in the eyes with [src]!</span>" \
+				"<span class='danger'>[user] укалывает себя в глаза используя [src]!</span>", \
+				"<span class='danger'>Вы колите себя в глаза используя [src]!</span>" \
 			)
 
 		eyes.damage += rand(3,4)
 		if(eyes.damage >= eyes.min_bruised_damage)
 			if(M.stat != 2)
 				if(!BP_IS_ROBOTIC(eyes)) //robot eyes bleeding might be a bit silly
-					to_chat(M, "<span class='danger'>Your eyes start to bleed profusely!</span>")
+					to_chat(M, "<span class='danger'>Ваши глаза кровоточат!</span>")
 			if(prob(50))
 				if(M.stat != 2)
 					to_chat(M, "<span class='warning'>You drop what you're holding and clutch at your eyes!</span>")
@@ -585,7 +585,7 @@ var/list/global/slot_flags_enumeration = list(
 				M.Weaken(4)
 			if (eyes.damage >= eyes.min_broken_damage)
 				if(M.stat != 2)
-					to_chat(M, "<span class='warning'>You go blind!</span>")
+					to_chat(M, "<span class='warning'>Вы ослепли!</span>")
 
 		var/obj/item/organ/external/affecting = H.get_organ(eyes.parent_organ)
 		affecting.take_external_damage(7)
@@ -650,10 +650,10 @@ GLOBAL_LIST_EMPTY(blood_overlay_cache)
 
 /obj/item/proc/showoff(mob/user)
 	for (var/mob/M in view(user))
-		M.show_message("[user] holds up [src]. <a HREF=?src=\ref[M];lookitem=\ref[src]>Take a closer look.</a>",1)
+		M.show_message("[user] держит [src]. <a HREF=?src=\ref[M];lookitem=\ref[src]>Взглянуть ближе.</a>",1)
 
 /mob/living/carbon/verb/showoff()
-	set name = "Show Held Item"
+	set name = "Показать предмет в руке"
 	set category = "Object"
 
 	var/obj/item/I = get_active_hand()

@@ -1,4 +1,4 @@
-/var/server_name = "\[RU]Navarro - F13 side server"
+/var/server_name = "\[RU\] Navarro Project"
 
 /var/game_id = null
 /hook/global_init/proc/generate_gameid()
@@ -78,7 +78,7 @@
 	diary = file("data/logs/[date_string].log")
 	diary << "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(world.timeofday, "hh:mm.ss")][log_end]\n---------------------[log_end]"
 	changelog_hash = md5('html/changelog.html')					//used for telling if the changelog has changed recently
-	
+
 	TgsNew(minimum_required_security_level = TGS_SECURITY_TRUSTED)
 
 	if(config && config.server_name != null && config.server_suffix && world.port > 0)

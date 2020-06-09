@@ -124,9 +124,9 @@
 
 /obj/machinery/suspension_gen/cannot_transition_to(state_path)
 	if(locked)
-		return SPAN_NOTICE("Unlock \the [src] first.")
+		return SPAN_NOTICE("Разблокируйте [src].")
 	if(suspension_field)
-		return SPAN_NOTICE("Turn \the [src] off first.")
+		return SPAN_NOTICE("Выключите [src].")
 	return ..()
 
 /obj/machinery/suspension_gen/attackby(obj/item/weapon/W, mob/user)
@@ -138,22 +138,22 @@
 				anchored = 0
 			else
 				anchored = 1
-			to_chat(user, "<span class='info'>You wrench the stabilising legs [anchored ? "into place" : "up against the body"].</span>")
+			to_chat(user, "<span class='info'>Вы [anchored ? "прикрутили" : "открyтили"] стабилизирующие ножки.</span>")
 			if(anchored)
 				desc = "It is resting securely on four stubby legs."
 			else
 				desc = "It has stubby legs bolted up against it's body for stabilising."
 		else
-			to_chat(user, "<span class='warning'>You are unable to secure [src] while it is active!</span>")
+			to_chat(user, "<span class='warning'>Вы не можете закрепить [src] пока он активен!</span>")
 	else if(istype(W, /obj/item/weapon/card))
 		var/obj/item/weapon/card/I = W
 		if(!auth_card)
 			if(attempt_unlock(I, user))
-				to_chat(user, "<span class='info'>You swipe [I], the console flashes \'<i>Access granted.</i>\'</span>")
+				to_chat(user, "<span class='info'>Вы проводите картой, консоль моргает \'<i>Доступ Разрешён.</i>\'</span>")
 			else
-				to_chat(user, "<span class='warning'>You swipe [I], console flashes \'<i>Access denied.</i>\'</span>")
+				to_chat(user, "<span class='warning'>Вы проводите картой, консоль моргает \'<i>Доступ Запрещён.</i>\'</span>")
 		else
-			to_chat(user, "<span class='warning'>Remove [auth_card] first.</span>")
+			to_chat(user, "<span class='warning'>[auth_card] внутри, необходимо её изъять.</span>")
 
 /obj/machinery/suspension_gen/proc/attempt_unlock(var/obj/item/weapon/card/C, var/mob/user)
 	if(!panel_open)

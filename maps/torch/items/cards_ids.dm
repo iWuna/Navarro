@@ -1,7 +1,7 @@
 //Torch ID Cards (they have to be here to make the outfits work, no way around it)
 
 /obj/item/weapon/card/id/torch
-	name = "identification card"
+	name = "идентификационная карта"
 	desc = "An identification card issued to personnel aboard the NTEV Blue Jay."
 	job_access_type = /datum/job/assistant
 

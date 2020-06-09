@@ -187,7 +187,7 @@
 		mymob.healths.SetName("health")
 		mymob.healths.screen_loc = ui_health
 		hud_elements |= mymob.healths
-		
+
 		mymob.oxygen = new /obj/screen/oxygen()
 		mymob.oxygen.icon = 'icons/mob/status_indicators.dmi'
 		mymob.oxygen.icon_state = "oxy0"
@@ -290,7 +290,7 @@
 
 /mob/living/carbon/human/verb/toggle_hotkey_verbs()
 	set category = "OOC"
-	set name = "Toggle hotkey buttons"
+	set name = "Включить хоткеи"
 	set desc = "This disables or enables the user interface buttons which can be used with hotkeys."
 
 	if(hud_used.hotkey_ui_hidden)
@@ -300,7 +300,7 @@
 		client.screen -= hud_used.hotkeybuttons
 		hud_used.hotkey_ui_hidden = 1
 
-// Yes, these use icon state. Yes, these are terrible. The alternative is duplicating 
+// Yes, these use icon state. Yes, these are terrible. The alternative is duplicating
 // a bunch of fairly blobby logic for every click override on these objects.
 
 /obj/screen/food/Click(var/location, var/control, var/params)
@@ -370,16 +370,16 @@
 /obj/screen/toxins/Click(var/location, var/control, var/params)
 	if(istype(usr) && usr.toxin == src)
 		if(icon_state == "tox0")
-			to_chat(usr, SPAN_NOTICE("The air is clear of toxins."))
+			to_chat(usr, SPAN_NOTICE("Воздух чист."))
 		else
-			to_chat(usr, SPAN_DANGER("The air is eating away at your skin!"))
+			to_chat(usr, SPAN_DANGER("Чувство будто сам воздух разъедает вашу кожу!"))
 
 /obj/screen/oxygen/Click(var/location, var/control, var/params)
 	if(istype(usr) && usr.oxygen == src)
 		if(icon_state == "oxy0")
-			to_chat(usr, SPAN_NOTICE("You are breathing easy."))
+			to_chat(usr, SPAN_NOTICE("Вы спокойно дышите."))
 		else
-			to_chat(usr, SPAN_DANGER("You cannot breathe!"))
+			to_chat(usr, SPAN_DANGER("Вы не можете дышать!"))
 
 /obj/screen/movement/Click(var/location, var/control, var/params)
 	if(istype(usr))

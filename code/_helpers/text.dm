@@ -282,7 +282,7 @@
 
 //This proc fills in all spaces with the "replace" var (* by default) with whatever
 //is in the other string at the same spot (assuming it is not a replace char).
-//This is used for fingerprints
+//Используется для отпечатков
 /proc/stringmerge(var/text,var/compare,replace = "*")
 	var/newtext = text
 	if(length(text) != length(compare))

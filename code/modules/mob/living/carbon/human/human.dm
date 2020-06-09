@@ -1614,8 +1614,8 @@
 	else
 		var/datum/gender/T = gender_datums[get_gender()]
 		visible_message( \
-			"<span class='notice'>[src] examines [T.self].</span>", \
-			"<span class='notice'>You check yourself for injuries.</span>" \
+			"<span class='notice'>[src] проверяет [T.self].</span>", \
+			"<span class='notice'>Вы проверяете себя на повреждения.</span>" \
 			)
 
 		for(var/obj/item/organ/external/org in organs)
@@ -1654,9 +1654,9 @@
 			if(!org.is_usable() || org.is_dislocated())
 				status += "dangling uselessly"
 			if(status.len)
-				src.show_message("My [org.name] is <span class='warning'>[english_list(status)].</span>",1)
+				src.show_message("Орган - [org.name] <span class='warning'>[english_list(status)].</span>",1)
 			else
-				src.show_message("My [org.name] is <span class='notice'>OK.</span>",1)
+				src.show_message("Орган - [org.name] <span class='notice'>впорядке.</span>",1)
 
 		if((MUTATION_SKELETON in mutations) && (!w_uniform) && (!wear_suit))
 			play_xylophone()
