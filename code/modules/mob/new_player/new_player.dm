@@ -372,8 +372,7 @@
 /mob/new_player/proc/LateChoices()
 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
 
-	var/list/header = list("<html><body><center>")
-	header += {"<meta charset="UTF-8">"}
+	var/list/header = list("<html><body><meta charset=\"UTF-8\"><center>")
 	header += "<b>Приветствуем, [name].<br></b>"
 	header += "Длительность раунда: [roundduration2text()]<br>"
 
@@ -386,8 +385,7 @@
 			header += "<font color='red'>The [station_name()] is currently undergoing crew transfer procedures.</font><br>"
 
 	var/list/dat = list()
-	dat = {"<meta charset="UTF-8">"}
-	dat += "Выберите одну их доступных позиций:<br>"
+	dat += "<meta charset=\"UTF-8\">Выберите одну их доступных позиций:<br>"
 	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Скрыть":"Показать"] недоступные роли.</a><br>"
 	dat += "<table>"
 	dat += "<tr><td colspan = 3><b>[GLOB.using_map.station_name]:</b></td></tr>"
