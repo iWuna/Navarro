@@ -6,5 +6,5 @@
 ######################################################################
 
 #example - admin
-iWuna - Host
-Fanxelt - Host
+iWuna - HeadAdmin
+Fanxelt - GameAdmin
