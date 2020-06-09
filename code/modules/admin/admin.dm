@@ -834,29 +834,29 @@ var/global/floorIsLava = 0
 
 /datum/admins/proc/startnow()
 	set category = "Server"
-	set desc="Start the round RIGHT NOW"
-	set name="Start Now"
+	set desc="Начать раунд вот прям щас"
+	set name="Начать сейчас"
 	if(GAME_STATE < RUNLEVEL_LOBBY)
-		to_chat(usr, "<span class='bigdanger'>Unable to start the game as it is not yet set up.</span>")
+		to_chat(usr, "<span class='bigdanger'>Игра не может начаться, сервер не закончил инициализацию.</span>")
 		SSticker.start_ASAP = !SSticker.start_ASAP
 		if(SSticker.start_ASAP)
-			to_chat(usr, "<span class='bigwarning'>The game will begin as soon as possible.</span>")
+			to_chat(usr, "<span class='bigwarning'>Игра начнётся как можно скорее.</span>")
 		else
 			to_chat(usr, "<span class='bigwarning'>The game will begin as normal.</span>")
 		return 0
 	if(SSticker.start_now())
 		log_admin("[usr.key] has started the game.")
-		message_admins("<font color='blue'>[usr.key] has started the game.</font>")
+		message_admins("<font color='blue'>[usr.key] начинает игру.</font>")
 		SSstatistics.add_field_details("admin_verb","SN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		return 1
 	else
-		to_chat(usr, "<span class='bigwarning'>Error: Start Now: Game has already started.</span>")
+		to_chat(usr, "<span class='bigwarning'>ОШИБКА: Начать сейчас: Игра уже началась.</span>")
 		return 0
 
 /datum/admins/proc/toggleenter()
 	set category = "Server"
-	set desc="People can't enter"
-	set name="Toggle Entering"
+	set desc="Люди не смогут заходить"
+	set name="Запретить вход"
 	config.enter_allowed = !(config.enter_allowed)
 	if (!(config.enter_allowed))
 		to_world("<B>New players may no longer enter the game.</B>")
@@ -1020,7 +1020,7 @@ var/global/floorIsLava = 0
 	set desc = "Spawn every possible custom closet. Do not do this on live."
 	set category = "Debug"
 
-	if(!check_rights(R_SPAWN))	
+	if(!check_rights(R_SPAWN))
 		return
 
 	if((input(usr, "Are you sure you want to spawn all these closets?", "So Many Closets") as null|anything in list("No", "Yes")) == "Yes")

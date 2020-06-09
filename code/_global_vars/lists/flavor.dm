@@ -104,7 +104,8 @@ GLOBAL_LIST_INIT(music_tracks, list(
 	"80s All Over Again" = /music_track/eighties,
 	"Wild Encounters" = /music_track/wildencounters,
 	"Torn" = /music_track/torn,
-	"Nebula" = /music_track/nebula
+	"Nebula" = /music_track/nebula,
+	"Take Me Home" = /music_track/f76
 ))
 
 /proc/setup_music_tracks(var/list/tracks)

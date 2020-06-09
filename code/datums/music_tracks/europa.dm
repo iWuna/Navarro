@@ -53,3 +53,10 @@
 	song = 'sound/music/europa/Pulse_Emitter_-_04_-_Nebula.ogg'
 	license = /decl/license/cc_by_nc_sa_3_0
 	url = "https://pulseemitter.bandcamp.com/track/nebula"
+
+/music_track/f76
+	artist = "John Denver"
+	title = "Take Me Home"
+	song = 'sound/music/europa/takemehome.ogg'
+	license = /decl/license/cc_by_nc_sa_3_0
+	url = "https://www.youtube.com/watch?v=1vrEljMfXYo"

@@ -15,7 +15,7 @@
 				Lines += entry
 				continue
 
-			entry += " - Playing as [C.mob.real_name]"
+			entry += " - Играет как [C.mob.real_name]"
 			switch(C.mob.stat)
 				if(UNCONSCIOUS)
 					entry += " - <font color='darkgray'><b>без сознания</b></font>"
