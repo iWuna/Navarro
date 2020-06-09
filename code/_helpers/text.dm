@@ -138,9 +138,9 @@
 	for(var/i=1, i<=length(text), i++)
 		var/ascii_char = text2ascii(text,i)
 		switch(ascii_char)
-			if(65 to 90)	//A-Z, make them lowercase
+			if(65 to 90, 192 to 223, 168)	//A-Z, make them lowercase
 				dat += ascii2text(ascii_char + 32)
-			if(97 to 122)	//a-z
+			if(97 to 122, 224 to 255, 184)	//a-z
 				dat += ascii2text(ascii_char)
 				last_was_space = 0
 			if(48 to 57)	//0-9
@@ -162,7 +162,7 @@
 	for(var/i=1, i<=length(text), i++)
 		switch(text2ascii(text,i))
 			if(62,60,92,47)	return			//rejects the text if it contains these bad characters: <, >, \ or /
-			if(127 to 255)	return			//rejects non-ASCII letters
+			//if(127 to 255)	return			//rejects non-ASCII letters
 			if(0 to 31)		return			//more weird stuff
 			if(32)			continue		//whitespace
 			else			non_whitespace = 1
@@ -347,11 +347,11 @@ proc/TextPreview(var/string,var/len=40)
 	for(var/i=1, i<=length(input), i++)
 		var/ascii_char = text2ascii(input,i)
 		switch(ascii_char)
-			// A  .. Z
-			if(65 to 90)			//Uppercase Letters
+			// A  .. Z, А  .. Я, Ё
+			if(65 to 90, 192 to 223, 168)			//Uppercase Letters
 				return 1
-			// a  .. z
-			if(97 to 122)			//Lowercase Letters
+			// a  .. z, а  .. я, ё
+			if(97 to 122, 224 to 255, 184)			//Lowercase Letters
 				return 1
 
 			// 0  .. 9
