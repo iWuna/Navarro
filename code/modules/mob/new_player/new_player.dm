@@ -311,7 +311,7 @@
 
 	// Just in case someone stole our position while we were waiting for input from alert() proc
 	if(!job || !job.is_available(client))
-		to_chat(src, alert("[job.title] is not available. Please try another."))
+		to_chat(src, alert("роль [job.title] недоступна. Попробуйте другую."))
 		return 0
 
 	SSjobs.assign_role(src, job.title, 1)
@@ -373,6 +373,7 @@
 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
 
 	var/list/header = list("<html><body><center>")
+	header += {"<meta charset="UTF-8">"}
 	header += "<b>Приветствуем, [name].<br></b>"
 	header += "Длительность раунда: [roundduration2text()]<br>"
 
@@ -385,6 +386,7 @@
 			header += "<font color='red'>The [station_name()] is currently undergoing crew transfer procedures.</font><br>"
 
 	var/list/dat = list()
+	dat = {"<meta charset="UTF-8">"}
 	dat += "Выберите одну их доступных позиций:<br>"
 	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Скрыть":"Показать"] недоступные роли.</a><br>"
 	dat += "<table>"
@@ -430,7 +432,7 @@
 
 	dat += "</table></center>"
 	if(LAZYLEN(hidden_reasons))
-		var/list/additional_dat = list("<br><b>Some roles have been hidden from this list for the following reasons:</b><br>")
+		var/list/additional_dat = list("<br><b>Некоторые из ролей скрыты, по следующим причинам:</b><br>")
 		for(var/raisin in hidden_reasons)
 			additional_dat += "[raisin]<br>"
 		additional_dat += "<br>"
@@ -529,11 +531,11 @@
 /mob/new_player/proc/check_species_allowed(datum/species/S, var/show_alert=1)
 	if(!S.is_available_for_join() && !has_admin_rights())
 		if(show_alert)
-			to_chat(src, alert("Your current species, [client.prefs.species], is not available for play."))
+			to_chat(src, alert("Ваша раса, [client.prefs.species], недоступна для игры."))
 		return 0
 	if(!is_alien_whitelisted(src, S))
 		if(show_alert)
-			to_chat(src, alert("You are currently not whitelisted to play [client.prefs.species]."))
+			to_chat(src, alert("Вы не можете играть за данную расу, обратитесь к администратору: [client.prefs.species]."))
 		return 0
 	return 1
 
