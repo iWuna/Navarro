@@ -33,7 +33,7 @@
 	output += "<a href='byond://?src=\ref[src];show_preferences=1'>Настройка Персонажа</A> "
 
 	if(GAME_STATE > RUNLEVEL_LOBBY)
-		output += "<a href='byond://?src=\ref[src];manifest=1'>осмотреть список экипажа</A> "
+		output += "<a href='byond://?src=\ref[src];manifest=1'>Посмотреть список экипажа</A> "
 
 	output += "<a href='byond://?src=\ref[src];observe=1'>Наблюдать</A> "
 
