@@ -10,7 +10,7 @@
 	over the centuries, ranging from revolutions to political upheaval and regular rioting. The people of Mars consider themselves somewhat tougher \
 	than most with a fierce pride that often clashes not just with those from other planets, but those from other parts of Mars."
 	distance = "1.5AU"
-	capital = "Olympus"
+	capital = "Олимпус"
 	economic_power = 1.1
 
 /decl/cultural_info/location/human/earth
@@ -23,8 +23,8 @@
 	much as they have been for hundreds of years, and are generally content with their lot in life. From a variety of ancient cultures, the people of \
 	Earth are as diverse as they have always been."
 	distance = "1AU"
-	capital = "Geneva"
-	economic_power = 1.2
+	capital = "Москва"
+	economic_power = 1.6
 
 /decl/cultural_info/location/human/luna
 	name = HOME_SYSTEM_LUNA
@@ -41,7 +41,7 @@
 	'old money' of humanity, with many of them having distinct, traceable lineages to the first settlers, old Earth dynasties and heavy corporate \
 	ties. Most of the people of Luna are rich, cultured and refined. Not all are, however, and many of the people of the city of New Vegas are on \
 	the poverty line, often holding feelings of resentment against the other people of Luna."
-	capital = "Selene"
+	capital = "Селена"
 	economic_power = 1.3
 	secondary_langs = list(LANGUAGE_HUMAN_SELENIAN)
 
@@ -59,7 +59,7 @@
 	Apart from those rich enough to live there permanently most of the people of Venus are service workers, living there only for the duration \
 	of their employment. The second group, the surfacers are hardy labourers who work in large, windowless, industrial complexes on the planets \
 	surface. These surfacers often resent and are at odds with their rich, carefree employers."
-	capital = "Central Administration Zone"
+	capital = "Центральная Административная Зона"
 	economic_power = 1.4
 
 /decl/cultural_info/location/human/ceres
@@ -72,7 +72,7 @@
 	passes through Ceres, giving it a reputation for having a diverse black market. Commonly called 'Belters' the people of Ceres are today are mostly \
 	employed in shipbuilding, manufacturing, vessel services and hospitality. Belters generally regard themselves as adaptive, proud members of the SCG \
 	and some of the best engineers Humanity has to offer."
-	capital = "Government Zone, Ceres Station"
+	capital = "Правительственная зона, Станция Церес"
 
 /decl/cultural_info/location/human/pluto
 	name = HOME_SYSTEM_PLUTO
@@ -113,9 +113,9 @@
 	This fact alone is what has allowed the Helios system and Eos as a whole to weather multiple economic recessions and has allowed Eos to establish itself as a premier commercial centre of the wider \
 	SCG. This process was hindered during the Gaia conflict, when the Helios Gateway was destroyed in a suicide action of the Fourth Fleet to stop the GCC advance. It has recovered rapidly \
 	since the occupation, though the memories of that event carry in the collective consciousness of those who remained through it."
-	capital = "Surya"
+	capital = "Сируя"
 	economic_power = 1.3
-	distance = "10 light years"
+	distance = "10 световых лет"
 
 /decl/cultural_info/location/human/terra
 	name = HOME_SYSTEM_TERRA
@@ -126,7 +126,7 @@
 	increasingly high taxes. This state of affairs has seen the immigration of many Terran citizens to the SCG in recent years, hoping to escape the poor conditions they found themselves in. Despite this,\
 	the people of Terra are a proud and unbroken people who are heavily patriotic and tend to bring this with them wherever they go."
 	capital = "Ameranth"
-	distance = "22.5 light years."
+	distance = "22.5 световых лет."
 	economic_power = 0.9
 	ruling_body = "Gilgamesh Colonial Confederation"
 	language = LANGUAGE_HUMAN_RUSSIAN
@@ -146,12 +146,12 @@
 	The divide between north and south could also be considered a divide between rich and poor. Even the poorest city dweller will likely be richer than most farmers. \
 	Typically untrusting, once a Terstener has made a friend, they will often be that way for life.  Known for their community and attitudes to strangers, they are considered the cowboys of Sol Central. \
 	Many Tersteners serve in the Defence Forces, and many gave their lives in the Gaian Conflict."
-	capital = "Tersten City"
+	capital = "Терстен Сити"
 	economic_power = 1.0
 
 /decl/cultural_info/location/human/lorriman
 	name = HOME_SYSTEM_LORRIMAN
-	distance = "44 light years"
+	distance = "44 световых лет"
 	description = "Lorriman is an arctic planet in the Gessshire system.  It is a frozen wasteland with winds reaching 200mph, with an average temperature is -50°C. \
 	Because of this, the planet's cities are either domed or built into mountains. Its economy is built around a technological backbone, providing the technology \
 	and the people skilled to use them.  Its infrastructure is developed enough to support mass transit across the planet. Its capital city is called The Hub, a massive domed structure \
@@ -160,7 +160,7 @@
 	It is known by most Defence Forces personnel to act begrudgingly towards any requests given, and only a select few have visited the planet itself.<br><br>\
 	Lorrimanians are a quiet, unassuming, academically-driven bunch. They are often sought as researchers or other scientifically-driven career.  It is rare for anyone to immigrate \
 	to the planet, but exceptions have been made. A scientifically driven people, they have served many organisations loyally."
-	capital = "The Hub"
+	capital = "Хаб"
 	economic_power = 1.0
 
 /decl/cultural_info/location/human/cinu

@@ -1,5 +1,5 @@
 /datum/codex_category/reagents/
-	name = "Reagents"
+	name = "Вещества"
 	desc = "Chemicals and reagents, both natural and artificial."
 
 /datum/codex_category/reagents/Initialize()

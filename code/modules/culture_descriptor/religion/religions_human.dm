@@ -1,6 +1,6 @@
 /decl/cultural_info/religion/other
 	name = RELIGION_OTHER
-	description = "One of the many, many niche or relatively unknown religions of the galaxy."
+	description = "Одна из многих, из тех что можно встретить во всём космическом пространстве."
 
 /decl/cultural_info/religion/jewish
 	name = RELIGION_JUDAISM
@@ -44,20 +44,20 @@
 
 /decl/cultural_info/religion/atheist
 	name = RELIGION_ATHEISM
-	description = "A lack of belief in a God. Someone who holds to atheism is called an atheist."
+	description = "Отсутствие веры в бога. Тех, кто придерживается атеизма, зовут... Атеистами."
 
 /decl/cultural_info/religion/thelemite
 	name = RELIGION_THELEMA
-	description = "An esoteric Western religion focusing on the law of Thelema. Someone who practices Thelema is called a Thelemite."
+	description = "Эзотерическое верование призывающее к соблюдению законов Телемы."
 
 /decl/cultural_info/religion/spiritualism
 	name = RELIGION_SPIRITUALISM
-	description = "A belief based on communication with the spirits of the dead, especially through mediums. Someone who practices spiritualism is called a spiritualist."
+	description = "Верование основанное на общении с духами умерших, в основном через медиумов."
 
 /decl/cultural_info/religion/shinto
 	name = RELIGION_SHINTO
-	description = "A traditional Japanese religion based on rituals to create a connection between the past and modern day. Someone who practices Shinto is called a Shintoist."
+	description = "Традиционная японская религия, призывает к нахождению гармонии и обретении духа между прошлым и настоящим."
 
 /decl/cultural_info/religion/taoist
 	name = RELIGION_TAOISM
-	description = "A traditional Chinese religion that emphasizes living in harmony with the Tao. Someone who practices Taoism is called a Taoist."
+	description = "Традиционная китайская религия, призывающая жить в гармонии с Тао."

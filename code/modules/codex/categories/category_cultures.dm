@@ -1,5 +1,5 @@
 /datum/codex_category/cultures/
-	name = "Factions and Culture"
+	name = "Фракции и культуры"
 	desc = "Prominent planets, cultures, factions and religions of known space."
 
 /datum/codex_category/cultures/Initialize()

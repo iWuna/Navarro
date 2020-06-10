@@ -1,5 +1,5 @@
 /datum/codex_category/gases/
-	name = "Gases"
+	name = "Газы"
 	desc = "Notable gases."
 
 /datum/codex_category/gases/Initialize()

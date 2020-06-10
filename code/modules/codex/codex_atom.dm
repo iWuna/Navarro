@@ -10,7 +10,7 @@
 	var/antag = get_antag_info()
 	if(!lore && !mechanics && !antag)
 		return FALSE
-		
+
 	var/datum/codex_entry/entry = new(name, list(type), _lore_text = lore, _mechanics_text = mechanics, _antag_text = antag)
 	return entry
 
@@ -26,4 +26,4 @@
 /atom/examine(mob/user, distance, infix = "", suffix = "")
 	. = ..()
 	if(user.can_use_codex() && SScodex.get_codex_entry(get_codex_value()))
-		to_chat(user, "<span class='notice'>The codex has <b><a href='?src=\ref[SScodex];show_examined_info=\ref[src];show_to=\ref[user]'>relevant information</a></b> available.</span>")
+		to_chat(user, "<span class='notice'>В кодексе <b><a href='?src=\ref[SScodex];show_examined_info=\ref[src];show_to=\ref[user]'>есть</a></b> информация по данному объекту.</span>")

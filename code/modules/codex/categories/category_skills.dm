@@ -1,5 +1,5 @@
 /datum/codex_category/skills/
-	name = "Skills"
+	name = "Умения"
 	desc = "Certifiable skills."
 
 /datum/codex_category/skills/Initialize()

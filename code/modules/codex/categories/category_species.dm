@@ -1,5 +1,5 @@
 /datum/codex_category/species/
-	name = "Species"
+	name = "Расы"
 	desc = "Sapient species encountered in known space."
 
 /datum/codex_category/species/Initialize()

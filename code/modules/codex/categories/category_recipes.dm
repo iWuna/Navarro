@@ -1,5 +1,5 @@
 /datum/codex_category/recipes/
-	name = "Recipies"
+	name = "Рецепты"
 	desc = "Recipies for a variety of reagents."
 
 /datum/codex_category/recipes/Initialize()
