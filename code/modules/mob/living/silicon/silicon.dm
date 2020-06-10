@@ -143,9 +143,9 @@
 // this function shows the health of the AI in the Status panel
 /mob/living/silicon/proc/show_system_integrity()
 	if(!src.stat)
-		stat(null, text("System integrity: [round((health/maxHealth)*100)]%"))
+		stat(null, text("Целостность системы: [round((health/maxHealth)*100)]%"))
 	else
-		stat(null, text("Systems nonfunctional"))
+		stat(null, text("Системы нефункционируют"))
 
 
 // This is a pure virtual function, it should be overwritten by all subclasses
@@ -244,18 +244,18 @@
 			to_chat(src, "Sensor augmentations disabled.")
 
 /mob/living/silicon/verb/pose()
-	set name = "Set Pose"
+	set name = "Позировать"
 	set desc = "Sets a description which will be shown when someone examines you."
 	set category = "IC"
 
-	pose =  sanitize(input(usr, "This is [src]. It...", "Pose", null)  as text)
+	pose =  sanitize(input(usr, "Это [src]. It...", "Pose", null)  as text)
 
 /mob/living/silicon/verb/set_flavor()
-	set name = "Set Flavour Text"
+	set name = "Установить флавор"
 	set desc = "Sets an extended description of your character's features."
 	set category = "IC"
 
-	flavor_text =  sanitize(input(usr, "Please enter your new flavour text.", "Flavour text", null)  as text)
+	flavor_text =  sanitize(input(usr, "Пожалуйста, введите новый флавор.", "Новый флавор", null)  as text)
 
 /mob/living/silicon/binarycheck()
 	return 1

@@ -42,7 +42,7 @@
 /obj/effect/rune/examine(mob/user)
 	. = ..()
 	if(iscultist(user))
-		to_chat(user, "This is \a [cultname] rune.")
+		to_chat(user, "Это руна культа [cultname].")
 
 /obj/effect/rune/attackby(var/obj/item/I, var/mob/living/user)
 	if(istype(I, /obj/item/weapon/book/tome) && iscultist(user))

@@ -14,7 +14,7 @@
 
 /obj/item/weapon/paper/talisman/stun/attack_self(var/mob/living/user)
 	if(iscultist(user))
-		to_chat(user, "This is a stun talisman.")
+		to_chat(user, "Это талисман шока.")
 	..()
 
 /obj/item/weapon/paper/talisman/stun/attack(var/mob/living/M, var/mob/living/user)
@@ -42,7 +42,7 @@
 
 /obj/item/weapon/paper/talisman/emp/attack_self(var/mob/living/user)
 	if(iscultist(user))
-		to_chat(user, "This is an emp talisman.")
+		to_chat(user, "Это талисман ЭМИ.")
 	..()
 
 /obj/item/weapon/paper/talisman/emp/afterattack(var/atom/target, var/mob/user, var/proximity)

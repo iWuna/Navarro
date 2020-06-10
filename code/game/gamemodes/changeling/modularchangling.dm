@@ -461,11 +461,11 @@ var/list/datum/power/changeling/powerinstances = list()
 
 
 	if(Thepower == null)
-		to_chat(M.current, "This is awkward.  Changeling power purchase failed, please report this bug to a coder!")
+		to_chat(M.current, "Ужасно.  Покупка способностей генокрада неуспешна, доложите об ошибке кодеру!")
 		return
 
 	if(Thepower in purchasedpowers)
-		to_chat(M.current, "We have already evolved this ability!")
+		to_chat(M.current, "Мы уже имеем эту способность!")
 		return
 
 

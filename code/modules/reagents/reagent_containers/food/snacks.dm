@@ -1454,8 +1454,8 @@
 	monkey_type = /obj/effect/spider/spiderling
 
 /obj/item/weapon/reagent_containers/food/snacks/spellburger
-	name = "spell burger"
-	desc = "This is absolutely Ei Nath."
+	name = "заклибургер"
+	desc = "Это абсолютный Ei Nath."
 	icon_state = "spellburger"
 	filling_color = "#d505ff"
 	nutriment_desc = list("magic" = 3, "buns" = 3)
@@ -1463,7 +1463,7 @@
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/bigbiteburger
-	name = "big bite burger"
+	name = "бургер большой укус"
 	desc = "Forget the Luna Burger! THIS is the future!"
 	icon_state = "bigbiteburger"
 	filling_color = "#e3d681"
@@ -1506,7 +1506,7 @@
 	reagents.add_reagent(/datum/reagent/sodiumchloride, 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/baguette
-	name = "baguette"
+	name = "багет"
 	desc = "Bon appetit!"
 	icon_state = "baguette"
 	filling_color = "#e3d796"
@@ -1533,7 +1533,7 @@
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/sandwich
-	name = "sandwich"
+	name = "сэндвич"
 	desc = "A grand creation of meat, cheese, bread, and several leaves of lettuce! Arthur Dent would be proud."
 	icon_state = "sandwich"
 	trash = /obj/item/trash/plate
@@ -1547,7 +1547,7 @@
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/toastedsandwich
-	name = "toasted sandwich"
+	name = "жареный сэндвич"
 	desc = "Now if you only had a pepper bar."
 	icon_state = "toastedsandwich"
 	trash = /obj/item/trash/plate
@@ -1575,7 +1575,7 @@
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 4)
 
 /obj/item/weapon/reagent_containers/food/snacks/tomatosoup
-	name = "tomato soup"
+	name = "томатный суп"
 	desc = "Drinking this feels like being a vampire! A tomato vampire..."
 	icon_state = "tomatosoup"
 	trash = /obj/item/trash/snack_bowl
@@ -1605,8 +1605,8 @@
 	reagents.add_reagent(/datum/reagent/psilocybin, 8)
 
 /obj/item/weapon/reagent_containers/food/snacks/stew
-	name = "stew"
-	desc = "A nice and warm stew. Healthy and strong."
+	name = "похлёбка"
+	desc = "Вкусная и согревающая похлёбка."
 	icon_state = "stew"
 	filling_color = "#9e673a"
 	center_of_mass = "x=16;y=5"
@@ -1688,7 +1688,7 @@
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledspagetti
-	name = "boiled spaghetti"
+	name = "варёные спагетти"
 	desc = "A plain dish of noodles, this sucks."
 	icon_state = "spagettiboiled"
 	trash = /obj/item/trash/plate
@@ -1699,7 +1699,7 @@
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledrice
-	name = "boiled rice"
+	name = "варёный рис"
 	desc = "A boring dish of boring rice."
 	icon_state = "boiledrice"
 	trash = /obj/item/trash/snack_bowl
@@ -1831,7 +1831,7 @@
 	bitesize = 3
 
 /obj/item/weapon/reagent_containers/food/snacks/applepie
-	name = "apple pie"
+	name = "яблочный пирог"
 	desc = "A pie containing sweet sweet love... or apple."
 	icon_state = "applepie"
 	filling_color = "#e0edc5"
@@ -1902,7 +1902,7 @@
 
 
 /obj/item/weapon/reagent_containers/food/snacks/mint
-	name = "mint"
+	name = "мята"
 	desc = "A tasty after-dinner mint. It is only wafer thin."
 	icon_state = "mint"
 	filling_color = "#f2f2f2"

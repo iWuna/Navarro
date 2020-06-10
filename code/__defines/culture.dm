@@ -17,13 +17,13 @@
 #define FACTION_FREETRADE      "Объеденение Свободной Торговли"
 #define FACTION_HEPHAESTUS     "Hephaestus Industries"
 #define FACTION_XYNERGY        "Ксинергия"
-#define FACTION_FLEET          "SCG Fleet"
+#define FACTION_FLEET          "Флот Земли"
 #define FACTION_MARINES        "Армия Земного Правительства" // BoH Addon
 #define FACTION_EXPEDITIONARY  "Экспедиционный Корпус"
 #define FACTION_PCRC           "Полиция Проксима Центаури"
 #define FACTION_CORPORATE      "Организация Изучения Космоса"
 #define FACTION_DAIS           "Deimos Advanced Information Systems"
-#define FACTION_OTHER          "Дркгая фракция"
+#define FACTION_OTHER          "Другая фракция"
 #define FACTION_TEST_SUBJECTS  "Test Subjects"
 #define FACTION_SPACECOPS  "Охрана Земного Правительства"
 

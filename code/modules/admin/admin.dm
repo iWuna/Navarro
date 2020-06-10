@@ -1469,12 +1469,12 @@ datum/admins/var/obj/item/weapon/paper/admin/faxreply // var to hold fax replies
 	var/customname = input(src.owner, "Pick a title for the report", "Title") as text|null
 
 	P.SetName("[P.origin] - [customname]")
-	P.desc = "This is a paper titled '" + P.name + "'."
+	P.desc = "Это бумага под названием '" + P.name + "'."
 
 	var/shouldStamp = 1
 	if(!P.sender) // admin initiated
-		switch(alert("Would you like the fax stamped?",, "Yes", "No"))
-			if("No")
+		switch(alert("Would you like the fax stamped?",, "Да", "Нет"))
+			if("Нет")
 				shouldStamp = 0
 
 	if(shouldStamp)

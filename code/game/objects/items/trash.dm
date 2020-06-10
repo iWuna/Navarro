@@ -5,7 +5,7 @@
 /obj/item/trash
 	icon = 'icons/obj/trash.dmi'
 	w_class = ITEM_SIZE_SMALL
-	desc = "This is rubbish."
+	desc = "Это полный мусор."
 	var/age = 0
 
 /obj/item/trash/New(var/newloc, var/_age)
@@ -26,23 +26,23 @@
 	icon_state = "4no_raisins"
 
 /obj/item/trash/candy
-	name = "candy"
+	name = "конфета"
 	icon_state = "candy"
 
 /obj/item/trash/candy/proteinbar
-	name = "protein bar"
+	name = "протеиновый батончик"
 	icon_state = "proteinbar"
 
 /obj/item/trash/cheesie
-	name = "\improper Cheesie Honkers"
+	name = "Сырный Хонкерс"
 	icon_state = "cheesie_honkers"
 
 /obj/item/trash/chips
-	name = "chips"
+	name = "чипсы"
 	icon_state = "chips"
 
 /obj/item/trash/popcorn
-	name = "popcorn"
+	name = "попкорн"
 	icon_state = "popcorn"
 
 /obj/item/trash/sosjerky
@@ -50,15 +50,15 @@
 	icon_state = "sosjerky"
 
 /obj/item/trash/syndi_cakes
-	name = "syndi cakes"
+	name = "синдикейк"
 	icon_state = "syndi_cakes"
 
 /obj/item/trash/waffles
-	name = "waffles"
+	name = "ваффли"
 	icon_state = "waffles"
 
 /obj/item/trash/plate
-	name = "plate"
+	name = "тарелка"
 	icon_state = "plate"
 
 /obj/item/trash/snack_bowl
@@ -70,7 +70,7 @@
 	icon_state = "pistachios_pack"
 
 /obj/item/trash/semki
-	name = "semki pack"
+	name = "семечки"
 	icon_state = "semki_pack"
 
 /obj/item/trash/fishegg
@@ -86,23 +86,23 @@
 	icon_state = "salo"
 
 /obj/item/trash/croutons
-	name = "suhariki pack"
+	name = "сухарики"
 	icon_state = "croutons"
 
 /obj/item/trash/squid
-	name = "calamari pack"
+	name = "пачка кальмаров"
 	icon_state = "squid"
 
 /obj/item/trash/driedfish
-	name = "vobla pack"
+	name = "сушеная вобла"
 	icon_state = "driedfish"
 
 /obj/item/trash/tray
-	name = "tray"
+	name = "поднос"
 	icon_state = "tray"
 
 /obj/item/trash/candle
-	name = "candle"
+	name = "свеча"
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candle4"
 
@@ -119,31 +119,31 @@
 	icon_state = "monkeywrap"
 
 /obj/item/trash/beef
-	name = "empty can"
+	name = "пустая банка"
 	icon_state = "beef"
 
 /obj/item/trash/beans
-	name = "empty can"
+	name = "пустая банка"
 	icon_state = "beans"
 
 /obj/item/trash/tomato
-	name = "empty can"
+	name = "пустая банка"
 	icon_state = "tomato"
 
 /obj/item/trash/spinach
-	name = "empty can"
+	name = "пустая банка"
 	icon_state = "spinach"
 
 /obj/item/trash/cakewrap
-	name = "wrapper"
+	name = "упаковка"
 	icon_state = "cakewrap"
 
 /obj/item/trash/mochicakewrap
-	name = "wrapper"
+	name = "упаковка"
 	icon_state = "mochicakewrap"
 
 /obj/item/trash/mooncakewrap
-	name = "wrapper"
+	name = "упаковка"
 	icon_state = "mooncakewrap"
 
 /obj/item/trash/tidegobs
@@ -179,7 +179,7 @@
 	icon_state = "weebonuts"
 
 /obj/item/trash/stick
-	name = "stick"
+	name = "палочка"
 	desc = "a stick from some snack food item or a lollipop, not even useful as crafting material."
 	icon_state = "stick"
 

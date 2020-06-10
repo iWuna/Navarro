@@ -51,5 +51,5 @@
 
 /obj/structure/synthesized_instrument/synthesizer/minimoog
 	name = "space minimoog"
-	desc = "This is a minimoog, like a space piano, but more spacey!"
+	desc = "Это минирояль, как рояль но меньше!"
 	icon_state = "minimoog"

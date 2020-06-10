@@ -31,7 +31,7 @@
 	if(distance > 3)
 		skipears = 1
 
-	var/list/msg = list("<span class='info'>*---------*\nThis is ")
+	var/list/msg = list("<span class='info'>*---------*\n Это ")
 
 	var/datum/gender/T = gender_datums[get_gender()]
 	if(skipjumpsuit && skipface) //big suits/masks/helmets make it hard to tell their gender
@@ -64,77 +64,77 @@
 
 	//uniform
 	if(w_uniform && !skipjumpsuit)
-		msg += "[T.He] [T.is] wearing [w_uniform.get_examine_line()].\n"
+		msg += "[T.He] носит [w_uniform.get_examine_line()].\n"
 
 	//head
 	if(head)
-		msg += "[T.He] [T.is] wearing [head.get_examine_line()] on [T.his] head.\n"
+		msg += "[T.He] носит [head.get_examine_line()] на [T.his] голове.\n"
 
 	//suit/armour
 	if(wear_suit)
-		msg += "[T.He] [T.is] wearing [wear_suit.get_examine_line()].\n"
+		msg += "[T.He] носит [wear_suit.get_examine_line()].\n"
 		//suit/armour storage
 		if(s_store && !skipsuitstorage)
-			msg += "[T.He] [T.is] carrying [s_store.get_examine_line()] on [T.his] [wear_suit.name].\n"
+			msg += "[T.He] несёт [s_store.get_examine_line()] на своём [wear_suit.name].\n"
 
 	//back
 	if(back)
-		msg += "[T.He] [T.has] [back.get_examine_line()] on [T.his] back.\n"
+		msg += "[T.He] [T.has] [back.get_examine_line()] на своей спине.\n"
 
 	//left hand
 	if(l_hand)
-		msg += "[T.He] [T.is] holding [l_hand.get_examine_line()] in [T.his] left hand.\n"
+		msg += "[T.He] держит [l_hand.get_examine_line()] в своей левой руке.\n"
 
 	//right hand
 	if(r_hand)
-		msg += "[T.He] [T.is] holding [r_hand.get_examine_line()] in [T.his] right hand.\n"
+		msg += "[T.He] держит [r_hand.get_examine_line()] в своей правой руке.\n"
 
 	//gloves
 	if(gloves && !skipgloves)
-		msg += "[T.He] [T.has] [gloves.get_examine_line()] on [T.his] hands.\n"
+		msg += "[T.He] носит [gloves.get_examine_line()] на своих руках.\n"
 	else if(blood_DNA)
-		msg += "<span class='warning'>[T.He] [T.has] [(hand_blood_color != SYNTH_BLOOD_COLOUR) ? "blood" : "oil"]-stained hands!</span>\n"
+		msg += "<span class='warning'>[T.He] имеет руки покрытые [(hand_blood_color != SYNTH_BLOOD_COLOUR) ? "кровью" : "маслом"]!</span>\n"
 
 	//belt
 	if(belt)
-		msg += "[T.He] [T.has] [belt.get_examine_line()] about [T.his] waist.\n"
+		msg += "[T.He] [T.has] [belt.get_examine_line()] вокруг своего пояса.\n"
 
 	//shoes
 	if(shoes && !skipshoes)
-		msg += "[T.He] [T.is] wearing [shoes.get_examine_line()] on [T.his] feet.\n"
+		msg += "[T.He] носит [shoes.get_examine_line()] на своих ногах.\n"
 	else if(feet_blood_DNA)
-		msg += "<span class='warning'>[T.He] [T.has] [(feet_blood_color != SYNTH_BLOOD_COLOUR) ? "blood" : "oil"]-stained feet!</span>\n"
+		msg += "<span class='warning'>[T.He] имеет ноги [(feet_blood_color != SYNTH_BLOOD_COLOUR) ? "кровью" : "маслом"]!</span>\n"
 
 	//mask
 	if(wear_mask && !skipmask)
-		msg += "[T.He] [T.has] [wear_mask.get_examine_line()] on [T.his] face.\n"
+		msg += "[T.He] [T.has] [wear_mask.get_examine_line()] на своём лице.\n"
 
 	//eyes
 	if(glasses && !skipeyes)
-		msg += "[T.He] [T.has] [glasses.get_examine_line()] covering [T.his] eyes.\n"
+		msg += "[T.He] [T.has] [glasses.get_examine_line()] скрывающий глаза.\n"
 
 	//left ear
 	if(l_ear && !skipears)
-		msg += "[T.He] [T.has] [l_ear.get_examine_line()] on [T.his] left ear.\n"
+		msg += "[T.He] [T.has] [l_ear.get_examine_line()] на своём левом ухе.\n"
 
 	//right ear
 	if(r_ear && !skipears)
-		msg += "[T.He] [T.has] [r_ear.get_examine_line()] on [T.his] right ear.\n"
+		msg += "[T.He] [T.has] [r_ear.get_examine_line()] на своём правом ухе.\n"
 
 	//ID
 	if(wear_id)
-		msg += "[T.He] [T.is] wearing [wear_id.get_examine_line()].\n"
+		msg += "[T.He] носит [wear_id.get_examine_line()].\n"
 
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/weapon/handcuffs/cable))
-			msg += "<span class='warning'>[T.He] [T.is] \icon[handcuffed] restrained with cable!</span>\n"
+			msg += "<span class='warning'>[T.He] имеет руки \icon[handcuffed] перевязанные кабелем!</span>\n"
 		else
-			msg += "<span class='warning'>[T.He] [T.is] \icon[handcuffed] handcuffed!</span>\n"
+			msg += "<span class='warning'>[T.He] \icon[handcuffed] в наручниках!</span>\n"
 
 	//buckled
 	if(buckled)
-		msg += "<span class='warning'>[T.He] [T.is] \icon[buckled] buckled to [buckled]!</span>\n"
+		msg += "<span class='warning'>[T.He] \icon[buckled] сидит на [buckled]!</span>\n"
 
 	//Jitters
 	if(is_jittery)
@@ -158,7 +158,7 @@
 	for(var/organ in list(BP_L_LEG, BP_R_LEG, BP_L_ARM, BP_R_ARM))
 		var/obj/item/organ/external/o = get_organ(organ)
 		if(o && o.splinted && o.splinted.loc == o)
-			msg += "<span class='warning'>[T.He] [T.has] \a [o.splinted] on [T.his] [o.name]!</span>\n"
+			msg += "<span class='warning'>[T.He] [T.has] \a [o.splinted] на [T.his] [o.name]!</span>\n"
 
 	if(mSmallsize in mutations)
 		msg += "[T.He] [T.is] small halfling!\n"
@@ -166,20 +166,20 @@
 	if (src.stat)
 		msg += "<span class='warning'>[T.He] [T.is]n't responding to anything around [T.him] and seems to be unconscious.</span>\n"
 		if((stat == DEAD || is_asystole() || src.losebreath) && distance <= 3)
-			msg += "<span class='warning'>[T.He] [T.does] not appear to be breathing.</span>\n"
+			msg += "<span class='warning'>[T.He] похоже не дышит.</span>\n"
 		if(ishuman(user) && !user.incapacitated() && Adjacent(user))
 			spawn(0)
-				user.visible_message("<b>\The [user]</b> checks \the [src]'s pulse.", "You check \the [src]'s pulse.")
+				user.visible_message("<b>\The [user]</b> проверяет пульс [src].", "Вы проверяете пульс [src].")
 				if(do_after(user, 15, src))
 					if(pulse() == PULSE_NONE)
-						to_chat(user, "<span class='deadsay'>[T.He] [T.has] no pulse.</span>")
+						to_chat(user, "<span class='deadsay'>[T.He] не имеет пульса.</span>")
 					else
-						to_chat(user, "<span class='deadsay'>[T.He] [T.has] a pulse!</span>")
+						to_chat(user, "<span class='deadsay'>[T.He] имеет пульс!</span>")
 
 	if(fire_stacks)
-		msg += "[T.He] looks flammable.\n"
+		msg += "[T.He] выглядит огнеопасно.\n"
 	if(on_fire)
-		msg += "<span class='warning'>[T.He] [T.is] on fire!.</span>\n"
+		msg += "<span class='warning'>[T.He] в огне!.</span>\n"
 
 	var/ssd_msg = species.get_ssd(src)
 	if(ssd_msg && (!should_have_organ(BP_BRAIN) || has_brain()) && stat != DEAD)
@@ -193,9 +193,9 @@
 		msg += "<span class='notice'>[T.He] [T.has] \"[H.forehead_graffiti]\" written on [T.his] [H.name] in [H.graffiti_style]!</span>\n"
 
 	if(became_younger)
-		msg += "[T.He] looks a lot younger than you remember.\n"
+		msg += "[T.He] выглядит намного младше чем вы помните.\n"
 	if(became_older)
-		msg += "[T.He] looks a lot older than you remember.\n"
+		msg += "[T.He] выглядит намного старше чем вы помните.\n"
 
 	var/list/wound_flavor_text = list()
 	var/applying_pressure = ""
@@ -209,7 +209,7 @@
 		var/obj/item/organ/external/E = organs_by_name[organ_tag]
 
 		if(!E)
-			wound_flavor_text[organ_descriptor] = "<b>[T.He] [T.is] missing [T.his] [organ_descriptor].</b>\n"
+			wound_flavor_text[organ_descriptor] = "<b>[T.He] не имеет [organ_descriptor].</b>\n"
 			continue
 
 		wound_flavor_text[E.name] = ""
@@ -288,8 +288,8 @@
 			if(R)
 				criminal = R.get_criminalStatus()
 
-			msg += "<span class = 'deptradio'>Criminal status:</span> <a href='?src=\ref[src];criminal=1'>\[[criminal]\]</a>\n"
-			msg += "<span class = 'deptradio'>Security records:</span> <a href='?src=\ref[src];secrecord=`'>\[View\]</a>\n"
+			msg += "<span class = 'deptradio'>Статус:</span> <a href='?src=\ref[src];criminal=1'>\[[criminal]\]</a>\n"
+			msg += "<span class = 'deptradio'>Записи службы безопасности:</span> <a href='?src=\ref[src];secrecord=`'>\[Посмотреть\]</a>\n"
 
 	if(hasHUD(user, HUD_MEDICAL))
 		var/perpname = "wot"
@@ -305,8 +305,8 @@
 		if(R)
 			medical = R.get_status()
 
-		msg += "<span class = 'deptradio'>Physical status:</span> <a href='?src=\ref[src];medical=1'>\[[medical]\]</a>\n"
-		msg += "<span class = 'deptradio'>Medical records:</span> <a href='?src=\ref[src];medrecord=`'>\[View\]</a>\n"
+		msg += "<span class = 'deptradio'>Физический статус:</span> <a href='?src=\ref[src];medical=1'>\[[medical]\]</a>\n"
+		msg += "<span class = 'deptradio'>Медицинские записи:</span> <a href='?src=\ref[src];medrecord=`'>\[Посмотреть\]</a>\n"
 
 
 	if(print_flavor_text()) msg += "[print_flavor_text()]\n"
@@ -314,7 +314,7 @@
 	if(mind && user.mind && name == real_name)
 		var/list/relations = matchmaker.get_relationships_between(user.mind, mind, TRUE)
 		if(length(relations))
-			msg += "<br><span class='notice'>You know them. <a href='byond://?src=\ref[src];show_relations=1'>More...</a></span><br>"
+			msg += "<br><span class='notice'>Вы знаете его. <a href='byond://?src=\ref[src];show_relations=1'>Больше...</a></span><br>"
 
 	msg += "*---------*</span><br>"
 	msg += applying_pressure
@@ -343,11 +343,11 @@
 	return FALSE
 
 /mob/living/carbon/human/verb/pose()
-	set name = "Set Pose"
+	set name = "Позировать"
 	set desc = "Sets a description which will be shown when someone examines you."
 	set category = "IC"
 
-	pose =  sanitize(input(usr, "This is [src]. [get_visible_gender() == MALE ? "He" : get_visible_gender() == FEMALE ? "She" : "They"]...", "Pose", null)  as text)
+	pose =  sanitize(input(usr, "Это [src]. [get_visible_gender() == MALE ? "Он" : get_visible_gender() == FEMALE ? "Она" : "Они"]...", "Поза", null)  as text)
 
 /mob/living/carbon/human/verb/set_flavor()
 	set name = "Set Flavour Text"
@@ -357,36 +357,36 @@
 	var/list/HTML = list()
 	HTML += "<meta charset=\"UTF-8\"><body>"
 	HTML += "<tt><center>"
-	HTML += "<b>Update Flavour Text</b> <hr />"
+	HTML += "<b>Обновить флавор</b> <hr />"
 	HTML += "<br></center>"
-	HTML += "<a href='byond://?src=\ref[src];flavor_change=general'>General:</a> "
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=general'>Общее:</a> "
 	HTML += TextPreview(flavor_texts["general"])
 	HTML += "<br>"
-	HTML += "<a href='byond://?src=\ref[src];flavor_change=head'>Head:</a> "
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=head'>Голова:</a> "
 	HTML += TextPreview(flavor_texts["head"])
 	HTML += "<br>"
-	HTML += "<a href='byond://?src=\ref[src];flavor_change=face'>Face:</a> "
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=face'>Лицо:</a> "
 	HTML += TextPreview(flavor_texts["face"])
 	HTML += "<br>"
-	HTML += "<a href='byond://?src=\ref[src];flavor_change=eyes'>Eyes:</a> "
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=eyes'>Глаза:</a> "
 	HTML += TextPreview(flavor_texts["eyes"])
 	HTML += "<br>"
-	HTML += "<a href='byond://?src=\ref[src];flavor_change=torso'>Body:</a> "
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=torso'>Тело:</a> "
 	HTML += TextPreview(flavor_texts["torso"])
 	HTML += "<br>"
-	HTML += "<a href='byond://?src=\ref[src];flavor_change=arms'>Arms:</a> "
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=arms'>Руки:</a> "
 	HTML += TextPreview(flavor_texts["arms"])
 	HTML += "<br>"
-	HTML += "<a href='byond://?src=\ref[src];flavor_change=hands'>Hands:</a> "
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=hands'>Ладони:</a> "
 	HTML += TextPreview(flavor_texts["hands"])
 	HTML += "<br>"
-	HTML += "<a href='byond://?src=\ref[src];flavor_change=legs'>Legs:</a> "
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=legs'>Ноги:</a> "
 	HTML += TextPreview(flavor_texts["legs"])
 	HTML += "<br>"
-	HTML += "<a href='byond://?src=\ref[src];flavor_change=feet'>Feet:</a> "
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=feet'>Ступни:</a> "
 	HTML += TextPreview(flavor_texts["feet"])
 	HTML += "<br>"
 	HTML += "<hr />"
-	HTML +="<a href='?src=\ref[src];flavor_change=done'>\[Done\]</a>"
+	HTML +="<a href='?src=\ref[src];flavor_change=done'>\[Готово\]</a>"
 	HTML += "<tt>"
 	src << browse(jointext(HTML,null), "window=flavor_changes;size=430x300")

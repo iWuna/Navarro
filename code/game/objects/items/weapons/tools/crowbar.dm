@@ -1,5 +1,5 @@
 /obj/item/weapon/crowbar
-	name = "crowbar"
+	name = "монтировка"
 	desc = "A heavy crowbar of solid steel, good and solid in your hand."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "crowbar"
@@ -22,7 +22,7 @@
 	item_state = "crowbar_red"
 
 /obj/item/weapon/crowbar/prybar
-	name = "pry bar"
+	name = "лом"
 	desc = "A steel bar with a wedge. It comes in a variety of configurations and colours - collect them all."
 	icon_state = "prybar_preview"
 	item_state = "crowbar"

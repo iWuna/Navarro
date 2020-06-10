@@ -135,7 +135,7 @@
 
 /obj/item/clothing/suit/holidaypriest
 	name = "Holiday Priest"
-	desc = "This is a nice holiday my son."
+	desc = "Это прекрасный праздник, сын мой."
 	icon_state = "holidaypriest"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	flags_inv = HIDEJUMPSUIT

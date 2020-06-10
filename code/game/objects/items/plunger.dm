@@ -1,6 +1,6 @@
 /obj/item/clothing/mask/plunger
-	name = "plunger"
-	desc = "This is possibly the least sanitary object around."
+	name = "вантуз"
+	desc = "Вантуз. Древний и простой инструмент для чистки унитазов."
 	icon_state = "plunger_black"
 	item_state = "plunger_black"
 	icon = 'icons/obj/plunger.dmi'

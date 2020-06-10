@@ -49,7 +49,7 @@
 		return
 
 	if(!istype(A))
-		to_chat(user, "This is not an APC!")
+		to_chat(user, "Это не ЩЗ!")
 		return
 
 	if(A)

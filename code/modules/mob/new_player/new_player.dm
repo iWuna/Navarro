@@ -216,7 +216,7 @@
 			var/sql = "INSERT INTO erro_privacy VALUES (null, Now(), '[src.ckey]', '[option]')"
 			var/DBQuery/query_insert = dbcon.NewQuery(sql)
 			query_insert.Execute()
-			to_chat(usr, "<b>Thank you for your vote!</b>")
+			to_chat(usr, "<b>Спасибо вам за ваш ответ!</b>")
 			usr << browse(null,"window=privacypoll")
 
 	if(!ready && href_list["preference"])
