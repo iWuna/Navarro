@@ -1,6 +1,6 @@
 /datum/map/torch
 //	lobby_screens = list('maps/torch/lobby/ship.gif','maps/torch/lobby/hullside.gif','maps/torch/lobby/torchlogo.gif')
-	lobby_screens = list('icons/misc/title_bh.dmi')
+	lobby_screens = list('icons/misc/lobby_navarro.dmi')
 	lobby_tracks = list(
 		/music_track/chasing_time,
 		/music_track/torch,
@@ -17,5 +17,6 @@
 		/music_track/torn,
 		/music_track/nebula,
 		/music_track/epicintro2015,
-		/music_track/epicintro2017
+		/music_track/epicintro2017,
+		/music_track/ds13
 	)

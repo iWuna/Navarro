@@ -60,3 +60,8 @@
 	song = 'sound/music/europa/takemehome.ogg'
 	license = /decl/license/cc_by_nc_sa_3_0
 	url = "https://www.youtube.com/watch?v=1vrEljMfXYo"
+
+/music_track/ds13
+	artist = "Nicole"
+	title = "Twinkle Twinkle"
+	song = 'sound/music/europa/twinkle.ogg'
