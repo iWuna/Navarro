@@ -50,10 +50,11 @@
 				newpoll = 1
 				break
 
+
 			if(newpoll)
-				output += "<b><a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A> (NEW!)</b> "
+				output += "<b><a href='byond://?src=\ref[src];showpoll=1'>Опрос</A> (NEW!)</b> "
 			else
-				output += "<a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A> "
+				output += "<a href='byond://?src=\ref[src];showpoll=1'>Опрос</A> "
 
 	output += "<hr>Текущий персонаж: <b>[client.prefs.real_name]</b>[client.prefs.job_high ? ", [client.prefs.job_high]" : null]<br>"
 	if(GAME_STATE <= RUNLEVEL_LOBBY)
