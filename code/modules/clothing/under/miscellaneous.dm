@@ -125,12 +125,12 @@
 	permeability_coefficient = 0.01
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	armor = list(
-		melee = ARMOR_MELEE_SHIELDED, 
-		bullet = ARMOR_BALLISTIC_HEAVY, 
+		melee = ARMOR_MELEE_SHIELDED,
+		bullet = ARMOR_BALLISTIC_HEAVY,
 		laser = ARMOR_LASER_HEAVY,
-		energy = ARMOR_ENERGY_SHIELDED, 
-		bomb = ARMOR_BOMB_SHIELDED, 
-		bio = ARMOR_BIO_SHIELDED, 
+		energy = ARMOR_ENERGY_SHIELDED,
+		bomb = ARMOR_BOMB_SHIELDED,
+		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SHIELDED
 		)
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
@@ -730,7 +730,7 @@
 	gender_icons = 1
 	siemens_coefficient = 0.8
 	armor = list(
-		energy = ARMOR_ENERGY_SMALL, 
+		energy = ARMOR_ENERGY_SMALL,
 		rad = ARMOR_RAD_MINOR
 		)
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
@@ -753,3 +753,10 @@
 	icon_state = "kimono"
 	worn_state = "kimono"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
+/obj/item/clothing/under/security_alternative
+	name = "форма охраны"
+	desc = "Форма охраны цвета хаки. Имеет скрытые рёбра жёсткости."
+	icon_state = "sec_under"
+	item_state = "r_suit"
+	worn_state = "sec_under"
