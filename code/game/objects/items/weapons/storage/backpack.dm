@@ -307,8 +307,8 @@
 	color = "#512828"
 
 /obj/item/weapon/storage/backpack/satchel/eng
-	name = "industrial satchel"
-	desc = "A tough satchel with extra pockets."
+	name = "сумка инженера"
+	desc = "Кожанная сумка с дополнительными карманами."
 	icon_state = "satchel-eng"
 	item_state_slots = list(
 		slot_l_hand_str = "engiepack",
@@ -316,8 +316,8 @@
 		)
 
 /obj/item/weapon/storage/backpack/satchel/med
-	name = "medical satchel"
-	desc = "A sterile satchel used in medical departments."
+	name = "сумка врача"
+	desc = "Сумка в раскраске медицинского отдела."
 	icon_state = "satchel-med"
 	item_state_slots = list(
 		slot_l_hand_str = "medicalpack",
@@ -325,17 +325,17 @@
 		)
 
 /obj/item/weapon/storage/backpack/satchel/vir
-	name = "virologist satchel"
-	desc = "A sterile satchel with virologist colours."
+	name = "сумка вирусолога"
+	desc = "Сумка с зелёными полосками, как у вирусолога."
 	icon_state = "satchel-vir"
 
 /obj/item/weapon/storage/backpack/satchel/chem
-	name = "pharmacist satchel"
+	name = "сумка фармацевта"
 	desc = "A sterile satchel with pharmacist colours."
 	icon_state = "satchel-chem"
 
 /obj/item/weapon/storage/backpack/satchel/gen
-	name = "geneticist satchel"
+	name = "сумка генетика"
 	desc = "A sterile satchel with geneticist colours."
 	icon_state = "satchel-gen"
 
@@ -345,7 +345,7 @@
 	icon_state = "satchel-nt"
 
 /obj/item/weapon/storage/backpack/satchel/sec
-	name = "security satchel"
+	name = "сумка охранника"
 	desc = "A robust satchel for security related needs."
 	icon_state = "satchel-sec"
 	item_state_slots = list(
@@ -358,12 +358,12 @@
 	icon_state = "satchel-sec_exo"
 
 /obj/item/weapon/storage/backpack/satchel/hyd
-	name = "hydroponics satchel"
+	name = "сумка ботаника"
 	desc = "A green satchel for plant related work."
 	icon_state = "satchel_hyd"
 
 /obj/item/weapon/storage/backpack/satchel/cap
-	name = "captain's satchel"
+	name = "сумка капитана"
 	desc = "An exclusive satchel for officers."
 	icon_state = "satchel-cap"
 	item_state_slots = list(

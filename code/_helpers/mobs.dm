@@ -239,7 +239,7 @@ proc/age2agedescription(age)
 /mob/proc/remove_from_dead_mob_list()
 	return GLOB.dead_mob_list_.Remove(src)
 
-//Find a dead mob with a brain and client.
+//Ищем мёртвого моба с мозгом и клиентом.
 /proc/find_dead_player(var/find_key, var/include_observers = 0)
 	if(isnull(find_key))
 		return

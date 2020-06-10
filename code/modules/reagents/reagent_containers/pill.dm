@@ -41,7 +41,7 @@
 			return
 		user.visible_message(SPAN_WARNING("[user] forces [M] to swallow \the [src]."))
 		var/contained = reagentlist()
-		admin_attack_log(user, M, "Fed the victim with [name] (Reagents: [contained])", "Was fed [src] (Reagents: [contained])", "used [src] (Reagents: [contained]) to feed")
+		admin_attack_log(user, M, "Fed the victim with [name] (Реагенты: [contained])", "Was fed [src] (Реагенты: [contained])", "used [src] (Реагенты: [contained]) to feed")
 		if(reagents.total_volume)
 			reagents.trans_to_mob(M, reagents.total_volume, CHEM_INGEST)
 		qdel(src)

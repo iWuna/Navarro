@@ -13,7 +13,7 @@
 
 /obj/item/weapon/melee/energy/can_embed()
 	return FALSE
-	
+
 /obj/item/weapon/melee/energy/Initialize()
 	. = ..()
 	if(active)
@@ -22,7 +22,7 @@
 	else
 		active = TRUE
 		deactivate()
-		
+
 /obj/item/weapon/melee/energy/on_update_icon()
 	. = ..()
 	if(active)
@@ -43,9 +43,9 @@
 	update_icon()
 	if(user)
 		playsound(user, 'sound/weapons/saberon.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>\The [src] is now energised.</span>")
+		to_chat(user, "<span class='notice'>[src] активирован.</span>")
 	set_light(0.8, 1, 2, 4, lighting_color)
-	
+
 /obj/item/weapon/melee/energy/proc/deactivate(mob/living/user)
 	if(!active)
 		return
@@ -59,7 +59,7 @@
 	update_icon()
 	if(user)
 		playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>\The [src] deactivates!</span>")
+		to_chat(user, "<span class='notice'>[src] деактивирован!</span>")
 	set_light(0)
 
 /obj/item/weapon/melee/energy/attack_self(mob/living/user as mob)
@@ -89,8 +89,8 @@
  * Energy Axe
  */
 /obj/item/weapon/melee/energy/axe
-	name = "energy axe"
-	desc = "An energised battle axe."
+	name = "энергетический топор"
+	desc = "Боевой топор из света."
 	icon_state = "axe0"
 	active_icon = "axe1"
 	lighting_color = COLOR_SABER_AXE
@@ -118,8 +118,8 @@
  * Energy Sword
  */
 /obj/item/weapon/melee/energy/sword
-	name = "energy sword"
-	desc = "May the force be within you."
+	name = "световой меч"
+	desc = "Да прибудет с тобой сила."
 	icon_state = "sword0"
 	active_force = 30
 	active_throwforce = 20
@@ -139,11 +139,11 @@
 /obj/item/weapon/melee/energy/sword/Initialize()
 	if(!blade_color)
 		blade_color = pick("red","blue","green","purple")
-	
+
 	active_icon = "sword[blade_color]"
 	var/color_hex = list("red" = COLOR_SABER_RED,  "blue" = COLOR_SABER_BLUE, "green" = COLOR_SABER_GREEN, "purple" = COLOR_SABER_PURPLE)
 	lighting_color = color_hex[blade_color]
-	
+
 	. = ..()
 
 /obj/item/weapon/melee/energy/sword/green
@@ -243,7 +243,7 @@
 			host.embedded -= src
 			host.drop_from_inventory(src)
 		QDEL_IN(src, 0)
-		
+
 /obj/item/weapon/melee/energy/machete
 	name = "energy machete"
 	desc = "A machete handle that extends out into a long, purple machete blade. It appears to be Skrellian in origin."
