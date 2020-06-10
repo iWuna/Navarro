@@ -13,12 +13,12 @@
 
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
 	default_spawn = "Cryogenic Storage"
-	station_name  = "SEV Navarro"
-	station_short = "Navarro"
+	station_name  = "ГЭК Наварро"
+	station_short = "Наварро"
 	dock_name     = "TBD"
-	boss_name     = "Central Command"
+	boss_name     = "ЦК"
 	boss_short    = "Central"
-	company_name  = "Центральное Правительство Солнечной Системы"
+	company_name  = "Правительство Земли"
 	company_short = "Ц.П.С.С"
 
 	map_admin_faxes = list("Solar Goverment Central Office")
@@ -26,7 +26,7 @@
 	//These should probably be moved into the evac controller...
 	shuttle_docked_message = "Внимание всему экипажу: подготовка к Прыжку, завершена. Двигатель Блюспейс запускается, подготовить сдуно к прыжку. Время до прыжка: приблизительно %ETD%."
 	shuttle_leaving_dock = "Внимание всему экипажу: Прыжок инициирован, выход из Блюспейс через %ETA%."
-	shuttle_called_message = "Внимание всему экипажу: Jump sequence initiated. Transit procedures are now in effect. Jump in %ETA%."
+	shuttle_called_message = "Внимание всему экипажу: Инициализирован прыжок. Транзитные процедуры в действии. Прыжок через %ETA%."
 	shuttle_recall_message = "Внимание всему экипажу: Прыжок отменен, всем вернуться к штатному исполнению обязательств."
 
 	evac_controller_type = /datum/evacuation_controller/starship

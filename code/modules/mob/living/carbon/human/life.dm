@@ -101,7 +101,7 @@
 	else
 		stamina = Clamp(stamina + amt, 0, 100)
 		if(stamina <= 0)
-			to_chat(src, SPAN_WARNING("You are exhausted!"))
+			to_chat(src, SPAN_WARNING("Вы устали!"))
 			if(MOVING_QUICKLY(src))
 				set_moving_slowly()
 	if(last_stamina != stamina && hud_used)
@@ -257,13 +257,13 @@
 			if(!isSynthetic())
 				if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT))
 					radiation -= 5 * RADIATION_SPEED_COEFFICIENT
-					to_chat(src, "<span class='warning'>You feel weak.</span>")
+					to_chat(src, "<span class='warning'>Вы чувствуете что силы покинули вас.</span>")
 					Weaken(3)
 					if(!lying)
 						emote("collapse")
 				if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT) && species.get_bodytype(src) == SPECIES_HUMAN) //apes go bald
 					if((h_style != "Bald" || f_style != "Shaved" ))
-						to_chat(src, "<span class='warning'>Your hair falls out.</span>")
+						to_chat(src, "<span class='warning'>Ваши волосы выпадают.</span>")
 						h_style = "Bald"
 						f_style = "Shaved"
 						update_hair()
@@ -273,9 +273,9 @@
 			radiation -= 3 * RADIATION_SPEED_COEFFICIENT
 			if(!isSynthetic())
 				if(prob(5))
-					take_overall_damage(0, 5 * RADIATION_SPEED_COEFFICIENT, used_weapon = "Radiation Burns")
+					take_overall_damage(0, 5 * RADIATION_SPEED_COEFFICIENT, used_weapon = "Радиационные ожоги")
 				if(prob(1))
-					to_chat(src, "<span class='warning'>You feel strange!</span>")
+					to_chat(src, "<span class='warning'>Вы ощущаете себя странно!</span>")
 					adjustCloneLoss(5 * RADIATION_SPEED_COEFFICIENT)
 					emote("gasp")
 		if(radiation > 150)
@@ -285,11 +285,11 @@
 		damage = Floor(damage * species.get_radiation_mod(src))
 		if(damage)
 			adjustToxLoss(damage * RADIATION_SPEED_COEFFICIENT)
-			immunity = max(0, immunity - damage * 15 * RADIATION_SPEED_COEFFICIENT) 
+			immunity = max(0, immunity - damage * 15 * RADIATION_SPEED_COEFFICIENT)
 			updatehealth()
 			if(!isSynthetic() && organs.len)
 				var/obj/item/organ/external/O = pick(organs)
-				if(istype(O)) O.add_autopsy_data("Radiation Poisoning", damage)
+				if(istype(O)) O.add_autopsy_data("Отравление радиацией", damage)
 
 	/** breathing **/
 
@@ -393,7 +393,7 @@
 			burn_dam = HEAT_DAMAGE_LEVEL_2
 		else
 			burn_dam = HEAT_DAMAGE_LEVEL_3
-		take_overall_damage(burn=burn_dam, used_weapon = "High Body Temperature")
+		take_overall_damage(burn=burn_dam, used_weapon = "Высокая температура тела")
 		fire_alert = max(fire_alert, 2)
 
 	else if(bodytemperature <= getSpeciesOrSynthTemp(COLD_LEVEL_1))
@@ -410,7 +410,7 @@
 			burn_dam = COLD_DAMAGE_LEVEL_3
 		SetStasis(getCryogenicFactor(bodytemperature), STASIS_COLD)
 		if(!chem_effects[CE_CRYO])
-			take_overall_damage(burn=burn_dam, used_weapon = "Low Body Temperature")
+			take_overall_damage(burn=burn_dam, used_weapon = "Низкая температура тела")
 			fire_alert = max(fire_alert, 1)
 
 	// Account for massive pressure differences.  Done by Polymorph
@@ -419,7 +419,7 @@
 
 	if(adjusted_pressure >= species.hazard_high_pressure)
 		var/pressure_damage = min( ( (adjusted_pressure / species.hazard_high_pressure) -1 )*PRESSURE_DAMAGE_COEFFICIENT , MAX_HIGH_PRESSURE_DAMAGE)
-		take_overall_damage(brute=pressure_damage, used_weapon = "High Pressure")
+		take_overall_damage(brute=pressure_damage, used_weapon = "Высокое давление")
 		pressure_alert = 2
 	else if(adjusted_pressure >= species.warning_high_pressure)
 		pressure_alert = 1
@@ -433,7 +433,7 @@
 			if(QDELETED(O) || !(O.owner == src))
 				continue
 			if(O.damage + (LOW_PRESSURE_DAMAGE) < O.min_broken_damage) //vacuum does not break bones
-				O.take_external_damage(brute = LOW_PRESSURE_DAMAGE, used_weapon = "Low Pressure")
+				O.take_external_damage(brute = LOW_PRESSURE_DAMAGE, used_weapon = "Низкое давление")
 		if(getOxyLoss() < 55) // 11 OxyLoss per 4 ticks when wearing internals;    unconsciousness in 16 ticks, roughly half a minute
 			adjustOxyLoss(4)  // 16 OxyLoss per 4 ticks when no internals present; unconsciousness in 13 ticks, roughly twenty seconds
 		pressure_alert = -2
@@ -648,7 +648,7 @@
 				var/zzzchance = min(5, 5*drowsyness/30)
 				if((prob(zzzchance) || drowsyness >= 60))
 					if(stat == CONSCIOUS)
-						to_chat(src, "<span class='notice'>You are about to fall asleep...</span>")
+						to_chat(src, "<span class='notice'>Вас клонит в сон...</span>")
 					Sleeping(5)
 
 		// If you're dirty, your gloves will become dirty, too.
@@ -671,7 +671,7 @@
 		if(stasis_value > 1 && drowsyness < stasis_value * 4)
 			drowsyness += min(stasis_value, 3)
 			if(!stat && prob(1))
-				to_chat(src, "<span class='notice'>You feel slow and sluggish...</span>")
+				to_chat(src, "<span class='notice'>Вы замедлелись и чувствуете себя жирнее...</span>")
 
 	return 1
 
@@ -879,7 +879,7 @@
 	if(client && world.time >= client.played + 600)
 		A.play_ambience(src)
 	if(stat == UNCONSCIOUS && world.time - l_move_time < 5 && prob(10))
-		to_chat(src,"<span class='notice'>You feel like you're [pick("moving","flying","floating","falling","hovering")].</span>")
+		to_chat(src,"<span class='notice'>Чувство будто вы [pick("двигаетесь","летите","парите","падаете","пролетаете")].</span>")
 
 /mob/living/carbon/human/proc/handle_changeling()
 	if(mind && mind.changeling)
@@ -912,34 +912,34 @@
 		// Please be very careful when calling custom_pain() from within code that relies on pain/trauma values. There's the
 		// possibility of a feedback loop from custom_pain() being called with a positive power, incrementing pain on a limb,
 		// which triggers this proc, which calls custom_pain(), etc. Make sure you call it with nohalloss = TRUE in these cases!
-		custom_pain("[pick("It hurts so much", "You really need some painkillers", "Dear god, the pain")]!", 10, nohalloss = TRUE)
+		custom_pain("[pick("Больно", "МНЕ ОЧЕНЬ НУЖНО ОБЕЗБОЛИВАЮЩЕЕ!", "Господи как больно")]!", 10, nohalloss = TRUE)
 
 	if(shock_stage >= 30)
-		if(shock_stage == 30) visible_message("<b>[src]</b> is having trouble keeping \his eyes open.")
+		if(shock_stage == 30) visible_message("<b>[src]</b> едва может держать глаза открытыми.")
 		if(prob(30))
 			eye_blurry = max(2, eye_blurry)
 			stuttering = max(stuttering, 5)
 
 	if(shock_stage == 40)
-		custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!", 40, nohalloss = TRUE)
+		custom_pain("[pick("Боль просто мучительная", "Пожалуйста, просто прекратите эту боль", "Всё твоё тело немеет")]!", 40, nohalloss = TRUE)
 	if (shock_stage >= 60)
-		if(shock_stage == 60) visible_message("<b>[src]</b>'s body becomes limp.")
+		if(shock_stage == 60) visible_message("Тело <b>[src]</b> обмякло.")
 		if (prob(2))
-			custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!", shock_stage, nohalloss = TRUE)
+			custom_pain("[pick("Боль просто мучительная", "Пожалуйста, просто прекратите эту боль", "Всё твоё тело немеет")]!", shock_stage, nohalloss = TRUE)
 			Weaken(10)
 
 	if(shock_stage >= 80)
 		if (prob(5))
-			custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!", shock_stage, nohalloss = TRUE)
+			custom_pain("[pick("Боль просто мучительная", "Пожалуйста, просто прекратите эту боль", "Всё твоё тело немеет")]!", shock_stage, nohalloss = TRUE)
 			Weaken(20)
 
 	if(shock_stage >= 120)
 		if (prob(2))
-			custom_pain("[pick("You black out", "You feel like you could die any moment now", "You're about to lose consciousness")]!", shock_stage, nohalloss = TRUE)
+			custom_pain("[pick("Вы отрубились", "Чувство будто сейчас помру", "Теряю сознание...")]!", shock_stage, nohalloss = TRUE)
 			Paralyse(5)
 
 	if(shock_stage == 150)
-		visible_message("<b>[src]</b> can no longer stand, collapsing!")
+		visible_message("<b>[src]</b> больше не может стоять и падает!")
 		Weaken(20)
 
 	if(shock_stage >= 150)

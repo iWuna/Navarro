@@ -1,6 +1,6 @@
 /mob/living/carbon/human/monkey/punpun/New()
 	..()
-	name = "Pun Pun"
+	name = "Пун-Пун"
 	real_name = name
 	var/obj/item/clothing/C
 	if(prob(50))

@@ -5,20 +5,20 @@ var/global/floorIsLava = 0
 
 ////////////////////////////////
 /proc/message_admins(var/msg)
-	msg = "<span class=\"log_message\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[msg]</span></span>"
+	msg = "<span class=\"log_message\"><span class=\"prefix\">ЛОГ:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(msg)
 	for(var/client/C in GLOB.admins)
 		if(R_ADMIN & C.holder.rights)
 			to_chat(C, msg)
 /proc/message_staff(var/msg)
-	msg = "<span class=\"log_message\"><span class=\"prefix\">STAFF LOG:</span> <span class=\"message\">[msg]</span></span>"
+	msg = "<span class=\"log_message\"><span class=\"prefix\">ЛОГ 2:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(msg)
 	for(var/client/C in GLOB.admins)
 		if(C && C.holder && (R_INVESTIGATE & C.holder.rights))
 			to_chat(C, msg)
 /proc/msg_admin_attack(var/text) //Toggleable Attack Messages
 	log_attack(text)
-	var/rendered = "<span class=\"log_message\"><span class=\"prefix\">ATTACK:</span> <span class=\"message\">[text]</span></span>"
+	var/rendered = "<span class=\"log_message\"><span class=\"prefix\">АТАКА:</span> <span class=\"message\">[text]</span></span>"
 	for(var/client/C in GLOB.admins)
 		if(check_rights(R_INVESTIGATE, 0, C))
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
@@ -41,22 +41,22 @@ var/global/floorIsLava = 0
 	if (!istype(src,/datum/admins))
 		src = usr.client.holder
 	if (!istype(src,/datum/admins))
-		to_chat(usr, "Error: you are not an admin!")
+		to_chat(usr, "Ошибка: ты не админ!")
 		return
 
-	var/body = "<html><head><title>Options for [M.key]</title></head>"
-	body += "<body>Options panel for <b>[M]</b>"
+	var/body = "<html><head><title>Опции для [M.key]</title></head>"
+	body += "<body>Панель опций для <b>[M]</b>"
 	var/last_ckey = LAST_CKEY(M)
 	if(M.client)
-		body += " played by <b>[M.client]</b> "
-		body += "\[<A href='?src=\ref[src];editrights=show'>[M.client.holder ? M.client.holder.rank : "Player"]</A>\]"
+		body += " играет <b>[M.client]</b> "
+		body += "\[<A href='?src=\ref[src];editrights=show'>[M.client.holder ? M.client.holder.rank : "Игрок"]</A>\]"
 	else if(last_ckey)
-		body += " (last occupied by ckey <b>[last_ckey]</b>)"
+		body += " (последний раз им играл <b>[last_ckey]</b>)"
 
 	if(istype(M, /mob/new_player))
-		body += " <B>Hasn't Entered Game</B> "
+		body += " <B>Не в игре</B> "
 	else
-		body += " \[<A href='?src=\ref[src];revive=\ref[M]'>Heal</A>\] "
+		body += " \[<A href='?src=\ref[src];revive=\ref[M]'>Излечить</A>\] "
 
 	var/mob/living/exosuit/E = M
 	if(istype(E) && E.pilots)
@@ -72,17 +72,17 @@ var/global/floorIsLava = 0
 		<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a> -
 		<a href='?src=\ref[src];narrateto=\ref[M]'>DN</a> -
 		[admin_jump_link(M, src)]\] <br>
-		<b>Mob type:</b> [M.type]<br>
-		<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br/><br/>
-		<A href='?src=\ref[src];boot2=\ref[M]'>Kick</A> |
-		<A href='?_src_=holder;warn=[last_ckey]'>Warn</A> |
-		<A href='?src=\ref[src];newban=\ref[M];last_key=[last_ckey]'>Ban</A> |
-		<A href='?src=\ref[src];jobban2=\ref[M]'>Jobban</A> |
-		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A>
+		<b>Тип моба:</b> [M.type]<br>
+		<b>Неактивен:</b> [M.client ? "[M.client.inactivity/600] мин" : "Вышел"]<br/><br/>
+		<A href='?src=\ref[src];boot2=\ref[M]'>Кикнуть</A> |
+		<A href='?_src_=holder;warn=[last_ckey]'>Предупредить</A> |
+		<A href='?src=\ref[src];newban=\ref[M];last_key=[last_ckey]'>Бан</A> |
+		<A href='?src=\ref[src];jobban2=\ref[M]'>Джоббан</A> |
+		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Записи</A>
 	"}
 
 	if(M.client)
-		body += "| <A HREF='?src=\ref[src];sendtoprison=\ref[M]'>Prison</A> | "
+		body += "| <A HREF='?src=\ref[src];sendtoprison=\ref[M]'>В дурку</A> | "
 		var/muted = M.client.prefs.muted
 		body += {"<br><b>Mute: </b>
 			\[<A href='?src=\ref[src];mute=\ref[M];mute_type=[MUTE_IC]'><font color='[(muted & MUTE_IC)?"red":"blue"]'>IC</font></a> |
@@ -100,24 +100,24 @@ var/global/floorIsLava = 0
 			body += "<A href='?src=\ref[src];removestaffwarn=\ref[M]'>Remove StaffWarn</A>"
 
 	body += {"<br><br>
-		<A href='?src=\ref[src];jumpto=\ref[M]'><b>Jump to</b></A> |
-		<A href='?src=\ref[src];getmob=\ref[M]'>Get</A> |
-		<A href='?src=\ref[src];sendmob=\ref[M]'>Send To</A>
+		<A href='?src=\ref[src];jumpto=\ref[M]'><b>Прышгуть к</b></A> |
+		<A href='?src=\ref[src];getmob=\ref[M]'>Телепортировать к себе</A> |
+		<A href='?src=\ref[src];sendmob=\ref[M]'>Тулерортировать в</A>
 		<br><br>
-		[check_rights(R_ADMIN|R_MOD,0) ? "<A href='?src=\ref[src];traitor=\ref[M]'>Traitor panel</A> | " : "" ]
-		[check_rights(R_INVESTIGATE,0) ? "<A href='?src=\ref[src];skillpanel=\ref[M]'>Skill panel</A>" : "" ]
+		[check_rights(R_ADMIN|R_MOD,0) ? "<A href='?src=\ref[src];traitor=\ref[M]'>Панель спец.роли</A> | " : "" ]
+		[check_rights(R_INVESTIGATE,0) ? "<A href='?src=\ref[src];skillpanel=\ref[M]'>Навыки</A>" : "" ]
 	"}
 
 	if(M.mind)
 		body += "<br><br>"
-		body += "<b>Goals:</b>"
+		body += "<b>Цели:</b>"
 		body += "<br>"
 		body += "[jointext(M.mind.summarize_goals(FALSE, TRUE, src), "<br>")]"
 		body += "<br>"
-		body += "<a href='?src=\ref[M.mind];add_goal=1'>Add Random Goal</a>"
+		body += "<a href='?src=\ref[M.mind];add_goal=1'>Добавить случайную цель</a>"
 
 	body += "<br><br>"
-	body += "<b>Psionics:</b><br/>"
+	body += "<b>Пси-способности:</b><br/>"
 	if(isliving(M))
 		var/mob/living/psyker = M
 		if(psyker.psi)
@@ -139,36 +139,36 @@ var/global/floorIsLava = 0
 	if (M.client)
 		if(!istype(M, /mob/new_player))
 			body += "<br><br>"
-			body += "<b>Transformation:</b>"
+			body += "<b>ТРАНСформация:</b>"
 			body += "<br>"
 
 			//Monkey
 			if(issmall(M))
 				body += "<B>Monkeyized</B> | "
 			else
-				body += "<A href='?src=\ref[src];monkeyone=\ref[M]'>Monkeyize</A> | "
+				body += "<A href='?src=\ref[src];monkeyone=\ref[M]'>В мартышку</A> | "
 
 			//Corgi
 			if(iscorgi(M))
 				body += "<B>Corgized</B> | "
 			else
-				body += "<A href='?src=\ref[src];corgione=\ref[M]'>Corgize</A> | "
+				body += "<A href='?src=\ref[src];corgione=\ref[M]'>В псину</A> | "
 
 			//AI / Cyborg
 			if(isAI(M))
 				body += "<B>Is an AI</B> "
 			else if(ishuman(M))
-				body += {"<A href='?src=\ref[src];makeai=\ref[M]'>Make AI</A> |
-					<A href='?src=\ref[src];makerobot=\ref[M]'>Make Robot</A> |
-					<A href='?src=\ref[src];makealien=\ref[M]'>Make Alien</A> |
-					<A href='?src=\ref[src];makeslime=\ref[M]'>Make slime</A>
+				body += {"<A href='?src=\ref[src];makeai=\ref[M]'>В ИИ</A> |
+					<A href='?src=\ref[src];makerobot=\ref[M]'>В робота</A> |
+					<A href='?src=\ref[src];makealien=\ref[M]'>В чужого</A> |
+					<A href='?src=\ref[src];makeslime=\ref[M]'>В слизня</A>
 				"}
 
 			//Simple Animals
 			if(isanimal(M))
-				body += "<A href='?src=\ref[src];makeanimal=\ref[M]'>Re-Animalize</A> | "
+				body += "<A href='?src=\ref[src];makeanimal=\ref[M]'>Не животное</A> | "
 			else
-				body += "<A href='?src=\ref[src];makeanimal=\ref[M]'>Animalize</A> | "
+				body += "<A href='?src=\ref[src];makeanimal=\ref[M]'>Животное</A> | "
 
 			// DNA2 - Admin Hax
 			if(M.dna && iscarbon(M))
@@ -191,32 +191,32 @@ var/global/floorIsLava = 0
 
 			body += {"<br><br>
 				<b>Rudimentary transformation:</b><font size=2><br>These transformations only create a new mob type and copy stuff over. They do not take into account MMIs and similar mob-specific things. The buttons in 'Transformations' are preferred, when possible.</font><br>
-				<A href='?src=\ref[src];simplemake=observer;mob=\ref[M]'>Observer</A> |
-				\[ Xenos: <A href='?src=\ref[src];simplemake=larva;mob=\ref[M]'>Larva</A>
-				\[ Crew: <A href='?src=\ref[src];simplemake=human;mob=\ref[M]'>Human</A>
-				<A href='?src=\ref[src];simplemake=human;species=Unathi;mob=\ref[M]'>Unathi</A>
-				<A href='?src=\ref[src];simplemake=human;species=Skrell;mob=\ref[M]'>Skrell</A>
-				<A href='?src=\ref[src];simplemake=human;species=Vox;mob=\ref[M]'>Vox</A> \] | \[
-				<A href='?src=\ref[src];simplemake=nymph;mob=\ref[M]'>Nymph</A>
-				<A href='?src=\ref[src];simplemake=human;species='Diona';mob=\ref[M]'>Diona</A> \] |
-				\[ slime: <A href='?src=\ref[src];simplemake=slime;mob=\ref[M]'>Baby</A>,
-				<A href='?src=\ref[src];simplemake=adultslime;mob=\ref[M]'>Adult</A> \]
-				<A href='?src=\ref[src];simplemake=monkey;mob=\ref[M]'>Monkey</A> |
-				<A href='?src=\ref[src];simplemake=robot;mob=\ref[M]'>Cyborg</A> |
-				<A href='?src=\ref[src];simplemake=cat;mob=\ref[M]'>Cat</A> |
-				<A href='?src=\ref[src];simplemake=runtime;mob=\ref[M]'>Runtime</A> |
-				<A href='?src=\ref[src];simplemake=corgi;mob=\ref[M]'>Corgi</A> |
-				<A href='?src=\ref[src];simplemake=ian;mob=\ref[M]'>Ian</A> |
-				<A href='?src=\ref[src];simplemake=crab;mob=\ref[M]'>Crab</A> |
-				<A href='?src=\ref[src];simplemake=coffee;mob=\ref[M]'>Coffee</A> |
-				\[ Construct: <A href='?src=\ref[src];simplemake=constructarmoured;mob=\ref[M]'>Armoured</A> ,
-				<A href='?src=\ref[src];simplemake=constructbuilder;mob=\ref[M]'>Builder</A> ,
-				<A href='?src=\ref[src];simplemake=constructwraith;mob=\ref[M]'>Wraith</A> \]
-				<A href='?src=\ref[src];simplemake=shade;mob=\ref[M]'>Shade</A>
+				<A href='?src=\ref[src];simplemake=observer;mob=\ref[M]'>Наблюдатель</A> |
+				\[ Xenos: <A href='?src=\ref[src];simplemake=larva;mob=\ref[M]'>Лявра</A>
+				\[ Crew: <A href='?src=\ref[src];simplemake=human;mob=\ref[M]'>Человек</A>
+				<A href='?src=\ref[src];simplemake=human;species=Unathi;mob=\ref[M]'>Унатх</A>
+				<A href='?src=\ref[src];simplemake=human;species=Skrell;mob=\ref[M]'>Скрелл</A>
+				<A href='?src=\ref[src];simplemake=human;species=Vox;mob=\ref[M]'>Вокс</A> \] | \[
+				<A href='?src=\ref[src];simplemake=nymph;mob=\ref[M]'>Нимфа</A>
+				<A href='?src=\ref[src];simplemake=human;species='Diona';mob=\ref[M]'>Диона</A> \] |
+				\[ слизень: <A href='?src=\ref[src];simplemake=slime;mob=\ref[M]'>Пиздюк</A>,
+				<A href='?src=\ref[src];simplemake=adultslime;mob=\ref[M]'>Взрослый</A> \]
+				<A href='?src=\ref[src];simplemake=monkey;mob=\ref[M]'>Мартышка</A> |
+				<A href='?src=\ref[src];simplemake=robot;mob=\ref[M]'>Киборг</A> |
+				<A href='?src=\ref[src];simplemake=cat;mob=\ref[M]'>Кот</A> |
+				<A href='?src=\ref[src];simplemake=runtime;mob=\ref[M]'>Рантайм</A> |
+				<A href='?src=\ref[src];simplemake=corgi;mob=\ref[M]'>Корги</A> |
+				<A href='?src=\ref[src];simplemake=ian;mob=\ref[M]'>Йан</A> |
+				<A href='?src=\ref[src];simplemake=crab;mob=\ref[M]'>Краб</A> |
+				<A href='?src=\ref[src];simplemake=coffee;mob=\ref[M]'>Кофе</A> |
+				\[ Констракт: <A href='?src=\ref[src];simplemake=constructarmoured;mob=\ref[M]'>Бронированный</A> ,
+				<A href='?src=\ref[src];simplemake=constructbuilder;mob=\ref[M]'>Строитель</A> ,
+				<A href='?src=\ref[src];simplemake=constructwraith;mob=\ref[M]'>Жнец</A> \]
+				<A href='?src=\ref[src];simplemake=shade;mob=\ref[M]'>Тень</A>
 				<br>
 			"}
 	body += {"<br><br>
-			<b>Other actions:</b>
+			<b>Другие действия:</b>
 			<br>
 			<A href='?src=\ref[src];forcespeech=\ref[M]'>Forcesay</A>
 			"}
@@ -228,7 +228,7 @@ var/global/floorIsLava = 0
 			<A href='?src=\ref[src];tdomeobserve=\ref[M]'>Thunderdome Observer</A> |
 		"}
 	// language toggles
-	body += "<br><br><b>Languages:</b><br>"
+	body += "<br><br><b>Языки:</b><br>"
 	var/f = 1
 	for(var/k in all_languages)
 		var/datum/language/L = all_languages[k]
@@ -266,7 +266,7 @@ var/global/floorIsLava = 0
 
 /datum/admins/proc/PlayerNotesPage(var/filter_term)
 	var/list/dat = list()
-	dat += "<B>Player notes</B><HR>"
+	dat += "<B>Записи игрока</B><HR>"
 	var/savefile/S=new("data/player_notes.sav")
 	var/list/note_keys
 	S >> note_keys

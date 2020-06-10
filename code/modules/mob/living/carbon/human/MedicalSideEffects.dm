@@ -84,18 +84,18 @@
 	name = "Headache"
 	triggers = list(/datum/reagent/cryoxadone = 10, /datum/reagent/bicaridine = 15, /datum/reagent/tricordrazine = 15)
 	cures = list(/datum/reagent/alkysine, /datum/reagent/tramadol, /datum/reagent/paracetamol, /datum/reagent/tramadol/oxycodone)
-	cure_message = "Your head stops throbbing..."
+	cure_message = "Твоя голова перестаёт болеть..."
 
 /datum/medical_effect/headache/on_life(mob/living/carbon/human/H, strength)
 	var/obj/item/organ/external/head/head = H.get_organ("head")
 	if(istype(head))
 		switch(strength)
 			if(1 to 10)
-				H.custom_pain("You feel a light pain in your head.",0, affecting = head)
+				H.custom_pain("Вы чувствуете слабую боль в голове.",0, affecting = head)
 			if(11 to 30)
-				H.custom_pain("You feel a throbbing pain in your head!",1, affecting = head)
+				H.custom_pain("Вы чувствуете пульсирующую боль в голове!",1, affecting = head)
 			if(31 to INFINITY)
-				H.custom_pain("You feel an excrutiating pain in your head!",1, affecting = head)
+				H.custom_pain("Вы чувствуете мучительную боль в голове!",1, affecting = head)
 
 // BAD STOMACH
 // ===========
@@ -103,16 +103,16 @@
 	name = "Bad Stomach"
 	triggers = list(/datum/reagent/kelotane = 30, /datum/reagent/dermaline = 15)
 	cures = list(/datum/reagent/dylovene)
-	cure_message = "Your stomach feels a little better now..."
+	cure_message = "Твой желудок ведёт себя спокойнее..."
 
 /datum/medical_effect/bad_stomach/on_life(mob/living/carbon/human/H, strength)
 	switch(strength)
 		if(1 to 10)
-			H.custom_pain("You feel a bit light around the stomach.",0)
+			H.custom_pain("Вы чувствуете покалывания в области желудка.",0)
 		if(11 to 30)
-			H.custom_pain("Your stomach hurts.",0)
+			H.custom_pain("Ваш желудок болит.",0)
 		if(31 to INFINITY)
-			H.custom_pain("You feel sick.",1)
+			H.custom_pain("Вам нехорошо.",1)
 
 // CRAMPS
 // ======
@@ -138,14 +138,14 @@
 	name = "Itch"
 	triggers = list(/datum/reagent/space_drugs = 10)
 	cures = list(/datum/reagent/inaprovaline)
-	cure_message = "The itching stops..."
+	cure_message = "Зуд прекратился..."
 
 /datum/medical_effect/itch/on_life(mob/living/carbon/human/H, strength)
 	switch(strength)
 		if(1 to 10)
-			H.custom_pain("You feel a slight itch.",0)
+			H.custom_pain("Вы ощущаете небольшой зуд.",0)
 		if(11 to 30)
-			H.custom_pain("You want to scratch your itch badly.",0)
+			H.custom_pain("Вы ощущаете сильный зуд.",0)
 		if(31 to INFINITY)
-			H.visible_message("<B>\The [src]</B> shivers slightly.")
-			H.custom_pain("This itch makes it really hard to concentrate.",1)
+			H.visible_message("<B>[src]</B> слегка дрожит.")
+			H.custom_pain("Этот зуд мешает концентрироваться.",1)

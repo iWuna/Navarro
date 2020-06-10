@@ -84,8 +84,8 @@
 		if(!code_owner && leader)
 			code_owner = leader
 		if(code_owner)
-			code_owner.StoreMemory("<B>Nuclear Bomb Code</B>: [code]", /decl/memory_options/system)
-			to_chat(code_owner.current, "The nuclear authorization code is: <B>[code]</B>")
+			code_owner.StoreMemory("<B>Код от ядерной бомбы</B>: [code]", /decl/memory_options/system)
+			to_chat(code_owner.current, "Код Авторизации ядерной бомбы: <B>[code]</B>")
 	else
 		message_admins("<span class='danger'>Could not spawn nuclear bomb. Contact a developer.</span>")
 		return
@@ -96,7 +96,7 @@
 /datum/antagonist/proc/greet(var/datum/mind/player)
 
 	// Basic intro text.
-	to_chat(player.current, "<span class='danger'><font size=3>You are a [role_text]!</font></span>")
+	to_chat(player.current, "<span class='danger'><font size=3>Вы [role_text]!</font></span>")
 	if(leader_welcome_text && player == leader)
 		to_chat(player.current, "<span class='antagdesc'>[leader_welcome_text]</span>")
 	else
@@ -112,7 +112,7 @@
 
 /datum/antagonist/proc/set_antag_name(var/mob/living/player)
 	// Choose a name, if any.
-	var/newname = sanitize(input(player, "You are a [role_text]. Would you like to change your name to something else?", "Name change") as null|text, MAX_NAME_LEN)
+	var/newname = sanitize(input(player, "Вы [role_text]. Вы хотите изменить своё имя или что-то еще?", "Name change") as null|text, MAX_NAME_LEN)
 	if (newname)
 		player.real_name = newname
 		player.SetName(player.real_name)

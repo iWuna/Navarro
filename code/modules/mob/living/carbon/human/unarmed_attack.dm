@@ -61,7 +61,7 @@ var/global/list/sparring_attack_cache = list()
 		switch(zone) // strong punches can have effects depending on where they hit
 			if(BP_HEAD, BP_EYES, BP_MOUTH)
 				// Induce blurriness
-				target.visible_message("<span class='danger'>[target] looks momentarily disoriented.</span>", "<span class='danger'>You see stars.</span>")
+				target.visible_message("<span class='danger'>[target] выглядит дизориентированно.</span>", "<span class='danger'>Вы видите звёзды.</span>")
 				target.apply_effect(attack_damage*2, EYE_BLUR, armour)
 			if(BP_L_ARM, BP_L_HAND)
 				if (target.l_hand)

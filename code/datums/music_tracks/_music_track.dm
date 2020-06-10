@@ -11,12 +11,12 @@
 	license = decls_repository.get_decl(license)
 
 /music_track/proc/play_to(var/listener)
-	to_chat(listener, "<span class='good'>Now Playing:</span>")
+	to_chat(listener, "<span class='good'>Сейчас играет:</span>")
 	to_chat(listener, "<span class='good'>[title][artist ? " by [artist]" : ""][album ? " ([album])" : ""]</span>")
 	if(url)
 		to_chat(listener, url)
 
-	to_chat(listener, "<span class='good'>License: <a href='[license.url]'>[license.name]</a></span>")
+	to_chat(listener, "<span class='good'>Лицензия: <a href='[license.url]'>[license.name]</a></span>")
 	sound_to(listener, sound(song, repeat = 1, wait = 0, volume = volume, channel = GLOB.lobby_sound_channel))
 
 // No VV editing anything about music tracks

@@ -1,7 +1,7 @@
 /mob/living/carbon/human
-	name = "unknown"
-	real_name = "unknown"
-	voice_name = "unknown"
+	name = "Неизвестный"
+	real_name = "неизвестный"
+	voice_name = "неизвестный"
 	icon = 'icons/mob/human.dmi'
 	icon_state = "body_m_s"
 
@@ -86,8 +86,8 @@
 /mob/living/carbon/human/Stat()
 	. = ..()
 	if(statpanel("Status"))
-		stat("Intent:", "[a_intent]")
-		stat("Move Mode:", "[move_intent.name]")
+		stat("Намерение:", "[a_intent]")
+		stat("Режим передвижения:", "[move_intent.name]")
 
 		if(evacuation_controller)
 			var/eta_status = evacuation_controller.get_status_panel_eta()
@@ -104,13 +104,13 @@
 
 		var/obj/item/organ/internal/cell/potato = internal_organs_by_name[BP_CELL]
 		if(potato && potato.cell)
-			stat("Battery charge:", "[potato.get_charge()]/[potato.cell.maxcharge]")
+			stat("Заряд батареи:", "[potato.get_charge()]/[potato.cell.maxcharge]")
 
 		if(back && istype(back,/obj/item/weapon/rig))
 			var/obj/item/weapon/rig/suit = back
 			var/cell_status = "ERROR"
 			if(suit.cell) cell_status = "[suit.cell.charge]/[suit.cell.maxcharge]"
-			stat(null, "Suit charge: [cell_status]")
+			stat(null, "Заряд костюма: [cell_status]")
 
 		if(mind)
 			if(mind.changeling)
@@ -205,39 +205,39 @@
 		if((slot_ref["slot"] in list(slot_l_store, slot_r_store)))
 			continue
 		var/obj/item/thing_in_slot = get_equipped_item(slot_ref["slot"])
-		dat += "<BR><B>[slot_ref["name"]]:</b> <a href='?src=\ref[src];item=[slot_ref["slot"]]'>[istype(thing_in_slot) ? thing_in_slot : "nothing"]</a>"
+		dat += "<BR><B>[slot_ref["name"]]:</b> <a href='?src=\ref[src];item=[slot_ref["slot"]]'>[istype(thing_in_slot) ? thing_in_slot : "ничего"]</a>"
 		if(istype(thing_in_slot, /obj/item/clothing))
 			var/obj/item/clothing/C = thing_in_slot
 			if(C.accessories.len)
-				dat += "<BR><A href='?src=\ref[src];item=tie;holder=\ref[C]'>Remove accessory</A>"
+				dat += "<BR><A href='?src=\ref[src];item=tie;holder=\ref[C]'>Снять аксессуар</A>"
 	dat += "<BR><HR>"
 
 	if(species.hud.has_hands)
-		dat += "<BR><b>Left hand:</b> <A href='?src=\ref[src];item=[slot_l_hand]'>[istype(l_hand) ? l_hand : "nothing"]</A>"
-		dat += "<BR><b>Right hand:</b> <A href='?src=\ref[src];item=[slot_r_hand]'>[istype(r_hand) ? r_hand : "nothing"]</A>"
+		dat += "<BR><b>Левая рука:</b> <A href='?src=\ref[src];item=[slot_l_hand]'>[istype(l_hand) ? l_hand : "ничего"]</A>"
+		dat += "<BR><b>Правая рука:</b> <A href='?src=\ref[src];item=[slot_r_hand]'>[istype(r_hand) ? r_hand : "ничего"]</A>"
 
 	// Do they get an option to set internals?
 	if(istype(wear_mask, /obj/item/clothing/mask) || istype(head, /obj/item/clothing/head/helmet/space))
 		if(istype(back, /obj/item/weapon/tank) || istype(belt, /obj/item/weapon/tank) || istype(s_store, /obj/item/weapon/tank))
-			dat += "<BR><A href='?src=\ref[src];item=internals'>Toggle internals.</A>"
+			dat += "<BR><A href='?src=\ref[src];item=internals'>Включить подачу воздуха.</A>"
 
 	var/obj/item/clothing/under/suit = w_uniform
 	// Other incidentals.
 	if(istype(suit))
-		dat += "<BR><b>Pockets:</b> <A href='?src=\ref[src];item=pockets'>Empty or Place Item</A>"
+		dat += "<BR><b>Карманы:</b> <A href='?src=\ref[src];item=pockets'>Опустошить или положить предмет</A>"
 		if(suit.has_sensor == 1)
-			dat += "<BR><A href='?src=\ref[src];item=sensors'>Set sensors</A>"
+			dat += "<BR><A href='?src=\ref[src];item=sensors'>Выставить сенсоры</A>"
 		if (suit.has_sensor && user.get_multitool())
-			dat += "<BR><A href='?src=\ref[src];item=lock_sensors'>[suit.has_sensor == SUIT_LOCKED_SENSORS ? "Unl" : "L"]ock sensors</A>"
+			dat += "<BR><A href='?src=\ref[src];item=lock_sensors'>[suit.has_sensor == SUIT_LOCKED_SENSORS ? "Разб" : "б"]локировать сенсоры</A>"
 	if(handcuffed)
-		dat += "<BR><A href='?src=\ref[src];item=[slot_handcuffed]'>Handcuffed</A>"
+		dat += "<BR><A href='?src=\ref[src];item=[slot_handcuffed]'>В наручниках</A>"
 
 	for(var/entry in worn_underwear)
 		var/obj/item/underwear/UW = entry
-		dat += "<BR><a href='?src=\ref[src];item=\ref[UW]'>Remove \the [UW]</a>"
+		dat += "<BR><a href='?src=\ref[src];item=\ref[UW]'>Снять [UW]</a>"
 
-	dat += "<BR><A href='?src=\ref[src];refresh=1'>Refresh</A>"
-	dat += "<BR><A href='?src=\ref[user];mach_close=mob[name]'>Close</A>"
+	dat += "<BR><A href='?src=\ref[src];refresh=1'>Обновить</A>"
+	dat += "<BR><A href='?src=\ref[user];mach_close=mob[name]'>Закрыть</A>"
 
 	user << browse(dat, text("window=mob[name];size=340x540"))
 	onclose(user, "mob[name]")
@@ -273,7 +273,7 @@
 
 //gets name from ID or ID inside PDA or PDA itself
 //Useful when player do something with computers
-/mob/living/carbon/human/proc/get_authentification_name(var/if_no_id = "Unknown")
+/mob/living/carbon/human/proc/get_authentification_name(var/if_no_id = "Неизвестный")
 	var/obj/item/weapon/card/id/id = GetIdCard()
 	if(istype(id))
 		return id.registered_name
@@ -284,8 +284,8 @@
 /mob/living/carbon/human/proc/get_visible_name()
 	var/face_name = get_face_name()
 	var/id_name = get_id_name("")
-	if((face_name == "Unknown") && id_name && (id_name != face_name))
-		return "[face_name] (as [id_name])"
+	if((face_name == "Неизвестный") && id_name && (id_name != face_name))
+		return "[face_name] (как [id_name])"
 	return face_name
 
 //Returns "Unknown" if facially disfigured and real_name if not. Useful for setting name when polyacided or when updating a human's name variable
@@ -303,7 +303,7 @@
 
 //gets name from ID or PDA itself, ID inside PDA doesn't matter
 //Useful when player is being seen by other mobs
-/mob/living/carbon/human/proc/get_id_name(var/if_no_id = "Unknown")
+/mob/living/carbon/human/proc/get_id_name(var/if_no_id = "Неизвестный")
 	. = if_no_id
 	var/obj/item/weapon/card/id/I = GetIdCard()
 	if(istype(I))
@@ -447,7 +447,7 @@
 
 			var/datum/computer_file/report/crew_record/R = get_crewmember_record(perpname)
 			if(R)
-				var/setcriminal = input(user, "Specify a new criminal status for this person.", "Security HUD", R.get_criminalStatus()) as null|anything in GLOB.security_statuses
+				var/setcriminal = input(user, "Укажите новый статус для этой персоны.", "Security HUD", R.get_criminalStatus()) as null|anything in GLOB.security_statuses
 				if(hasHUD(usr, HUD_SECURITY) && setcriminal)
 					R.set_criminalStatus(setcriminal)
 					modified = 1
@@ -462,7 +462,7 @@
 							U.handle_regular_hud_updates()
 
 			if(!modified)
-				to_chat(usr, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
+				to_chat(usr, "<span class='warning'>Неудалось получить данные об этой персоне.</span>")
 			return TOPIC_HANDLED
 
 	if (href_list["secrecord"])
@@ -478,13 +478,13 @@
 			var/datum/computer_file/report/crew_record/E = get_crewmember_record(perpname)
 			if(E)
 				if(hasHUD(user, HUD_SECURITY))
-					to_chat(user, "<b>Name:</b> [E.get_name()]")
-					to_chat(user, "<b>Criminal Status:</b> [E.get_criminalStatus()]")
-					to_chat(user, "<b>Details:</b> [E.get_secRecord()]")
+					to_chat(user, "<b>Имя:</b> [E.get_name()]")
+					to_chat(user, "<b>Статус:</b> [E.get_criminalStatus()]")
+					to_chat(user, "<b>Детали:</b> [E.get_secRecord()]")
 					read = 1
 
 			if(!read)
-				to_chat(user, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
+				to_chat(user, "<span class='warning'>Неудалось получить данные об этой персоне.</span>")
 			return TOPIC_HANDLED
 
 	if (href_list["medical"])
@@ -514,7 +514,7 @@
 							U.handle_regular_hud_updates()
 
 			if(!modified)
-				to_chat(user, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
+				to_chat(user, "<span class='warning'>Неудалось получить данные об этой персоне.</span>")
 			return TOPIC_HANDLED
 
 	if (href_list["medrecord"])
@@ -531,14 +531,14 @@
 			var/datum/computer_file/report/crew_record/E = get_crewmember_record(perpname)
 			if(E)
 				if(hasHUD(user, HUD_MEDICAL))
-					to_chat(usr, "<b>Name:</b> [E.get_name()]")
-					to_chat(usr, "<b>Gender:</b> [E.get_sex()]")
-					to_chat(usr, "<b>Species:</b> [E.get_species()]")
-					to_chat(usr, "<b>Blood Type:</b> [E.get_bloodtype()]")
-					to_chat(usr, "<b>Details:</b> [E.get_medRecord()]")
+					to_chat(usr, "<b>Имя:</b> [E.get_name()]")
+					to_chat(usr, "<b>Гендер:</b> [E.get_sex()]")
+					to_chat(usr, "<b>Раса:</b> [E.get_species()]")
+					to_chat(usr, "<b>Тип крови:</b> [E.get_bloodtype()]")
+					to_chat(usr, "<b>Детали:</b> [E.get_medRecord()]")
 					read = 1
 			if(!read)
-				to_chat(user, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
+				to_chat(user, "<span class='warning'>Неудалось получить данные об этой персоне.</span>")
 			return TOPIC_HANDLED
 
 	return ..()
@@ -626,7 +626,7 @@
 	if(species.has_fine_manipulation(src))
 		return 1
 	if(!silent)
-		to_chat(src, "<span class='warning'>You don't have the dexterity to use that!</span>")
+		to_chat(src, "<span class='warning'>Вы слишком тупы чтобы пользоваться этим!</span>")
 	return 0
 
 /mob/living/carbon/human/abiotic(var/full_body = TRUE)
@@ -696,7 +696,7 @@
 			if(species.gluttonous & GLUT_PROJECTILE_VOMIT)
 				M.throw_at(get_edge_target_turf(src,dir),7,7,src)
 
-	visible_message(SPAN_DANGER("\The [src] throws up!"),SPAN_DANGER("You throw up!"))
+	visible_message(SPAN_DANGER("[src] проблевывается!"),SPAN_DANGER("Вы проблевались!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	var/turf/location = loc
 	if(istype(location, /turf/simulated))
@@ -715,7 +715,7 @@
 
 	if(deliberate)
 		if(incapacitated())
-			to_chat(src, SPAN_WARNING("You cannot do that right now."))
+			to_chat(src, SPAN_WARNING("Вы не можете сделать этого сейчас."))
 			return
 		var/datum/gender/G = gender_datums[gender]
 		visible_message(SPAN_DANGER("\The [src] starts sticking a finger down [G.his] own throat. It looks like [G.he] [G.is] trying to throw up!"))
@@ -727,10 +727,10 @@
 	level = Clamp(level, 1, 3)
 
 	lastpuke = TRUE
-	to_chat(src, SPAN_WARNING("You feel nauseous..."))
+	to_chat(src, SPAN_WARNING("Вам нехорошо..."))
 	if(level > 1)
 		sleep(150 / timevomit)	//15 seconds until second warning
-		to_chat(src, SPAN_WARNING("You feel like you are about to throw up!"))
+		to_chat(src, SPAN_WARNING("Вы чувствуете что вас сейчас вырвет!"))
 		if(level > 2)
 			sleep(100 / timevomit)	//and you have 10 more for mad dash to the bucket
 			empty_stomach()
@@ -786,7 +786,7 @@
 		hairs.Add(H.name) // add hair name to hairs
 		qdel(H) // delete the hair after it's all done
 
-	var/new_style = input("Please select hair style", "Character Generation",h_style)  as null|anything in hairs
+	var/new_style = input("Выберите новую причёску", "Character Generation",h_style)  as null|anything in hairs
 
 	// if new style selected (not cancel)
 	if (new_style)
@@ -801,16 +801,16 @@
 		fhairs.Add(H.name)
 		qdel(H)
 
-	new_style = input("Please select facial style", "Character Generation",f_style)  as null|anything in fhairs
+	new_style = input("Выберите новую бороду или усы", "Character Generation",f_style)  as null|anything in fhairs
 
 	if(new_style)
 		f_style = new_style
 
-	var/new_gender = alert(usr, "Please select gender.", "Character Generation", "Male", "Female", "Neutral")
+	var/new_gender = alert(usr, "Выберите пол.", "Character Generation", "Мужской", "Женский", "Бесполый")
 	if (new_gender)
-		if(new_gender == "Male")
+		if(new_gender == "Мужской")
 			gender = MALE
-		else if(new_gender == "Female")
+		else if(new_gender == "Женский")
 			gender = FEMALE
 		else
 			gender = NEUTER

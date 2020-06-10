@@ -4,8 +4,8 @@
 /obj/structure/ore_box
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "orebox0"
-	name = "ore box"
-	desc = "A heavy box used for storing ore."
+	name = "коробка для руды"
+	desc = "Тяжёлая коробка для хранения всяческой руды."
 	density = 1
 	var/last_update = 0
 	var/list/stored_ore = list()
@@ -19,7 +19,7 @@
 		for(var/obj/item/weapon/ore/O in S.contents)
 			S.remove_from_storage(O, src, 1) //This will move the item to this item's contents
 		S.finish_bulk_removal()
-		to_chat(user, "<span class='notice'>You empty the satchel into the box.</span>")
+		to_chat(user, "<span class='notice'>Вы опустошили сумку в коробку.</span>")
 
 	update_ore_count()
 
@@ -47,44 +47,44 @@
 	add_fingerprint(user)
 
 	if(!contents.len)
-		to_chat(user, "It is empty.")
+		to_chat(user, "Пусто.")
 		return
 
 	if(world.time > last_update + 10)
 		update_ore_count()
 		last_update = world.time
 
-	to_chat(user, "It holds:")
+	to_chat(user, "Содержит:")
 	for(var/ore in stored_ore)
 		to_chat(user, "- [stored_ore[ore]] [ore]")
 	return
 
 
 /obj/structure/ore_box/verb/empty_box()
-	set name = "Empty Ore Box"
+	set name = "Опустошить коробку для руды"
 	set category = "Object"
 	set src in view(1)
 
 	if(!istype(usr, /mob/living/carbon/human)) //Only living, intelligent creatures with hands can empty ore boxes.
-		to_chat(usr, "<span class='warning'>You are physically incapable of emptying the ore box.</span>")
+		to_chat(usr, "<span class='warning'>Вы физически несовместимы с коробкой. Животное.</span>")
 		return
 
 	if( usr.stat || usr.restrained() )
 		return
 
 	if(!Adjacent(usr)) //You can only empty the box if you can physically reach it
-		to_chat(usr, "You cannot reach the ore box.")
+		to_chat(usr, "Вы не можете достать до коробки.")
 		return
 
 	add_fingerprint(usr)
 
 	if(contents.len < 1)
-		to_chat(usr, "<span class='warning'>The ore box is empty</span>")
+		to_chat(usr, "<span class='warning'>Коробка для руды пуста</span>")
 		return
 
 	for (var/obj/item/weapon/ore/O in contents)
 		O.dropInto(loc)
-	to_chat(usr, "<span class='notice'>You empty the ore box</span>")
+	to_chat(usr, "<span class='notice'>Вы опустошили коробку для руды</span>")
 
 /obj/structure/ore_box/ex_act(severity)
 	if(severity == 1.0 || (severity < 3.0 && prob(50)))

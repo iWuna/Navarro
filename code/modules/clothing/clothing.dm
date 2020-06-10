@@ -460,7 +460,7 @@ BLIND     // can't see anything
 	if(!success)
 		return 0
 	else if(success == 2)
-		to_chat(user, "<span class='warning'>You are already wearing a hat.</span>")
+		to_chat(user, "<span class='warning'>Вы уже носите головной убор.</span>")
 	else if(success == 1)
 		to_chat(user, "<span class='notice'>You crawl under \the [src].</span>")
 	return 1

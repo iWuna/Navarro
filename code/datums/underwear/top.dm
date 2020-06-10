@@ -3,7 +3,7 @@
 	underwear_type = /obj/item/underwear/top
 
 /datum/category_item/underwear/top/none
-	name = "None"
+	name = "Ничего"
 	always_last = TRUE
 	underwear_type = null
 
@@ -12,7 +12,7 @@
 
 /datum/category_item/underwear/top/bra
 	is_default = TRUE
-	name = "Bra"
+	name = "Лифчик"
 	icon_state = "bra"
 	has_color = TRUE
 
@@ -20,25 +20,25 @@
 	return gender == FEMALE
 
 /datum/category_item/underwear/top/sports_bra
-	name = "Sports bra"
+	name = "Спортивный лифчик"
 	icon_state = "sports_bra"
 	has_color = TRUE
 
 /datum/category_item/underwear/top/sports_bra_alt
-	name = "Sports bra, alt"
+	name = "Спортивный лифчик, альтернативный"
 	icon_state = "sports_bra_alt"
 	has_color = TRUE
 
 /datum/category_item/underwear/top/lacy_bra
-	name = "Lacy bra"
+	name = "Кружевной лифчик"
 	icon_state = "lacy_bra"
 
 /datum/category_item/underwear/top/lacy_bra_alt
-	name = "Lacy bra, alt"
+	name = "Кружевной лифчик, альтернативный"
 	icon_state = "lacy_bra_alt"
 
 /datum/category_item/underwear/top/halterneck_bra
-	name = "Halterneck bra"
+	name = "Бюстгалтер Хальтернек"
 	icon_state = "halterneck_bra"
 	has_color = TRUE
 

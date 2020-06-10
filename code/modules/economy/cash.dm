@@ -35,7 +35,7 @@
 			var/mob/living/carbon/human/h_user = user
 			h_user.drop_from_inventory(bundle)
 			h_user.put_in_hands(bundle)
-		to_chat(user, "<span class='notice'>You add [src.worth] [GLOB.using_map.local_currency_name] worth of money to the bundles.<br>It holds [bundle.worth] [GLOB.using_map.local_currency_name] now.</span>")
+		to_chat(user, "<span class='notice'>Вы добавили [src.worth] [GLOB.using_map.local_currency_name] в кучку.<br>Она содержит [bundle.worth] [GLOB.using_map.local_currency_name].</span>")
 		qdel(src)
 
 	else if(istype(W, /obj/item/weapon/gun/launcher/money))

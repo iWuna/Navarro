@@ -108,10 +108,10 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/salary_modifier	= 1			//Multiplier to starting character money
 	var/station_departments = list()//Gets filled automatically depending on jobs allowed
 
-	var/supply_currency_name = "Credits"
-	var/supply_currency_name_short = "Cr."
-	var/local_currency_name = "thalers"
-	var/local_currency_name_singular = "thaler"
+	var/supply_currency_name = "Кредиты"
+	var/supply_currency_name_short = "Кр."
+	var/local_currency_name = "таллеров"
+	var/local_currency_name_singular = "таллер"
 	var/local_currency_name_short = "T"
 
 	var/list/available_cultural_info = list(

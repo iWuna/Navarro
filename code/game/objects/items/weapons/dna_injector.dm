@@ -128,7 +128,7 @@
 	// Used by admin log.
 	var/injected_with_monkey = ""
 	if((buf.types & DNA2_BUF_SE) && (block ? (GetState() && block == GLOB.MONKEYBLOCK) : GetState(GLOB.MONKEYBLOCK)))
-		injected_with_monkey = " <span class='danger'>(MONKEY)</span>"
+		injected_with_monkey = " <span class='danger'>(МАКАКА)</span>"
 
 	admin_attack_log(user,M,"[injected_with_monkey] used the [name] on")
 

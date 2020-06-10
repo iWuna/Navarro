@@ -8,7 +8,7 @@
 
 
 /datum/event/brand_intelligence/announce()
-	command_announcement.Announce("Rampant brand intelligence has been detected aboard the [location_name()]. The origin is believed to be \a \"[initial(originMachine.name)]\" type. Infection of other machines is likely.", "[location_name()] Machine Monitoring", zlevels = affecting_z)
+	command_announcement.Announce("Хакерская атака на торговые автоматы проведена на борту [location_name()]. Её первая жертва: \"[initial(originMachine.name)]\" . Возможно что вирус перекинется и на другие устройства.", "Служба Информационной Безопасности", zlevels = affecting_z)
 
 
 /datum/event/brand_intelligence/start()
@@ -40,13 +40,13 @@
 			infectedMachine.shoot_inventory = 1
 
 	if(IsMultiple(activeFor, 12))
-		originMachine.speak(pick("Try our aggressive new marketing strategies!", \
-								 "You should buy products to feed your lifestyle obsession!", \
-								 "Consume!", \
-								 "Your money can buy happiness!", \
-								 "Engage direct marketing!", \
-								 "Advertising is legalized lying! But don't let that put you off our great deals!", \
-								 "You don't want to buy anything? Yeah, well I didn't want to buy your mom either."))
+		originMachine.speak(pick("Попробуй нашу новую стратегию агрессивного маркетинга!", \
+								 "Ты должен купить мои продукты, иначе сдохнешь!", \
+								 "Потребляй!", \
+								 "Твои деньги могут купить счастье!", \
+								 "Насладись прямым маркетингом!", \
+								 "Реклама узаконенная ложь! Но это не отменяет хорошей сделки!", \
+								 "Не хочешь что-нибудь купить? Чтож, тогда я куплю жирную задницу твоей мамаши."))
 
 /datum/event/brand_intelligence/end()
 	originMachine.shut_up = 1
@@ -57,7 +57,7 @@
 			continue
 		infectedMachine.shut_up = 1
 		infectedMachine.shoot_inventory = 0
-	command_announcement.Announce("All traces of the rampant brand intelligence have disappeared from the systems.", "[location_name()] Firewall Subroutines")
+	command_announcement.Announce("Все следы вируса были удалены из системы.", "Служба Информационной Безопасности")
 	originMachine = null
 	infectedVendingMachines.Cut()
 	vendingMachines.Cut()

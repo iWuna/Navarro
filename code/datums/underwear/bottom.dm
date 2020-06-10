@@ -4,12 +4,12 @@
 	underwear_type = /obj/item/underwear/bottom
 
 /datum/category_item/underwear/bottom/none
-	name = "None"
+	name = "Ничего"
 	always_last = TRUE
 	underwear_type = null
 
 /datum/category_item/underwear/bottom/briefs
-	name = "Briefs"
+	name = "Подштанники"
 	underwear_name = "briefs"
 	icon_state = "briefs"
 	has_color = TRUE
@@ -24,23 +24,23 @@
 	has_color = TRUE
 
 /datum/category_item/underwear/bottom/boxers_loveheart
-	name = "Boxers, Loveheart"
+	name = "Боксеры, Сердечки"
 	underwear_name = "boxers"
 	icon_state = "boxers_loveheart"
 
 /datum/category_item/underwear/bottom/boxers
-	name = "Boxers"
+	name = "Боксеры"
 	underwear_name = "boxers"
 	icon_state = "boxers"
 	has_color = TRUE
 
 /datum/category_item/underwear/bottom/boxers_green_and_blue
-	name = "Boxers, green & blue striped"
+	name = "Боксеры, в зелёно-голубую полоску"
 	underwear_name = "boxers"
 	icon_state = "boxers_green_and_blue"
 
 /datum/category_item/underwear/bottom/panties
-	name = "Panties"
+	name = "Трусы"
 	underwear_name = "panties"
 	icon_state = "panties"
 	has_color = TRUE
@@ -49,43 +49,43 @@
 	return gender == FEMALE
 
 /datum/category_item/underwear/bottom/lacy_thong
-	name = "Lacy thong"
+	name = "Кружевные стринги"
 	underwear_name = "thong"
 	icon_state = "lacy_thong"
 
 /datum/category_item/underwear/bottom/lacy_thong_alt
-	name = "Lacy thong, alt"
+	name = "Кружевные стринги, альтернативные"
 	underwear_name = "thong"
 	icon_state = "lacy_thong_alt"
 	has_color = TRUE
 
 /datum/category_item/underwear/bottom/panties_alt
-	name = "Panties, alt"
+	name = "Трусы, альтернативные"
 	underwear_name = "panties"
 	icon_state = "panties_alt"
 	has_color = TRUE
 
 /datum/category_item/underwear/bottom/compression_shorts
-	name = "Compression shorts"
+	name = "Компрессионные шорты"
 	icon_state = "compression_shorts"
 	has_color = TRUE
 
 /datum/category_item/underwear/bottom/thong
-	name = "Thong"
+	name = "Стринги"
 	underwear_name = "thong"
 	icon_state = "thong"
 	has_color = TRUE
 
 /datum/category_item/underwear/bottom/expedition_pt_shorts
-	name = "PT shorts, Expeditionary Corps"
+	name = "Спортивные шорты, Экспедиционный Корпус"
 	icon_state = "expedition_shorts"
 
 /datum/category_item/underwear/bottom/fleet_pt_shorts
-	name = "PT shorts, Fleet"
+	name = "Спортивные шорты, Флот"
 	icon_state = "fleet_shorts"
 
 /datum/category_item/underwear/bottom/army_pt_shorts
-	name = "PT shorts, Army"
+	name = "Спортивные шорты, Армия"
 	icon_state = "army_shorts"
 
 /datum/category_item/underwear/bottom/longjon

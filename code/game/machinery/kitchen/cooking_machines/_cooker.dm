@@ -75,7 +75,7 @@
 			return
 
 		if(!isliving(G.affecting))
-			to_chat(user, "<span class='warning'>You can't cook that.</span>")
+			to_chat(user, "<span class='warning'>Вы не можете приготовить это.</span>")
 			return
 
 		cook_mob(G.affecting, user)
@@ -84,16 +84,16 @@
 	// We're trying to cook something else. Check if it's valid.
 	var/obj/item/weapon/reagent_containers/food/snacks/check = I
 	if(istype(check) && islist(check.cooked) && (cook_type in check.cooked))
-		to_chat(user, "<span class='warning'>\The [check] has already been [cook_type].</span>")
+		to_chat(user, "<span class='warning'>[check] уже [cook_type].</span>")
 		return 0
 	else if(istype(check, /obj/item/weapon/reagent_containers/glass))
-		to_chat(user, "<span class='warning'>That would probably break [src].</span>")
+		to_chat(user, "<span class='warning'>Это сломает [src].</span>")
 		return 0
 	else if(istype(check, /obj/item/weapon/disk/nuclear))
-		to_chat(user, "Central Command would kill you if you [cook_type] that.")
+		to_chat(user, "Центральное Командование убъёт вас, если вы попытаетесь приготовить [cook_type] это.")
 		return 0
 	else if(!istype(check) && !istype(check, /obj/item/weapon/holder))
-		to_chat(user, "<span class='warning'>That's not edible.</span>")
+		to_chat(user, "<span class='warning'>Это не еда.</span>")
 		return 0
 
 	// Gotta hurt.
