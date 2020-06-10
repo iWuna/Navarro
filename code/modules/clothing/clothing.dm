@@ -415,7 +415,7 @@ BLIND     // can't see anything
 			to_chat(user, "You cannot turn the light on while in this [user.loc]")
 			return
 		on = !on
-		to_chat(user, "You [on ? "enable" : "disable"] the helmet light.")
+		to_chat(user, "Вы [on ? "включили" : "выключили"] фонарик встроенный в шлем.")
 		update_flashlight(user)
 	else
 		return ..(user)
