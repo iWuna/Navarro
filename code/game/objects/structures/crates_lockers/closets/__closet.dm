@@ -498,7 +498,7 @@
 
 	if(CanToggleLock(user, id_card))
 		locked = !locked
-		visible_message("<span class='notice'>[src] был [locked ? "заперт : "открыт"] [user].</span>", range = 3)
+		visible_message("<span class='notice'>[src] был [locked ? "заперт" : "открыт"] [user].</span>", range = 3)
 		update_icon()
 		return TRUE
 	else
