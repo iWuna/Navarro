@@ -31,12 +31,12 @@
 	output += "<div align='center'>"
 //	output += "<i>[GLOB.using_map.get_map_info()]</i>"
 	output +="<hr>"
-	output += "<a href='byond://?src=\ref[src];show_preferences=1'>Setup Character</A> "
+	output += "<a href='byond://?src=\ref[src];show_preferences=1'>Настройка Персонажа</A> "
 
 	if(GAME_STATE > RUNLEVEL_LOBBY)
-		output += "<a href='byond://?src=\ref[src];manifest=1'>View the Crew Manifest</A> "
+		output += "<a href='byond://?src=\ref[src];manifest=1'>Посмотреть список экипажа</A> "
 
-	output += "<a href='byond://?src=\ref[src];observe=1'>Observe</A> "
+	output += "<a href='byond://?src=\ref[src];observe=1'>Наблюдать</A> "
 
 	if(!IsGuestKey(src.key))
 		establish_db_connection()
@@ -52,22 +52,22 @@
 				break
 
 			if(newpoll)
-				output += "<b><a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A> (NEW!)</b> "
+				output += "<b><a href='byond://?src=\ref[src];showpoll=1'>Опрос</A> (NEW!)</b> "
 			else
-				output += "<a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A> "
+				output += "<a href='byond://?src=\ref[src];showpoll=1'>Опрос</A> "
 
 	output += "<hr>Current character: <b>[client.prefs.real_name]</b>[client.prefs.job_high ? ", [client.prefs.job_high]" : null]<br>"
 	if(GAME_STATE <= RUNLEVEL_LOBBY)
 		if(ready)
-			output += "<a class='linkOn' href='byond://?src=\ref[src];ready=0'>Un-Ready</a>"
+			output += "<a class='linkOn' href='byond://?src=\ref[src];ready=0'>Не готов</a>"
 		else
-			output += "<a href='byond://?src=\ref[src];ready=1'>Ready Up</a>"
+			output += "<a href='byond://?src=\ref[src];ready=1'>Готов</a>"
 	else
-		output += "<a href='byond://?src=\ref[src];late_join=1'>Join Game!</A>"
+		output += "<a href='byond://?src=\ref[src];late_join=1'>Присоединиться!</A>"
 
 	output += "</div>"
 
-	panel = new(src, "Welcome","Welcome to [GLOB.using_map.full_name]", 320, 160, src)
+	panel = new(src, "Welcome","Добро пожаловать на [GLOB.using_map.full_name]", 320, 160, src)
 	panel.set_window_options("can_close=0")
 	panel.set_content(JOINTEXT(output))
 	panel.open()
@@ -116,7 +116,7 @@
 
 	if(href_list["observe"])
 		if(GAME_STATE < RUNLEVEL_LOBBY)
-			to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
+			to_chat(src, "<span class='warning'>Дождитесь запуска основных систем сервера...</span>")
 			return
 
 		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
