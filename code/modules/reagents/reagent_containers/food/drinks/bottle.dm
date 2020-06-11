@@ -333,7 +333,7 @@
 		reagents.add_reagent(/datum/reagent/drink/grenadine, 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/cola
-	name = "\improper Space Cola"
+	name = "Космо-Кола"
 	desc = "Cola. in space."
 	icon_state = "colabottle"
 	center_of_mass = "x=16;y=6"

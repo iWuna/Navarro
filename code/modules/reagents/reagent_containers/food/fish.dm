@@ -1,6 +1,6 @@
 /obj/item/weapon/reagent_containers/food/snacks/fish
-	name = "fish fillet"
-	desc = "A fillet of fish."
+	name = "рыбное филе"
+	desc = "Филе рыбы."
 	icon_state = "fishfillet"
 	filling_color = "#ffdefe"
 	center_of_mass = "x=17;y=13"
@@ -21,7 +21,7 @@
 		var/toxin_amt = reagents.get_reagent_amount(/datum/reagent/toxin/carpotoxin)
 		if(toxin_amt && !prob(user.skill_fail_chance(SKILL_COOKING, 100, SKILL_PROF)))
 			reagents.remove_reagent(/datum/reagent/toxin/carpotoxin, toxin_amt)
-		user.visible_message("<span class='notice'>\The [user] slices \the [src] into thin strips.</span>")
+		user.visible_message("<span class='notice'>[user] режет [src] на кусочки.</span>")
 
 		var/transfer_amt = Floor(reagents.total_volume * 0.3)
 		for(var/i = 1 to 3)
@@ -33,7 +33,7 @@
 		..()
 
 /obj/item/weapon/reagent_containers/food/snacks/fish/poison
-	fish_type = "space carp"
+	fish_type = "космический карп"
 
 /obj/item/weapon/reagent_containers/food/snacks/fish/poison/New()
 	..()

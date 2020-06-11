@@ -1,6 +1,6 @@
 //DNA machine
 /obj/machinery/dnaforensics
-	name = "DNA analyzer"
+	name = "Аналтзатор ДНК"
 	desc = "A high tech machine that is designed to read DNA samples properly."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "dnaopen"
@@ -30,9 +30,9 @@
 		if(!user.unEquip(W, src))
 			return
 		src.bloodsamp = swab
-		to_chat(user, "<span class='notice'>You insert \the [W] into \the [src].</span>")
+		to_chat(user, "<span class='notice'>Вы вставили [W] в [src].</span>")
 	else
-		to_chat(user, "<span class='warning'>\The [src] only accepts used swabs.</span>")
+		to_chat(user, "<span class='warning'>[src] принимает лишь использованные мазки.</span>")
 		return
 
 /obj/machinery/dnaforensics/ui_interact(mob/user, ui_key = "main",var/datum/nanoui/ui = null)

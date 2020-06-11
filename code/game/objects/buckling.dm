@@ -86,8 +86,8 @@
 				"<span class='notice'>Вы слышите металлический лязг.</span>")
 		else
 			M.visible_message(\
-				"<span class='danger'>\The [M.name] is buckled to \the [src] by \the [user.name]!</span>",\
-				"<span class='danger'>You are buckled to \the [src] by \the [user.name]!</span>",\
+				"<span class='danger'>[user.name] пристёгивает [M.name] к [src]!</span>",\
+				"<span class='danger'>[user.name] пристёгивает вас к [src]!</span>",\
 				"<span class='notice'>Вы слышите металлический лязг.</span>")
 
 /obj/proc/user_unbuckle_mob(mob/user)

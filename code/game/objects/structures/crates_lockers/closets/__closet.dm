@@ -314,7 +314,7 @@
 				return
 		src.welded = !src.welded
 		src.update_icon()
-		user.visible_message("<span class='warning'>\The [src] has been [welded?"welded shut":"unwelded"] by \the [user].</span>", blind_message = "You hear welding.", range = 3)
+		user.visible_message("<span class='warning'>[src] [welded?"заваривен":"разваривен"] [user].</span>", blind_message = "Вы слышите звук сварки.", range = 3)
 	else if(setup & CLOSET_HAS_LOCK)
 		src.togglelock(user, W)
 	else
@@ -346,7 +346,7 @@
 		return
 	step_towards(O, src.loc)
 	if(user != O)
-		user.show_viewers("<span class='danger'>[user] stuffs [O] into [src]!</span>")
+		user.show_viewers("<span class='danger'>[user] запихивает [O] в [src]!</span>")
 	src.add_fingerprint(user)
 	return
 
@@ -359,7 +359,7 @@
 		return
 
 	if(!src.open())
-		to_chat(user, "<span class='notice'>It won't budge!</span>")
+		to_chat(user, "<span class='notice'>Не двигается!</span>")
 
 /obj/structure/closet/attack_hand(mob/user as mob)
 	src.add_fingerprint(user)
@@ -369,12 +369,12 @@
 	if(ghost.client && ghost.client.inquisitive_ghost)
 		ghost.examinate(src)
 		if (!src.opened)
-			to_chat(ghost, "It contains: [english_list(contents)].")
+			to_chat(ghost, "Содердит: [english_list(contents)].")
 
 /obj/structure/closet/verb/verb_toggleopen()
 	set src in oview(1)
 	set category = "Object"
-	set name = "Toggle Open"
+	set name = "Открыть"
 
 	if(!CanPhysicallyInteract(usr))
 		return
@@ -498,11 +498,11 @@
 
 	if(CanToggleLock(user, id_card))
 		locked = !locked
-		visible_message("<span class='notice'>\The [src] has been [locked ? null : "un"]locked by \the [user].</span>", range = 3)
+		visible_message("<span class='notice'>[src] был [locked ? "заперт : "открыт"] [user].</span>", range = 3)
 		update_icon()
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>Access denied!</span>")
+		to_chat(user, "<span class='warning'>Доступ запрещён!</span>")
 		return FALSE
 
 /obj/structure/closet/proc/CanToggleLock(var/mob/user, var/obj/item/weapon/card/id/id_card)

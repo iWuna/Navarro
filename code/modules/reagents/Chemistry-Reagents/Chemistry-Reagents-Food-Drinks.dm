@@ -512,7 +512,7 @@
 /datum/reagent/nutriment/mayo
 	name = "Mayonnaise"
 	description = "A mixture of egg yolk with lemon juice or vinegar. Usually put on bland food to make it more edible."
-	taste_description = "mayo"
+	taste_description = "майонез"
 	reagent_state = LIQUID
 	color = "#efede8"
 	taste_mult = 2
@@ -560,7 +560,7 @@
 /datum/reagent/drink/juice/banana
 	name = "Banana Juice"
 	description = "The raw essence of a banana."
-	taste_description = "banana"
+	taste_description = "банан"
 	color = "#c3af00"
 
 	glass_name = "banana juice"
@@ -569,7 +569,7 @@
 /datum/reagent/drink/juice/berry
 	name = "Berry Juice"
 	description = "A delicious blend of several different kinds of berries."
-	taste_description = "berries"
+	taste_description = "ягоды"
 	color = "#990066"
 
 	glass_name = "berry juice"
@@ -578,10 +578,10 @@
 /datum/reagent/drink/juice/carrot
 	name = "Carrot juice"
 	description = "It is just like a carrot but without crunching."
-	taste_description = "carrots"
+	taste_description = "морковь"
 	color = "#ff8c00" // rgb: 255, 140, 0
 
-	glass_name = "carrot juice"
+	glass_name = "морковный сок"
 	glass_desc = "It is just like a carrot but without crunching."
 
 /datum/reagent/drink/juice/carrot/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
@@ -591,26 +591,26 @@
 /datum/reagent/drink/juice/grape
 	name = "Grape Juice"
 	description = "It's grrrrrape!"
-	taste_description = "grapes"
+	taste_description = "виноград"
 	color = "#863333"
 
-	glass_name = "grape juice"
+	glass_name = "виноградный сок"
 	glass_desc = "It's grrrrrape!"
 
 /datum/reagent/drink/juice/lemon
 	name = "Lemon Juice"
 	description = "This juice is VERY sour."
-	taste_description = "sourness"
+	taste_description = "кислость"
 	taste_mult = 1.1
 	color = "#afaf00"
 
-	glass_name = "lemon juice"
+	glass_name = "лемонный сок"
 	glass_desc = "Sour..."
 
 /datum/reagent/drink/juice/lime
 	name = "Lime Juice"
 	description = "The sweet-sour juice of limes."
-	taste_description = "unbearable sourness"
+	taste_description = "нетерпимая кислинка"
 	taste_mult = 1.1
 	color = "#365e30"
 
@@ -626,7 +626,7 @@
 /datum/reagent/drink/juice/orange
 	name = "Orange juice"
 	description = "Both delicious AND rich in Vitamin C, what more do you need?"
-	taste_description = "oranges"
+	taste_description = "апельсины"
 	color = "#e78108"
 
 	glass_name = "orange juice"
@@ -641,7 +641,7 @@
 /datum/reagent/toxin/poisonberryjuice // It has more in common with toxins than drinks... but it's a juice
 	name = "Poison Berry Juice"
 	description = "A tasty juice blended from various kinds of very deadly and toxic berries."
-	taste_description = "berries"
+	taste_description = "ягоды"
 	color = "#863353"
 	strength = 5
 
@@ -686,7 +686,7 @@
 /datum/reagent/drink/juice/tomato
 	name = "Tomato Juice"
 	description = "Tomatoes made into juice. What a waste of big, juicy tomatoes, huh?"
-	taste_description = "tomatoes"
+	taste_description = "томаты"
 	color = "#731008"
 
 	glass_name = "tomato juice"
@@ -701,7 +701,7 @@
 /datum/reagent/drink/juice/watermelon
 	name = "Watermelon Juice"
 	description = "Delicious juice made from watermelon."
-	taste_description = "sweet watermelon"
+	taste_description = "сладкий арбуз"
 	color = "#b83333"
 
 	glass_name = "watermelon juice"
@@ -720,7 +720,7 @@
 /datum/reagent/drink/juice/apple
 	name = "Apple Juice"
 	description = "Delicious sweet juice made from apples."
-	taste_description = "sweet apples"
+	taste_description = "сладкие яблоки"
 	color = "#c07c40"
 
 	glass_name = "apple juice"
@@ -729,7 +729,7 @@
 /datum/reagent/drink/juice/pear
 	name = "Pear Juice"
 	description = "Delicious sweet juice made from pears."
-	taste_description = "sweet pears"
+	taste_description = "сладкие груши"
 	color = "#ffff66"
 
 	glass_name = "pear juice"
@@ -740,16 +740,16 @@
 /datum/reagent/drink/milk
 	name = "Milk"
 	description = "An opaque white liquid produced by the mammary glands of mammals."
-	taste_description = "milk"
+	taste_description = "молоко"
 	color = "#dfdfdf"
 
-	glass_name = "milk"
+	glass_name = "молоко"
 	glass_desc = "White and nutritious goodness!"
 
 /datum/reagent/drink/milk/chocolate
 	name =  "Chocolate Milk"
 	description = "A mixture of perfectly healthy milk and delicious chocolate."
-	taste_description = "chocolate milk"
+	taste_description = "шоколадное молоко"
 	color = "#74533b"
 
 	glass_name = "chocolate milk"
@@ -1061,12 +1061,12 @@
 /datum/reagent/drink/nuka_cola
 	name = "Nuka Cola"
 	description = "Cola, cola never changes."
-	taste_description = "the future"
+	taste_description = "вуна сука со своим фоллаутом и тут"
 	color = "#100800"
 	adj_temp = -5
 	adj_sleepy = -2
 
-	glass_name = "Nuka-Cola"
+	glass_name = "Ядер-Кола"
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland"
 	glass_special = list(DRINK_FIZZ)
 
@@ -1090,13 +1090,13 @@
 /datum/reagent/drink/space_cola
 	name = "Space Cola"
 	description = "A refreshing beverage."
-	taste_description = "cola"
+	taste_description = "кола"
 	reagent_state = LIQUID
 	color = "#100800"
 	adj_drowsy = -3
 	adj_temp = -5
 
-	glass_name = "Space Cola"
+	glass_name = "Космо-Кола"
 	glass_desc = "A glass of refreshing Space Cola"
 	glass_special = list(DRINK_FIZZ)
 

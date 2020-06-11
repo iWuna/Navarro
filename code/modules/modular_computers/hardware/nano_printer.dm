@@ -24,7 +24,7 @@
 		new paper_type(T,text_to_print, paper_title, md)
 		stored_paper--
 		playsound(T, "sound/machines/dotprinter.ogg", 30)
-		T.visible_message("<span class='notice'>\The [src] prints out a paper.</span>")
+		T.visible_message("<span class='notice'>[src] распечатывает лист бумаги.</span>")
 		return 1
 
 /obj/item/weapon/stock_parts/computer/nano_printer/proc/printer_ready()
@@ -44,7 +44,7 @@
 			to_chat(user, "You try to add \the [W] into \the [src], but its paper bin is full.")
 			return
 
-		to_chat(user, "You insert \the [W] into [src].")
+		to_chat(user, "Вы вставили [W] в [src].")
 		qdel(W)
 		stored_paper++
 	else if(istype(W, /obj/item/weapon/paper_bundle))

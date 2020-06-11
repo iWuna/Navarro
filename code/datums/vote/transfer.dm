@@ -16,11 +16,11 @@
 		to_chat(creator, "The current alert status is too high to call for a crew transfer!")
 		return FALSE
 	if(GAME_STATE <= RUNLEVEL_SETUP)
-		to_chat(creator, "The crew transfer button has been disabled!")	
+		to_chat(creator, "The crew transfer button has been disabled!")
 		return FALSE
 
 /datum/vote/transfer/setup_vote(mob/creator, automatic)
-	choices = list("Initiate Crew Transfer", "Extend the Round ([config.vote_autotransfer_interval / 600] minutes)")
+	choices = list("Инициировать конец смены", "Добавить времени ([config.vote_autotransfer_interval / 600] мин.)")
 	if (config.allow_extra_antags && SSvote.is_addantag_allowed(creator, automatic))
 		choices += "Add Antagonist"
 	..()
@@ -40,13 +40,13 @@
 			factor = 1.2
 		else
 			factor = 1.4
-	choices["Initiate Crew Transfer"] = round(choices["Initiate Crew Transfer"] * factor)
+	choices["Инициировать конец смены"] = round(choices["Инициировать конец смены"] * factor)
 	to_world("<font color='purple'>Crew Transfer Factor: [factor]</font>")
 
 /datum/vote/transfer/report_result()
 	if(..())
 		return 1
-	if(result[1] == "Initiate Crew Transfer")
+	if(result[1] == "Инициировать конец смены")
 		init_autotransfer()
 	else if(result[1] == "Add Antagonist")
 		SSvote.queued_auto_vote = /datum/vote/add_antagonist
@@ -58,7 +58,7 @@
 		return !isliving(user) || ismouse(user) || is_drone(user)
 
 /datum/vote/transfer/check_toggle()
-	return config.allow_vote_restart ? "Allowed" : "Disallowed"
+	return config.allow_vote_restart ? "Разрешено" : "Запрещено"
 
 /datum/vote/transfer/toggle(mob/user)
 	if(is_admin(user))

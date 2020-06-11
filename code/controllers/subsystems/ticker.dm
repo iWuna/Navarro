@@ -138,7 +138,7 @@ SUBSYSTEM_DEF(ticker)
 			else
 				SSstatistics.set_field_details("end_proper","proper completion")
 				if(!delay_end)
-					to_world("<span class='notice'><b>Restarting in [restart_timeout/10] seconds</b></span>")
+					to_world("<span class='notice'><b>Рестарт через [restart_timeout/10] секунд</b></span>")
 			handle_tickets()
 		if(END_GAME_ENDING)
 			restart_timeout -= (world.time - last_fire)

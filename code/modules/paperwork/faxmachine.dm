@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(alldepartments)
 GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 /obj/machinery/photocopier/faxmachine
-	name = "fax machine"
+	name = "факс"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "fax"
 	insert_anim = "faxsend"
@@ -36,7 +36,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		if(!user.unEquip(O, src))
 			return
 		scan = O
-		to_chat(user, "<span class='notice'>You insert \the [O] into \the [src].</span>")
+		to_chat(user, "<span class='notice'>Вы вставили [O] в [src].</span>")
 	else
 		..()
 
@@ -47,7 +47,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 /obj/machinery/photocopier/faxmachine/interact(mob/user)
 	user.set_machine(src)
 
-	var/dat = "<meta charset=\"UTF-8\">Fax Machine<BR>"
+	var/dat = "<meta charset=\"UTF-8\">Факс<BR>"
 
 	var/scan_name
 	if(scan)
@@ -55,29 +55,29 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	else
 		scan_name = "--------"
 
-	dat += "Confirm Identity: <a href='byond://?src=\ref[src];scan=1'>[scan_name]</a><br>"
+	dat += "Подтвердите личность: <a href='byond://?src=\ref[src];scan=1'>[scan_name]</a><br>"
 
 	if(authenticated)
-		dat += "<a href='byond://?src=\ref[src];logout=1'>{Log Out}</a>"
+		dat += "<a href='byond://?src=\ref[src];logout=1'>{Выйти}</a>"
 	else
-		dat += "<a href='byond://?src=\ref[src];auth=1'>{Log In}</a>"
+		dat += "<a href='byond://?src=\ref[src];auth=1'>{Авторизироваться}</a>"
 
 	dat += "<hr>"
 
 	if(authenticated)
-		dat += "<b>Logged in to:</b> [GLOB.using_map.boss_name] Quantum Entanglement Network<br><br>"
+		dat += "<b>Авторизация в:</b> Квантовый Передатчик [GLOB.using_map.boss_name]<br><br>"
 
 		if(copyitem)
-			dat += "<a href='byond://?src=\ref[src];remove=1'>Remove Item</a><br><br>"
+			dat += "<a href='byond://?src=\ref[src];remove=1'>Убрать предмет</a><br><br>"
 
 			if(sendcooldown)
-				dat += "<b>Transmitter arrays realigning. Please stand by.</b><br>"
+				dat += "<b>Передатчик настраивается. Пожалуйста, ожидайте.</b><br>"
 
 			else
 
-				dat += "<a href='byond://?src=\ref[src];send=1'>Send</a><br>"
-				dat += "<b>Currently sending:</b> [copyitem.name]<br>"
-				dat += "<b>Sending to:</b> <a href='byond://?src=\ref[src];dept=1'>[destination]</a><br>"
+				dat += "<a href='byond://?src=\ref[src];send=1'>Отправить</a><br>"
+				dat += "<b>Предмет:</b> [copyitem.name]<br>"
+				dat += "<b>Отправка к:</b> <a href='byond://?src=\ref[src];dept=1'>[destination]</a><br>"
 
 		else
 			if(sendcooldown)
@@ -90,7 +90,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		dat += "Proper authentication is required to use this device.<br><br>"
 
 		if(copyitem)
-			dat += "<a href ='byond://?src=\ref[src];remove=1'>Remove Item</a><br>"
+			dat += "<a href ='byond://?src=\ref[src];remove=1'>Убрать предмет</a><br>"
 
 	user << browse(dat, "window=copier")
 	onclose(user, "copier")
@@ -130,7 +130,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	if(href_list["dept"])
 		var/lastdestination = destination
-		destination = input(usr, "Which department?", "Choose a department", "") as null|anything in (GLOB.alldepartments + admin_departments)
+		destination = input(usr, "В какой отдел?", "Выберите отдел", "") as null|anything in (GLOB.alldepartments + admin_departments)
 		if(!destination) destination = lastdestination
 
 	if(href_list["auth"])
@@ -155,10 +155,10 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 			success = F.recievefax(copyitem)
 
 	if (success)
-		visible_message("[src] beeps, \"Message transmitted successfully.\"")
+		visible_message("[src] пищит, \"Сообщение успешно отправлено.\"")
 		//sendcooldown = 600
 	else
-		visible_message("[src] beeps, \"Error transmitting message.\"")
+		visible_message("[src] пищит, \"Ошибка при отправке сообщения.\"")
 
 /obj/machinery/photocopier/faxmachine/proc/recievefax(var/obj/item/incoming)
 	if(stat & (BROKEN|NOPOWER))
@@ -200,7 +200,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	else if (istype(copyitem, /obj/item/weapon/paper_bundle))
 		rcvdcopy = bundlecopy(copyitem, 0)
 	else
-		visible_message("[src] beeps, \"Error transmitting message.\"")
+		visible_message("[src] пищит, \"Ошибка при отправке сообщения.\"")
 		return
 
 	rcvdcopy.forceMove(null) //hopefully this shouldn't cause trouble
@@ -228,8 +228,8 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 /obj/machinery/photocopier/faxmachine/proc/message_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/reply_type, font_colour="#006100")
 	var/msg = "<span class='notice'><b><font color='[font_colour]'>[faxname]: </font>[get_options_bar(sender, 2,1,1)]"
-	msg += "(<A HREF='?_src_=holder;take_ic=\ref[sender]'>TAKE</a>) (<a href='?_src_=holder;FaxReply=\ref[sender];originfax=\ref[src];replyorigin=[reply_type]'>REPLY</a>)</b>: "
-	msg += "Receiving '[sent.name]' via secure connection ... <a href='?_src_=holder;AdminFaxView=\ref[sent]'>view message</a></span>"
+	msg += "(<A HREF='?_src_=holder;take_ic=\ref[sender]'>ВЗЯТЬ</a>) (<a href='?_src_=holder;FaxReply=\ref[sender];originfax=\ref[src];replyorigin=[reply_type]'>ОТВЕТ</a>)</b>: "
+	msg += "Получение '[sent.name]' по защищенному соединению ... <a href='?_src_=holder;AdminFaxView=\ref[sent]'>просмотр</a></span>"
 
 	for(var/client/C in GLOB.admins)
 		if(check_rights((R_ADMIN|R_MOD),0,C))

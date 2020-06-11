@@ -6,12 +6,12 @@
 
 	heat_protection = HEAD
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_MINOR,
 		laser = ARMOR_LASER_SMALL,
-		energy = ARMOR_ENERGY_MINOR, 
-		bomb = ARMOR_BOMB_PADDED, 
-		bio = ARMOR_BIO_SHIELDED, 
+		energy = ARMOR_ENERGY_MINOR,
+		bomb = ARMOR_BOMB_PADDED,
+		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_MINOR
 		)
 	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
@@ -38,12 +38,12 @@
 	w_class = ITEM_SIZE_HUGE//bulky item
 	desc = "A high-tech dark red space suit. Used for AI satellite maintenance."
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_MINOR,
 		laser = ARMOR_LASER_SMALL,
-		energy = ARMOR_ENERGY_MINOR, 
-		bomb = ARMOR_BOMB_PADDED, 
-		bio = ARMOR_BIO_SHIELDED, 
+		energy = ARMOR_ENERGY_MINOR,
+		bomb = ARMOR_BOMB_PADDED,
+		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_MINOR
 		)
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit)
@@ -169,14 +169,14 @@ else if(##equipment_var) {\
 
 /obj/item/clothing/suit/space/void/verb/toggle_helmet()
 
-	set name = "Toggle Helmet"
+	set name = "Переключить шлем"
 	set category = "Object"
 	set src in usr
 
 	if(!istype(src.loc,/mob/living)) return
 
 	if(!helmet)
-		to_chat(usr, "There is no helmet installed.")
+		to_chat(usr, "Шлем отсутствует.")
 		return
 
 	var/mob/living/carbon/human/H = usr
@@ -291,11 +291,11 @@ else if(##equipment_var) {\
 			to_chat(user, "<span class='warning'>You cannot modify \the [src] while it is being worn.</span>")
 			return
 		if(tank)
-			to_chat(user, "\The [src] already has an airtank installed.")
+			to_chat(user, "[src] уже имеет баллон.")
 		else
 			if(!user.unEquip(W, src))
 				return
-			to_chat(user, "You insert \the [W] into \the [src]'s storage compartment.")
+			to_chat(user, "Вы вставляете [W] в систему хранения [src].")
 			tank = W
 			playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
 		return

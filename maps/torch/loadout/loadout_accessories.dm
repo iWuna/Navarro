@@ -53,7 +53,7 @@
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
 
 /datum/gear/accessory/torch_patch
-	display_name = "NTEV Blue Jay mission patch"
+	display_name = "Нашивка миссии ГЭК Наварро"
 	path = /obj/item/clothing/accessory/solgov/torch_patch
 	description = "A shoulder patch representing the NTEV Blue Jay and its mission. Given to all the oddjobs pulled from various branches to work on the Blue Jay."
 
@@ -67,7 +67,7 @@
 	)
 
 /datum/gear/accessory/fleetpatch
-	display_name = "fleet patch"
+	display_name = "нашивка флота"
 	path = /obj/item/clothing/accessory/solgov/fleet_patch
 	flags = GEAR_HAS_TYPE_SELECTION
 	allowed_branches = list(/datum/mil_branch/fleet)

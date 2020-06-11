@@ -38,7 +38,7 @@
 	has  = "имеет"
 	is   = "это"
 	does = "делает"
-	self = "сам себе"
+	self = "сам себя"
 
 /datum/gender/female
 	key  = FEMALE
@@ -51,7 +51,7 @@
 	has  = "имеет"
 	is   = "это"
 	does = "делает"
-	self = "сама себе"
+	self = "сама себя"
 
 /datum/gender/neuter
 	key = NEUTER
@@ -65,4 +65,4 @@
 	has  = "имеет"
 	is   = "это"
 	does = "делает"
-	self = "само себе"
+	self = "само себя"
