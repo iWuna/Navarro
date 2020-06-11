@@ -291,6 +291,12 @@
 	description = "A selection of collars, not the most practical, but some people are into that"
 	path = /obj/item/clothing/accessory/collar/holo
 
+/datum/gear/passport
+	display_name = "passports selection"
+	description = "A selection of passports."
+	path = /obj/item/weapon/passport
+	flags = GEAR_HAS_SUBTYPE_SELECTION
+
 /datum/gear/accessory/collars/New()
 	..()
 	var/collars = list()
