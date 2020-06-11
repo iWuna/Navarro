@@ -74,7 +74,7 @@ SUBSYSTEM_DEF(ticker)
 			to_world("<B>Unable to choose playable game mode.</B> Reverting to pre-game lobby for a revote.")
 			return
 		if(CHOOSE_GAMEMODE_RESTART)
-			to_world("<B>Unable to choose playable game mode.</B> Restarting world.")
+			to_world("<B>Игровой режим не выбран.</B> Перезапуск мира.")
 			world.Reboot("Failure to select gamemode. Tried [english_list(bad_modes)].")
 			return
 	// This means we succeeded in picking a game mode.
@@ -357,22 +357,22 @@ Helpers
 
 /datum/controller/subsystem/ticker/proc/notify_delay()
 	if(!delay_notified)
-		to_world("<span class='notice'><b>An admin has delayed the round end</b></span>")
+		to_world("<span class='notice'><b>Администратор приостановил конец раунда.</b></span>")
 	delay_notified = 1
 
 /datum/controller/subsystem/ticker/proc/handle_tickets()
 	for(var/datum/ticket/ticket in tickets)
 		if(ticket.is_active())
 			if(!delay_notified)
-				message_staff("<span class='warning'><b>Automatically delaying restart due to active tickets.</b></span>")
+				message_staff("<span class='warning'><b>Автоматически задерживаем конец раунда из-за открытых тикетов администрации.</b></span>")
 			notify_delay()
 			end_game_state = END_GAME_AWAITING_TICKETS
 			return
-	message_staff("<span class='warning'><b>No active tickets remaining, restarting in [restart_timeout/10] seconds if an admin has not delayed the round end.</b></span>")
+	message_staff("<span class='warning'><b>Активных тикетов не обнаружено, рестарт через [restart_timeout/10] секунд, если администратор не приостановит раунд.</b></span>")
 	end_game_state = END_GAME_ENDING
 
 /datum/controller/subsystem/ticker/proc/declare_completion()
-	to_world("<br><br><br><H1>A round of [mode.name] has ended!</H1>")
+	to_world("<br><br><br><H1>Раунд с режимом [mode.name] завершён!</H1>")
 	for(var/client/C)
 		if(!C.credits)
 			C.RollCredits()

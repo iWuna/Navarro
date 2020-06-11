@@ -84,23 +84,23 @@
 		if(prob(2))
 			if(active_breathing)
 				owner.visible_message(
-					"<B>\The [owner]</B> coughs up blood!",
-					"<span class='warning'>You cough up blood!</span>",
-					"You hear someone coughing!",
+					"<B>[owner]</B> кашляет кровью!",
+					"<span class='warning'>Вы кашляете кровью!</span>",
+					"Вы слышите как кто-то кашляет!",
 				)
 			else
 				var/obj/item/organ/parent = owner.get_organ(parent_organ)
 				owner.visible_message(
-					"blood drips from <B>\the [owner]'s</B> [parent.name]!",
+					"кровь стекает <B>[owner]</B> с [parent.name]!",
 				)
 
 			owner.drip(1)
 		if(prob(4))
 			if(active_breathing)
 				owner.visible_message(
-					"<B>\The [owner]</B> gasps for air!",
-					"<span class='danger'>You can't breathe!</span>",
-					"You hear someone gasp for air!",
+					"<B>[owner]</B> задыхается!",
+					"<span class='danger'>Вы не можете дышать!</span>",
+					"Вы слышите как кто-то задыхается!",
 				)
 			else
 				to_chat(owner, "<span class='danger'>You're having trouble getting enough [breath_type]!</span>")
@@ -110,7 +110,7 @@
 /obj/item/organ/internal/lungs/proc/rupture()
 	var/obj/item/organ/external/parent = owner.get_organ(parent_organ)
 	if(istype(parent))
-		owner.custom_pain("You feel a stabbing pain in your [parent.name]!", 50, affecting = parent)
+		owner.custom_pain("Вы ощущаете колющую боль в [parent.name]!", 50, affecting = parent)
 	bruise()
 
 //exposure to extreme pressures can rupture lungs
@@ -167,7 +167,7 @@
 			if(inhale_efficiency < 0.8)
 				owner.emote("gasp")
 			else if(prob(20))
-				to_chat(owner, SPAN_WARNING("It's hard to breathe..."))
+				to_chat(owner, SPAN_WARNING("Тяжело дышать..."))
 		breath_fail_ratio = 1 - inhale_efficiency
 		failed_inhale = 1
 	else

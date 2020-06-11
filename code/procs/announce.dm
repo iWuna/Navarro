@@ -3,7 +3,7 @@
 /var/datum/announcement/minor/minor_announcement = new(new_sound = 'sound/AI/commandreport.ogg',)
 
 /datum/announcement
-	var/title = "Attention"
+	var/title = "Внимание"
 	var/announcer = ""
 	var/log = 0
 	var/sound
@@ -12,7 +12,7 @@
 	var/announcement_type = "Announcement"
 
 /datum/announcement/priority
-	title = "Priority Announcement"
+	title = "Приоритетное оповещение"
 	announcement_type = "Priority Announcement"
 
 /datum/announcement/priority/security
@@ -26,7 +26,7 @@
 
 /datum/announcement/priority/command/New(var/do_log = 1, var/new_sound = 'sound/misc/notice2.ogg', var/do_newscast = 0)
 	..(do_log, new_sound, do_newscast)
-	title = "[command_name()] Update"
+	title = "[command_name()] оповещение"
 	announcement_type = "[command_name()] Update"
 
 /datum/announcement/proc/Announce(var/message as text, var/new_title = "", var/new_sound = null, var/do_newscast = newscast, var/msg_sanitized = 0, var/zlevels = GLOB.using_map.contact_levels)

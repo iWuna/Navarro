@@ -128,7 +128,7 @@
 		SSmachines.makepowernets()
 
 	current_floor = next_floor
-	control_panel_interior.visible_message("Лифт медленно[moving_upwards ? "поднимается" : "опускается"].")
+	control_panel_interior.visible_message("Лифт медленно [moving_upwards ? "поднимается" : "опускается"].")
 
 	return 1
 

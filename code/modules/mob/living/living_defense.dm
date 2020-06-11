@@ -134,7 +134,7 @@
 			Weaken(rand(3,5))
 		if(M.skill_fail_prob(SKILL_HAULING, 100))
 			M.Weaken(rand(4,8))
-		M.visible_message(SPAN_DANGER("\The [M] collides with \the [src]!"))
+		M.visible_message(SPAN_DANGER("[M] сталкивается с [src]!"))
 
 	if(!aura_check(AURA_TYPE_THROWN, AM, TT.speed))
 		return
@@ -147,10 +147,10 @@
 		var/miss_chance = max(15*(TT.dist_travelled-2),0)
 
 		if (prob(miss_chance))
-			visible_message("<span class='notice'>\The [O] misses [src] narrowly!</span>")
+			visible_message("<span class='notice'>[O] промахивается стреляя в [src]!</span>")
 			return
 
-		src.visible_message("<span class='warning'>\The [src] has been hit by \the [O]</span>.")
+		src.visible_message("<span class='warning'>[src] был повреждён [O]</span>.")
 		apply_damage(throw_damage, dtype, null, O.damage_flags(), O)
 
 		if(TT.thrower)

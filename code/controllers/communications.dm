@@ -136,21 +136,21 @@ var/const/BLAST_DOORS_FREQ  = 1303 // Used by blast doors, buttons controlling t
 var/const/AIRLOCK_FREQ      = 1305 // Used by airlocks and buttons controlling them.
 
 var/list/radiochannels = list(
-	"Common"		= PUB_FREQ,
-	"Science"		= SCI_FREQ,
-	"Command"		= COMM_FREQ,
-	"Medical"		= MED_FREQ,
-	"Engineering"	= ENG_FREQ,
-	"Security" 		= SEC_FREQ,
+	"Общий"		= PUB_FREQ,
+	"Научный"		= SCI_FREQ,
+	"Командный"		= COMM_FREQ,
+	"Медицинский"		= MED_FREQ,
+	"Инженерный"	= ENG_FREQ,
+	"Служба Безопасности" 		= SEC_FREQ,
 	"Response Team" = ERT_FREQ,
-	"Special Ops" 	= DTH_FREQ,
-	"Mercenary" 	= SYND_FREQ,
-	"Raider"		= RAID_FREQ,
-	"Exploration"	= EXP_FREQ,
-	"Supply" 		= SUP_FREQ,
-	"Service" 		= SRV_FREQ,
+	"Отряд Специального Назначения" 	= DTH_FREQ,
+	"Наёмники" 	= SYND_FREQ,
+	"Рейдеры"		= RAID_FREQ,
+	"Исследователи"	= EXP_FREQ,
+	"Карго" 		= SUP_FREQ,
+	"Сервис" 		= SRV_FREQ,
 	"AI Private"	= AI_FREQ,
-	"Entertainment" = ENT_FREQ,
+	"Медиа" = ENT_FREQ,
 	"Medical(I)"	= MED_I_FREQ,
 	"Security(I)"	= SEC_I_FREQ,
 	"Recon"			= SKRELL_FREQ
@@ -169,7 +169,7 @@ var/list/channel_color_presets = list(
 	"Bemoaning Brown" = COMMS_COLOR_SUPPLY,
 	"Gastric Green" = COMMS_COLOR_SERVICE,
 	"Bold Brass" = COMMS_COLOR_EXPLORER,
-	"Viewable Violet" = COMMS_COLOR_SKRELL	
+	"Viewable Violet" = COMMS_COLOR_SKRELL
 )
 
 // central command channels, i.e deathsquid & response teams

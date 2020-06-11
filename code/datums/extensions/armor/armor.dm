@@ -2,8 +2,8 @@
 	base_type = /datum/extension/armor
 	expected_type = /atom/movable
 	var/list/armor_values
-	var/full_block_message = "Your armor absorbs the blow!"
-	var/partial_block_message = "Your armor softens the blow!"
+	var/full_block_message = "Ваша броня поглощает импульс"
+	var/partial_block_message = "Ваша броня частично поглощает импульс!"
 
 	// Armor 'works' for damages in range from 0 to [armor_range_mult * armor].
 	// The lower the damage, the harder it gets blocked, tapering to 0 mitigation at [armor_range_mult * armor]

@@ -52,7 +52,7 @@
 
 	if(isCrowbar(W))
 		if(!length(contents))
-			to_chat(user, "<span class='notice'>\The [src] is empty.</span>")
+			to_chat(user, "<span class='notice'>[src] пуст.</span>")
 		else
 			var/obj/item/stack/tile/E = input("Choose remove tile type.", "Tiles") as null|anything in contents
 			if(E)

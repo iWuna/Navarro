@@ -154,7 +154,7 @@
 		if(P.hidden && !emagged)
 			return 1
 
-		var/reason = sanitize(input(user,"Reason:","Why do you require this item?","") as null|text,,0)
+		var/reason = sanitize(input(user,"Reason:","Для чего вам этот заказ?","") as null|text,,0)
 		if(!reason)
 			return 1
 
@@ -178,7 +178,7 @@
 		O.comment = "#[O.ordernum]"
 		SSsupply.requestlist += O
 
-		if(can_print() && alert(user, "Would you like to print a confirmation receipt?", "Print receipt?", "Yes", "No") == "Yes")
+		if(can_print() && alert(user, "Вы желаете распечатать справку о подтверждении?", "Распечатать?", "Да", "Нет") == "Да")
 			print_order(O, user)
 		return 1
 
@@ -219,7 +219,7 @@
 		var/datum/supply_order/SO = find_order_by_id(id, SSsupply.requestlist)
 		if(SO)
 			if(SO.object.cost >= SSsupply.points)
-				to_chat(usr, "<span class='warning'>Not enough points to purchase \the [SO.object.name]!</span>")
+				to_chat(usr, "<span class='warning'>Недостаточно очков чтобы купить [SO.object.name]!</span>")
 			else
 				SSsupply.requestlist -= SO
 				SSsupply.shoppinglist += SO

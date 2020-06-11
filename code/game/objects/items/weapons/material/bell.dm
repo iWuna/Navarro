@@ -1,7 +1,7 @@
 // sprite stolen from vgstation
 
 /obj/item/weapon/material/bell
-	name = "bell"
+	name = "звонок"
 	desc = "A bell to ring to get people's attention. Don't break it."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "bell"
@@ -15,10 +15,10 @@
 	if (user.a_intent == I_GRAB)
 		return ..()
 	else if (user.a_intent == I_HURT)
-		user.visible_message("<span class='warning'>\The [user] hammers \the [src]!</span>")
+		user.visible_message("<span class='warning'>[user] хуярит рукой звеня в [src]!</span>")
 		playsound(user.loc, 'sound/items/manydings.ogg', 60)
 	else
-		user.visible_message("<span class='notice'>\The [user] rings \the [src].</span>")
+		user.visible_message("<span class='notice'>[user] звенит в [src].</span>")
 		playsound(user.loc, 'sound/items/oneding.ogg', 20)
 	flick("bell_dingeth", src)
 

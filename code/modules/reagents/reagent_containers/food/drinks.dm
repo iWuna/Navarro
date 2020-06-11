@@ -23,7 +23,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/proc/open(mob/user)
 	playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
-	to_chat(user, "<span class='notice'>You open \the [src] with an audible pop!</span>")
+	to_chat(user, "<span class='notice'>Вы открыли [src] с небольшим хлопком!</span>")
 	atom_flags |= ATOM_FLAG_OPEN_CONTAINER
 
 /obj/item/weapon/reagent_containers/food/drinks/attack(mob/M as mob, mob/user as mob, def_zone)
@@ -46,24 +46,24 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/standard_feed_mob(var/mob/user, var/mob/target)
 	if(!is_open_container())
-		to_chat(user, "<span class='notice'>You need to open \the [src]!</span>")
+		to_chat(user, "<span class='notice'>Сначала нужно открыть [src]!</span>")
 		return 1
 	return ..()
 
 /obj/item/weapon/reagent_containers/food/drinks/standard_dispenser_refill(var/mob/user, var/obj/structure/reagent_dispensers/target)
 	if(!is_open_container())
-		to_chat(user, "<span class='notice'>You need to open \the [src]!</span>")
+		to_chat(user, "<span class='notice'>Сначала нужно открыть [src]!</span>")
 		return 1
 	return ..()
 
 /obj/item/weapon/reagent_containers/food/drinks/standard_pour_into(var/mob/user, var/atom/target)
 	if(!is_open_container())
-		to_chat(user, "<span class='notice'>You need to open \the [src]!</span>")
+		to_chat(user, "<span class='notice'>Сначала нужно открыть [src]!</span>")
 		return 1
 	return ..()
 
 /obj/item/weapon/reagent_containers/food/drinks/self_feed_message(var/mob/user)
-	to_chat(user, "<span class='notice'>You swallow a gulp from \the [src].</span>")
+	to_chat(user, "<span class='notice'>Вы сделали глоток из [src].</span>")
 	if(user.has_personal_goal(/datum/goal/achievement/specific_object/drink))
 		for(var/datum/reagent/R in reagents.reagent_list)
 			user.update_personal_goal(/datum/goal/achievement/specific_object/drink, R.type)
@@ -76,15 +76,15 @@
 	if(distance > 1)
 		return
 	if(!reagents || reagents.total_volume == 0)
-		to_chat(user, "<span class='notice'>\The [src] is empty!</span>")
+		to_chat(user, "<span class='notice'>[src] пуст!</span>")
 	else if (reagents.total_volume <= volume * 0.25)
-		to_chat(user, "<span class='notice'>\The [src] is almost empty!</span>")
+		to_chat(user, "<span class='notice'>[src] почти пуст!</span>")
 	else if (reagents.total_volume <= volume * 0.66)
-		to_chat(user, "<span class='notice'>\The [src] is half full!</span>")
+		to_chat(user, "<span class='notice'>[src] наполовину полон!</span>")
 	else if (reagents.total_volume <= volume * 0.90)
-		to_chat(user, "<span class='notice'>\The [src] is almost full!</span>")
+		to_chat(user, "<span class='notice'>[src] почти полон!</span>")
 	else
-		to_chat(user, "<span class='notice'>\The [src] is full!</span>")
+		to_chat(user, "<span class='notice'>[src] полон!</span>")
 
 /obj/item/weapon/reagent_containers/food/drinks/proc/get_filling_state()
 	var/percent = round((reagents.total_volume / volume) * 100)

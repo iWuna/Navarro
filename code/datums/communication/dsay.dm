@@ -115,7 +115,7 @@
 
 /decl/dsay_communication/admin/get_message(var/client/communicator, var/mob/M, var/message)
 	var/stafftype = uppertext(communicator.holder.rank)
-	return "<span class='name'>[stafftype]([communicator.key])</span> says, <span class='message'>\"[message]\"</span>"
+	return "<span class='name'>[stafftype]([communicator.key])</span> говорит, <span class='message'>\"[message]\"</span>"
 
 /decl/dsay_communication/admin/adjust_channel(var/decl/communication_channel/dsay)
 	dsay.log_proc = /proc/log_say

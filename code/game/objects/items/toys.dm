@@ -700,7 +700,7 @@
 		user.visible_message("<span class='warning'><b>\The [user]</b> attempts to strangle [src]!</span>","<span class='warning'>You attempt to strangle [src]!</span>")
 	else
 		user.visible_message("<span class='notice'><b>\The [user]</b> pokes the [src].</span>","<span class='notice'>You poke the [src].</span>")
-		visible_message("[src] says, \"[phrase]\"")
+		visible_message("[src] говорит, \"[phrase]\"")
 
 /obj/structure/plushie/ian
 	name = "plush corgi"

@@ -111,7 +111,7 @@ proc/get_radio_key_from_channel(var/channel)
 		. = 1
 	else if(stuttering)
 		message = NewStutter(message)
-		verb = pick("stammers","stutters")
+		verb = pick("запинается","заикается")
 		. = 1
 	else if(has_chem_effect(CE_SQUEAKY, 1))
 		message = "<font face = 'Comic Sans MS'>[message]</font>"
@@ -243,7 +243,7 @@ proc/get_radio_key_from_channel(var/channel)
 			message_range = speaking.get_talkinto_msg_range(message)
 		var/msg
 		if(!speaking || !(speaking.flags & NO_TALK_MSG))
-			msg = "<span class='notice'>\The [src] talks into \the [used_radios[1]]</span>"
+			msg = "<span class='notice'>[src] говорит в [used_radios[1]]</span>"
 		for(var/mob/living/M in hearers(5, src))
 			if((M != src) && msg)
 				M.show_message(msg)

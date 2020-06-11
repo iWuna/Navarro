@@ -53,11 +53,11 @@
 	var/text = get_start_text()
 
 	log_vote(text)
-	to_world("<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[SSvote];vote_panel=1'>here</a> to place your votes.\nYou have [config.vote_period/10] seconds to vote.</font>")
+	to_world("<font color='purple'><b>[text]</b>\nНапишите <b>vote</b> или нажмите <a href='?src=\ref[SSvote];vote_panel=1'>тут</a> чтобы проголосовать.\nУ вас есть [config.vote_period/10] секунд чтобы проголосовать.</font>")
 	to_world(sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = GLOB.vote_sound_channel))
 
 /datum/vote/proc/get_start_text()
-	return "[capitalize(name)] vote started by [initiator]."
+	return "[capitalize(name)] голосование запущено [initiator]."
 
 //Modifies the vote totals based on non-voting mobs.
 /datum/vote/proc/handle_default_votes()
@@ -79,7 +79,7 @@
 
 	var/text = get_result_announcement()
 	log_vote(text)
-	to_world("<font color='purple'>[text]</font>")	
+	to_world("<font color='purple'>[text]</font>")
 
 	if(!(result[result[1]] > 0))
 		return 1
@@ -87,13 +87,13 @@
 /datum/vote/proc/get_result_announcement()
 	var/list/text = list()
 	if(!(result[result[1]] > 0)) // No one voted.
-		text += "<b>Vote Result: Inconclusive - No Votes!</b>"
+		text += "<b>Результат голосования: Не решено - Нет голосов!</b>"
 	else
-		text += "<b>Vote Result: [display_choices[result[1]]]</b>"
+		text += "<b>Результат голосования: [display_choices[result[1]]]</b>"
 		if(length(result) >= 2)
-			text += "\nSecond place: [display_choices[result[2]]]"
+			text += "\nВторое место: [display_choices[result[2]]]"
 		if(length(result) >= 3)
-			text += ", third place: [display_choices[result[3]]]"
+			text += ", третье место: [display_choices[result[3]]]"
 
 	return JOINTEXT(text)
 
