@@ -44,7 +44,7 @@ var/global/floorIsLava = 0
 		to_chat(usr, "Ошибка: ты не админ!")
 		return
 
-	var/body = "<html><head><title>Опции для [M.key]</title></head>"
+	var/body = "<html><meta charset=\"UTF-8\"><head><title>Опции для [M.key]</title></head>"
 	body += "<body>Панель опций для <b>[M]</b>"
 	var/last_ckey = LAST_CKEY(M)
 	if(M.client)
