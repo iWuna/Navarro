@@ -1,5 +1,5 @@
 /obj/structure/bed/chair	//YES, chairs are a type of bed, which are a type of stool. This works, believe me.	-Pete
-	name = "chair"
+	name = "стул"
 	desc = "You sit in this, either by will or force."
 	icon_state = "chair_preview"
 	color = "#666666"
@@ -122,7 +122,7 @@
 
 // Leaving this in for the sake of compilation.
 /obj/structure/bed/chair/comfy
-	name = "comfy chair"
+	name = "комфортное кресло"
 	desc = "It's a chair. It looks comfy."
 	icon_state = "comfychair_preview"
 	base_icon = "comfychair"
@@ -134,31 +134,31 @@
 	..(newloc, newmaterial, MATERIAL_CARPET)
 
 /obj/structure/bed/chair/comfy/teal/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "teal")
+	..(newloc, newmaterial, "сине-зеленое")
 
 /obj/structure/bed/chair/comfy/black/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "black")
+	..(newloc, newmaterial, "чёрное")
 
 /obj/structure/bed/chair/comfy/green/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "green")
+	..(newloc, newmaterial, "зелёное")
 
 /obj/structure/bed/chair/comfy/purple/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "purple")
+	..(newloc, newmaterial, "фиолетовое")
 
 /obj/structure/bed/chair/comfy/blue/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "blue")
+	..(newloc, newmaterial, "голубое")
 
 /obj/structure/bed/chair/comfy/beige/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "beige")
+	..(newloc, newmaterial, "бежевое")
 
 /obj/structure/bed/chair/comfy/lime/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "lime")
+	..(newloc, newmaterial, "лаймовое")
 
 /obj/structure/bed/chair/comfy/yellow/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "yellow")
+	..(newloc, newmaterial, "жёлтое")
 
 /obj/structure/bed/chair/comfy/captain
-	name = "captain chair"
+	name = "капитанское кресло"
 	desc = "It's a chair. Only for the highest ranked asses."
 	icon_state = "capchair_preview"
 	base_icon = "capchair"
@@ -171,10 +171,10 @@
 	overlays |= I
 
 /obj/structure/bed/chair/comfy/captain/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,MATERIAL_STEEL,"blue")
+	..(newloc,MATERIAL_STEEL,"голубое")
 
 /obj/structure/bed/chair/armchair
-	name = "armchair"
+	name = "кресло"
 	desc = "It's an armchair. It looks comfy."
 	icon_state = "armchair_preview"
 	base_icon = "armchair"
@@ -186,31 +186,31 @@
 	..(newloc, newmaterial, MATERIAL_CARPET)
 
 /obj/structure/bed/chair/armchair/teal/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "teal")
+	..(newloc, newmaterial, "сине-зеленое")
 
 /obj/structure/bed/chair/armchair/black/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "black")
+	..(newloc, newmaterial, "чёрное")
 
 /obj/structure/bed/chair/armchair/green/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "green")
+	..(newloc, newmaterial, "зелёное")
 
 /obj/structure/bed/chair/armchair/purple/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "purple")
+	..(newloc, newmaterial, "фиолетовое")
 
 /obj/structure/bed/chair/armchair/blue/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "blue")
+	..(newloc, newmaterial, "голубое")
 
 /obj/structure/bed/chair/armchair/beige/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "beige")
+	..(newloc, newmaterial, "бежевое")
 
 /obj/structure/bed/chair/armchair/lime/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "lime")
+	..(newloc, newmaterial, "лаймовое")
 
 /obj/structure/bed/chair/armchair/yellow/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "yellow")
+	..(newloc, newmaterial, "жёлтое")
 
 /obj/structure/bed/chair/office
-	name = "office chair"
+	name = "офисное кресло"
 	icon_state = "officechair_preview"
 	base_icon = "officechair"
 	anchored = 0
@@ -260,7 +260,7 @@
 	..(newloc, newmaterial, "black")
 
 /obj/structure/bed/chair/office/comfy
-	name = "comfy office chair"
+	name = "комфортное офисное кресло"
 	desc = "It's an office chair. It looks comfy."
 	icon_state = "comfyofficechair_preview"
 	base_icon = "comfyofficechair"
@@ -272,31 +272,31 @@
 	..(newloc, newmaterial, MATERIAL_CARPET)
 
 /obj/structure/bed/chair/office/comfy/teal/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "teal")
+	..(newloc, newmaterial, "сине-зеленое")
 
 /obj/structure/bed/chair/office/comfy/black/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "black")
+	..(newloc, newmaterial, "чёрное")
 
 /obj/structure/bed/chair/office/comfy/green/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "green")
+	..(newloc, newmaterial, "зелёное")
 
 /obj/structure/bed/chair/office/comfy/purple/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "purple")
+	..(newloc, newmaterial, "фиолетовое")
 
 /obj/structure/bed/chair/office/comfy/blue/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "blue")
+	..(newloc, newmaterial, "голубое")
 
 /obj/structure/bed/chair/office/comfy/beige/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "beige")
+	..(newloc, newmaterial, "бежевое")
 
 /obj/structure/bed/chair/office/comfy/lime/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "lime")
+	..(newloc, newmaterial, "лаймовое")
 
 /obj/structure/bed/chair/office/comfy/yellow/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, "yellow")
+	..(newloc, newmaterial, "жёлтое")
 
 /obj/structure/bed/chair/shuttle
-	name = "shuttle seat"
+	name = "кресло шатла"
 	desc = "A comfortable, secure seat. It has a sturdy-looking buckling system for smoother flights."
 	base_icon = "shuttle_chair"
 	icon_state = "shuttle_chair_preview"
@@ -328,7 +328,7 @@
 	..(newloc,MATERIAL_STEEL,MATERIAL_CLOTH)
 
 /obj/structure/bed/chair/wood
-	name = "classic chair"
+	name = "классическое кресло"
 	desc = "Old is never too old to not be in fashion."
 	base_icon = "wooden_chair"
 	icon_state = "wooden_chair_preview"
