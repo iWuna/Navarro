@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/dalek
-	name = "далек"
-	desc = "Что это такое чёрт возьми."
+	name = "Dalek"
+	desc = "What the hell is this!?"
 	icon = 'navarro/icons/dalek.dmi'
 	icon_state = "dalek"
 	icon_living = "dalek"
@@ -10,7 +10,7 @@
 	melee_damage_lower = 2
 	melee_damage_upper = 3
 	melee_damage_flags = DAM_SHARP|DAM_EDGE
-	attacktext = "вантузует"
+	attacktext = "plunges"
 	projectilesound = 'sound/weapons/laser3.ogg'
 	projectiletype = /obj/item/projectile/beam/smalllaser
 	faction = "hivebot"
