@@ -135,7 +135,7 @@
  * Book
  */
 /obj/item/weapon/book
-	name = "book"
+	name = "книга"
 	icon = 'icons/obj/library.dmi'
 	icon_state ="book"
 	throw_speed = 1
