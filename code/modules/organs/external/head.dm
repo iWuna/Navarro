@@ -1,7 +1,7 @@
 /obj/item/organ/external/head
 	organ_tag = BP_HEAD
 	icon_name = "head"
-	name = "head"
+	name = "голова"
 	slot_flags = SLOT_BELT
 	max_damage = 75
 	min_broken_damage = 35

@@ -2,7 +2,7 @@
 
 /obj/item/weapon/card/id/torch
 	name = "идентификационная карта"
-	desc = "An identification card issued to personnel aboard the NTEV Blue Jay."
+	desc = "Идентификационная карта выдаваемая персоналу ГЭК Наварро."
 	job_access_type = /datum/job/assistant
 
 /obj/item/weapon/card/id/torch/silver
@@ -13,7 +13,7 @@
 	color = "#ccecff"
 
 /obj/item/weapon/card/id/torch/gold
-	desc = "A golden identification card belonging to the Commanding Officer."
+	desc = "Золотая идентификационная карта принадлежащая Командующему Офицеру."
 	item_state = "gold_id"
 	job_access_type = /datum/job/captain
 	color = "#d4c780"
@@ -21,14 +21,14 @@
 
 // SolGov Crew and Contractors
 /obj/item/weapon/card/id/torch/crew
-	desc = "An identification card issued to crewmembers aboard the NTEV Blue Jay."
+	desc = "Идентификационная карта выдаваемая экипажу ГЭК Наварро"
 	color = "#d3e3e1"
 	job_access_type = /datum/job/crew
 	color = "#ccecff"
 
 
 /obj/item/weapon/card/id/torch/contractor
-	desc = "An identification card issued to private contractors aboard the NTEV Blue Jay."
+	desc = "Идентификационная карта выдаваемая наёмному экипажу ГЭК Наварро."
 	job_access_type = /datum/job/assistant
 	color = COLOR_GRAY80
 
@@ -161,7 +161,7 @@
 	color = COLOR_WHITE
 
 /obj/item/weapon/card/id/torch/crew/research
-	desc = "A card issued to science personnel aboard the NTEV Blue Jay."
+	desc = "Идентификационная карта выдаваемая научному персоналу ГЭК Наварро."
 	job_access_type = /datum/job/scientist_assistant
 	detail_color = COLOR_RESEARCH
 
@@ -175,12 +175,12 @@
 //NanoTrasen and Passengers
 
 /obj/item/weapon/card/id/torch/passenger
-	desc = "A card issued to passengers aboard the NTEV Blue Jay."
+	desc = "Идентификационная карта выдаваемая пассажирам ГЭК Наварро."
 	job_access_type = /datum/job/assistant
 	detail_color = COLOR_PAKISTAN_GREEN
 
 /obj/item/weapon/card/id/torch/passenger/research
-	desc = "A card issued to corporate personnel aboard the NTEV Blue Jay."
+	desc = "Идентификационная карта выдаваемая корпоративному персоналу ГЭК Наварро."
 	job_access_type = /datum/job/scientist_assistant
 	detail_color = COLOR_BOTTLE_GREEN
 
@@ -208,7 +208,7 @@
 
 //Merchant
 /obj/item/weapon/card/id/torch/merchant
-	desc = "An identification card issued to Merchants, indicating their right to sell and buy goods."
+	desc = "Идентификационная карта выдаваемая торговцам ГЭК Наварро, закрепляющая их право на торговлю."
 	job_access_type = /datum/job/merchant
 	color = COLOR_OFF_WHITE
 	detail_color = COLOR_BEIGE

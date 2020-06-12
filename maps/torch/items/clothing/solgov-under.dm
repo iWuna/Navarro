@@ -8,14 +8,14 @@
 
 //PT
 /obj/item/clothing/under/solgov/pt
-	name = "pt uniform"
-	desc = "Shorts! Shirt! Miami! Sexy!"
+	name = "спортивная форма"
+	desc = "Шорты! Футболка! Маями! Секси!"
 	icon_state = "miami"
 	worn_state = "miami"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 
 /obj/item/clothing/under/solgov/pt/expeditionary
-	name = "expeditionary pt uniform"
+	name = "спортивная форма Экспедиции"
 	desc = "A baggy shirt bearing the seal of the NT Surveyor Corps and some dorky looking blue shorts."
 	icon_state = "expeditionpt"
 	worn_state = "expeditionpt"
@@ -24,13 +24,13 @@
 		)
 
 /obj/item/clothing/under/solgov/pt/fleet
-	name = "fleet pt uniform"
+	name = "спортивная форма Флота"
 	desc = "A tight-fitting navy blue shirt paired with black shorts. For when you need to 'get physical'."
 	icon_state = "fleetpt"
 	worn_state = "fleetpt"
 
 /obj/item/clothing/under/solgov/pt/army
-	name = "army pt uniform"
+	name = "спортивная форма Военных"
 	desc = "Does NOT leave much to the imagination."
 	icon_state = "armypt"
 	worn_state = "armypt"
@@ -42,7 +42,7 @@
 //Utility
 
 /obj/item/clothing/under/solgov/utility
-	name = "utility uniform"
+	name = "комбинезон"
 	desc = "A comfortable turtleneck and black utility trousers."
 	icon_state = "blackutility"
 	item_state = "bl_suit"
@@ -56,7 +56,7 @@
 		)
 
 /obj/item/clothing/under/solgov/utility/expeditionary
-	name = "expeditionary uniform"
+	name = "экспидиционный комбинезон"
 	desc = "The utility uniform of the NT Surveyor Corps, made from biohazard resistant material. This one has silver trim."
 	icon_state = "blackutility_crew"
 	worn_state = "blackutility_crew"
@@ -65,7 +65,7 @@
 		)
 
 /obj/item/clothing/under/solgov/utility/expeditionary_skirt
-	name = "expeditionary skirt"
+	name = "экспидиционная юбка-комбинезон"
 	desc = "A black turtleneck and skirt, the elusive ladies' uniform of the NT Surveyor Corps."
 	icon_state = "blackservicefem"
 	worn_state = "blackservicefem"
@@ -74,7 +74,7 @@
 		)
 
 /obj/item/clothing/under/solgov/utility/expeditionary_skirt/officer
-	name = "expeditionary officer skirt"
+	name = "экспидиционная офицерская юбка-комбинезон"
 	desc = "A black turtleneck and skirt, the elusive ladies' uniform of the NT Surveyor Corps. This one has gold trim."
 	icon_state = "blackservicefem_com"
 	worn_state = "blackservicefem_com"
@@ -104,7 +104,7 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/research)
 
 /obj/item/clothing/under/solgov/utility/expeditionary/officer
-	name = "expeditionary officer's uniform"
+	name = "экспидиционный офицерский комбинезон"
 	desc = "The utility uniform of the NT Surveyor Corps, made from biohazard resistant material. This one has gold trim."
 	icon_state = "blackutility_com"
 	worn_state = "blackutility_com"
@@ -134,7 +134,7 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/research)
 
 /obj/item/clothing/under/solgov/utility/fleet
-	name = "fleet coveralls"
+	name = "комбинезон флота"
 	desc = "The utility uniform of NT's Private Fleet, made from an insulated material."
 	icon_state = "navyutility"
 	item_state = "jensensuit"
@@ -165,7 +165,7 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/fleet)
 
 /obj/item/clothing/under/solgov/utility/fleet/combat
-	name = "fleet fatigues"
+	name = "военная форма флота"
 	desc = "Alternative utility uniform of NT's Private Fleet, for when coveralls are impractical."
 	icon_state = "navycombat"
 	worn_state = "navycombat"
@@ -183,7 +183,7 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/fleet)
 
 /obj/item/clothing/under/solgov/utility/fleet/officer
-	name = "fleet officer's coveralls"
+	name = "комбинезон офицера флота"
 	desc = "Alternative utility uniform of NT's Private Fleet, for officers."
 	icon_state = "navyutilityoff"
 	worn_state = "navyutilityoff"
@@ -201,7 +201,7 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/medical/fleet)
 
 /obj/item/clothing/under/solgov/utility/army
-	name = "army fatigues"
+	name = "армейская форма"
 	desc = "The utility uniform of the SCG Army and Marine Corps, made from durable material."
 	icon_state = "greenutility"
 	item_state = "jensensuit"
@@ -235,14 +235,14 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration/army)
 
 /obj/item/clothing/under/solgov/utility/army/urban
-	name = "urban fatigues"
+	name = "городской камуфляж"
 	desc = "An urban version of the SCG Army utility uniform, made from durable material."
 	icon_state = "greyutility"
 	item_state = "gy_suit"
 	worn_state = "greyutility"
 
 /obj/item/clothing/under/solgov/utility/army/tan
-	name = "tan fatigues"
+	name = "пустынный камуфляж"
 	desc = "A tan version of the SCG Army utility uniform, made from durable material."
 	icon_state = "tanutility"
 	item_state = "johnny"
@@ -251,14 +251,14 @@
 //Service
 
 /obj/item/clothing/under/solgov/service
-	name = "service uniform"
+	name = "служебная униформа"
 	desc = "A service uniform of some kind."
 	icon_state = "whiteservice"
 	worn_state = "whiteservice"
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/solgov/service/expeditionary
-	name = "expeditionary service uniform"
+	name = "экспидиционная служебная униформа"
 	desc = "The service uniform of the NT Surveyor Corps in silver trim."
 	icon_state = "greydress"
 	worn_state = "greydress"
@@ -291,7 +291,7 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/research/jumper)
 
 /obj/item/clothing/under/solgov/service/expeditionary/skirt
-	name = "expeditionary service skirt"
+	name = "экспидиционная служебная юбка"
 	desc = "A feminine version of the NT Surveyor Corps service uniform in silver trim."
 	icon_state = "greydressfem"
 	worn_state = "greydressfem"
@@ -321,7 +321,7 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/research/jumper)
 
 /obj/item/clothing/under/solgov/service/expeditionary/command
-	name = "expeditionary officer's service uniform"
+	name = "экспидиционная служебная офицерская униформа"
 	desc = "The service uniform of the NT Surveyor Corps in gold trim."
 	icon_state = "greydress_com"
 	worn_state = "greydress_com"
@@ -351,7 +351,7 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/research/jumper)
 
 /obj/item/clothing/under/solgov/service/expeditionary/command/skirt
-	name = "expeditionary officer's service skirt"
+	name = "экспидиционная служебная офицерская юбка"
 	desc = "A feminine version of the NT Surveyor Corps service uniform in gold trim."
 	icon_state = "greydressfem_com"
 	worn_state = "greydressfem_com"
@@ -381,7 +381,7 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/research/jumper)
 
 /obj/item/clothing/under/solgov/service/fleet
-	name = "fleet service uniform"
+	name = "флотская служебная униформа"
 	desc = "The service uniform of NT's Private Fleet, made from immaculate white fabric."
 	icon_state = "whiteservice"
 	item_state = "nursesuit"
@@ -389,13 +389,13 @@
 	starting_accessories = list(/obj/item/clothing/accessory/navy)
 
 /obj/item/clothing/under/solgov/service/fleet/skirt
-	name = "fleet service skirt"
+	name = "флотская служебная юбка"
 	desc = "The service uniform skirt of NT's Private Fleet, made from immaculate white fabric."
 	icon_state = "whiteservicefem"
 	worn_state = "whiteservicefem"
 
 /obj/item/clothing/under/solgov/service/army
-	name = "army service uniform"
+	name = "армейская служебная форма"
 	desc = "The service uniform of the SCG Army and Marine Corps. Slimming."
 	icon_state = "greenservice"
 	item_state = "johnny"
@@ -406,7 +406,7 @@
 		)
 
 /obj/item/clothing/under/solgov/service/army/skirt
-	name = "army service skirt"
+	name = "армейская служебная юбка"
 	desc = "The service uniform skirt of the SCG Army and Marine Corps. Slimming."
 	icon_state = "greenservicefem"
 	worn_state = "greenservicefem"
@@ -415,7 +415,7 @@
 		)
 
 /obj/item/clothing/under/solgov/service/army/command
-	name = "marine officer's service uniform"
+	name = "армейская служебная униформа"
 	desc = "The service uniform of the SCG Army and Marine Corps. Slimming and stylish."
 	icon_state = "greenservice_com"
 	item_state = "johnny"
@@ -423,21 +423,21 @@
 	starting_accessories = list(/obj/item/clothing/accessory/brown)
 
 /obj/item/clothing/under/solgov/service/army/command/skirt
-	name = "marine officer's service skirt"
+	name = "армейская служебная офицерская юбка"
 	desc = "The service uniform skirt of the SCG Army and Marine Corps. Slimming and stylish."
 	icon_state = "greenservicefem_com"
 	worn_state = "greenservicefem_com"
 
 //Dress
 /obj/item/clothing/under/solgov/mildress
-	name = "dress uniform"
+	name = "парадная форма"
 	desc = "A dress uniform of some kind."
 	icon_state = "greydress"
 	worn_state = "greydress"
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/solgov/mildress/army
-	name = "army dress uniform"
+	name = "армейская парадная форма"
 	desc = "The dress uniform of the SCG Army and Marine Corps, class given form."
 	icon_state = "blackdress"
 	worn_state = "blackdress"
@@ -446,7 +446,7 @@
 		)
 
 /obj/item/clothing/under/solgov/mildress/army/skirt
-	name = "army dress skirt"
+	name = "армейская парадная юбка"
 	desc = "A feminine version of the SCG Army dress uniform, class given form."
 	icon_state = "blackdressfem"
 	worn_state = "blackdressfem"
@@ -455,13 +455,13 @@
 		)
 
 /obj/item/clothing/under/solgov/mildress/army/command
-	name = "army officer's dress uniform"
+	name = "армейская парадная офицерская форма"
 	desc = "The dress uniform of the SCG Army and Marine Corps, even classier in gold."
 	icon_state = "blackdress"
 	worn_state = "blackdress_com"
 
 /obj/item/clothing/under/solgov/mildress/army/command/skirt
-	name = "army officer's dress skirt"
+	name = "армейская парадная офицерская юбка"
 	desc = "A feminine version of the SCG Army dress uniform, even classier in gold."
 	icon_state = "blackdressfem"
 	worn_state = "blackdressfem_com"

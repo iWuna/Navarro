@@ -12,14 +12,14 @@
  * DATA CARDS - Used for the IC data card reader
  */
 /obj/item/weapon/card
-	name = "card"
+	name = "карточка"
 	desc = "Does card things."
 	icon = 'icons/obj/card.dmi'
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
 
 /obj/item/weapon/card/union
-	name = "union card"
+	name = "карточка союза"
 	desc = "A card showing membership in the local worker's union."
 	icon_state = "union"
 	slot_flags = SLOT_ID
@@ -227,7 +227,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/examine(mob/user, distance)
 	. = ..()
-	to_chat(user, "It says '[get_display_name()]'.")
+	to_chat(user, "На ней написано '[get_display_name()]'.")
 	if(distance <= 1)
 		show(user)
 
@@ -293,27 +293,27 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/proc/dat()
 	var/list/dat = list("<table><tr><td>")
-	dat += text("Name: []</A><BR>", "[formal_name_prefix][registered_name][formal_name_suffix]")
-	dat += text("Sex: []</A><BR>\n", sex)
-	dat += text("Age: []</A><BR>\n", age)
+	dat += text("Имя: []</A><BR>", "[formal_name_prefix][registered_name][formal_name_suffix]")
+	dat += text("Пол: []</A><BR>\n", sex)
+	dat += text("Возраст: []</A><BR>\n", age)
 
 	if(GLOB.using_map.flags & MAP_HAS_BRANCH)
-		dat += text("Branch: []</A><BR>\n", military_branch ? military_branch.name : "\[UNSET\]")
+		dat += text("Подразделение: []</A><BR>\n", military_branch ? military_branch.name : "\[UNSET\]")
 	if(GLOB.using_map.flags & MAP_HAS_RANK)
-		dat += text("Rank: []</A><BR>\n", military_rank ? military_rank.name : "\[UNSET\]")
+		dat += text("Звание: []</A><BR>\n", military_rank ? military_rank.name : "\[UNSET\]")
 
-	dat += text("Assignment: []</A><BR>\n", assignment)
-	dat += text("Fingerprint: []</A><BR>\n", fingerprint_hash)
-	dat += text("Blood Type: []<BR>\n", blood_type)
-	dat += text("DNA Hash: []<BR><BR>\n", dna_hash)
+	dat += text("Назначение: []</A><BR>\n", assignment)
+	dat += text("Отпечатки: []</A><BR>\n", fingerprint_hash)
+	dat += text("Группа крови: []<BR>\n", blood_type)
+	dat += text("ДНК: []<BR><BR>\n", dna_hash)
 	if(front && side)
-		dat +="<td align = center valign = top>Photo:<br><img src=front.png height=80 width=80 border=4><img src=side.png height=80 width=80 border=4></td>"
+		dat +="<td align = center valign = top>Фотография:<br><img src=front.png height=80 width=80 border=4><img src=side.png height=80 width=80 border=4></td>"
 	dat += "</tr></table>"
 	return jointext(dat,null)
 
 /obj/item/weapon/card/id/attack_self(mob/user as mob)
-	user.visible_message("\The [user] shows you: \icon[src] [src.name]. The assignment on the card: [src.assignment]",\
-		"You flash your ID card: \icon[src] [src.name]. The assignment on the card: [src.assignment]")
+	user.visible_message("[user] показывает вам: \icon[src] [src.name]. должность указанная на карте: [src.assignment]",\
+		"Вы показываете свою карточку: \icon[src] [src.name]. должность на карте: [src.assignment]")
 
 	src.add_fingerprint(user)
 	return
@@ -325,7 +325,7 @@ var/const/NO_EMAG_ACT = -50
 	return src
 
 /obj/item/weapon/card/id/verb/read()
-	set name = "Read ID Card"
+	set name = "Осмотреть карточку"
 	set category = "Object"
 	set src in usr
 
