@@ -329,10 +329,10 @@ var/const/NO_EMAG_ACT = -50
 	set category = "Object"
 	set src in usr
 
-	to_chat(usr, text("\icon[] []: The current assignment on the card is [].", src, src.name, src.assignment))
-	to_chat(usr, "The blood type on the card is [blood_type].")
-	to_chat(usr, "The DNA hash on the card is [dna_hash].")
-	to_chat(usr, "The fingerprint hash on the card is [fingerprint_hash].")
+	to_chat(usr, text("\icon[] []: Текущая должность на карте [].", src, src.name, src.assignment))
+	to_chat(usr, "Данные о группе крови: [blood_type].")
+	to_chat(usr, "Данные ДНК: [dna_hash].")
+	to_chat(usr, "Данные отпечатков: [fingerprint_hash].")
 	return
 
 /obj/item/weapon/card/id/silver
