@@ -5,6 +5,7 @@
 	icon_state = "dalek"
 	icon_living = "dalek"
 	icon_dead = "dalek_dead"
+	density = 1
 	health = 155
 	maxHealth = 155
 	melee_damage_lower = 2

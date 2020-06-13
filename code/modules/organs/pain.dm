@@ -69,11 +69,11 @@ mob/living/carbon/human/proc/handle_pain()
 		var/msg
 		switch(maxdam)
 			if(1 to 10)
-				msg =  "Your [damaged_organ.name] [burning ? "burns" : "hurts"]."
+				msg =  "Ваша [damaged_organ.name] [burning ? "жжётся" : "болит"]."
 			if(11 to 90)
-				msg = "Your [damaged_organ.name] [burning ? "burns" : "hurts"] badly!"
+				msg = "Ваша [damaged_organ.name] [burning ? "жжётся" : "боли"] очень сильно!"
 			if(91 to 10000)
-				msg = "OH GOD! Your [damaged_organ.name] is [burning ? "on fire" : "hurting terribly"]!"
+				msg = "ГОСПОДИ! Ваша [damaged_organ.name] [burning ? "в огне" : "ужасно болит"]!"
 		custom_pain(msg, maxdam, prob(10), damaged_organ, TRUE)
 	// Damage to internal organs hurts a lot.
 	for(var/obj/item/organ/internal/I in internal_organs)
