@@ -192,3 +192,30 @@ Basic field subtypes.
 
 /datum/report_field/signature/ask_value(mob/user)
 	set_value((user && user.real_name) ? user.real_name : "Anonymous")
+
+
+
+
+/datum/report_field/signature/anon/ask_value(mob/user)
+	if(user)
+		if("No" == input(user, "Would you like be anonymous ?", "", get_value()) as null|anything in list("No", "Yes"))
+			set_value(user.real_name ? user.real_name : "Anonymous")
+		else
+			set_value("Anonymous")
+
+
+//Will prompt for numbers.
+
+/datum/report_field/number/module/ask_value(mob/user)
+	var/value = input(user, "[display_name()]:", "Form Input", get_value()) as null|num
+	if(value >= 0)
+		set_value(value)
+	else
+		to_chat(user,SPAN_WARNING("Value has to be positive."))
+
+/datum/report_field/number/module/set_value(given_value)
+	if(isnum(given_value))
+		value = given_value
+
+/datum/report_field/number/ask_value(mob/user)
+	set_value(input(user, "[display_name()]:", "Form Input", get_value()) as null|num)
