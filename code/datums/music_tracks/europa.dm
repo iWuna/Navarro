@@ -65,3 +65,8 @@
 	artist = "Nicole"
 	title = "Twinkle Twinkle"
 	song = 'sound/music/europa/twinkle.ogg'
+
+/music_track/formaline
+	artist = "Fleur"
+	title = "Formaline"
+	song = 'sound/music/europa/formaline.ogg'

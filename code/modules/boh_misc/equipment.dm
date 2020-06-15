@@ -16,6 +16,7 @@
 
 	max_pressure_protection = ENG_VOIDSUIT_MAX_PRESSURE
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+	item_flags = ITEM_FLAG_AIRTIGHT
 
 /obj/item/clothing/head/bio_hood/anomaly/strong
 	name = "Heavy anomaly hood"
@@ -32,6 +33,7 @@
 
 	max_pressure_protection = ENG_VOIDSUIT_MAX_PRESSURE
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
+	item_flags = ITEM_FLAG_AIRTIGHT
 
 /////////
 // Documents

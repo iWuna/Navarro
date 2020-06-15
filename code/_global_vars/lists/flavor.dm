@@ -105,7 +105,9 @@ GLOBAL_LIST_INIT(music_tracks, list(
 	"Wild Encounters" = /music_track/wildencounters,
 	"Torn" = /music_track/torn,
 	"Nebula" = /music_track/nebula,
-	"Take Me Home" = /music_track/f76
+	"Take Me Home" = /music_track/f76,
+	"Formaline" = /music_track/formaline
+
 ))
 
 /proc/setup_music_tracks(var/list/tracks)
