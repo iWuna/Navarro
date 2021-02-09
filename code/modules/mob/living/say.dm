@@ -153,7 +153,7 @@ proc/get_radio_key_from_channel(var/channel)
 
 	return html_encode(message)
 
-/mob/living/say(var/message, var/datum/language/speaking = null, var/verb="говорит", var/alt_name="", whispering)
+/mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
 			to_chat(src, "<span class='warning'>You cannot speak in IC (Muted).</span>")
