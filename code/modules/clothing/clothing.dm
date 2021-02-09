@@ -59,13 +59,13 @@
 	smell_state = smell
 
 /obj/item/clothing/proc/get_fibers()
-	. = "материал с [name]"
+	. = "material from \a [name]"
 	var/list/acc = list()
 	for(var/obj/item/clothing/accessory/A in accessories)
 		if(prob(40) && A.get_fibers())
 			acc += A.get_fibers()
 	if(acc.len)
-		. += " с следами от [english_list(acc)]"
+		. += " with traces of [english_list(acc)]"
 
 /obj/item/clothing/proc/leave_evidence(mob/source)
 	add_fingerprint(source)
@@ -104,7 +104,7 @@
 
 			if(!wearable && !(slot in list(slot_l_store, slot_r_store, slot_s_store)))
 				if(!disable_warning)
-					to_chat(H, "<span class='danger'>Ваша раса не может носить [src].</span>")
+					to_chat(H, "<span class='danger'>Your species cannot wear [src].</span>")
 				return 0
 	return 1
 
@@ -152,17 +152,17 @@
 	var/list/ties = list()
 	for(var/obj/item/clothing/accessory/accessory in accessories)
 		if(accessory.high_visibility)
-			ties += " [accessory.get_examine_line()]"
+			ties += "\a [accessory.get_examine_line()]"
 	if(ties.len)
-		.+= " с прикрепленным [english_list(ties)]."
+		.+= " with [english_list(ties)] attached"
 	if(accessories.len > ties.len)
-		.+= ". <a href='?src=\ref[src];list_ungabunga=1'>\[Посмотреть аксессуары\]</a>"
+		.+= ". <a href='?src=\ref[src];list_ungabunga=1'>\[See accessories\]</a>"
 
 /obj/item/clothing/examine(mob/user)
 	. = ..()
 	var/datum/extension/armor/ablative/armor_datum = get_extension(src, /datum/extension/armor/ablative)
 	if(istype(armor_datum) && LAZYLEN(armor_datum.get_visible_damage()))
-		to_chat(user, SPAN_WARNING("It has some <a href='?src=\ref[src];list_armor_damage=1'>урон</a>."))
+		to_chat(user, SPAN_WARNING("It has some <a href='?src=\ref[src];list_armor_damage=1'>damage</a>."))
 
 /obj/item/clothing/CanUseTopic(var/user)
 	if(user in view(get_turf(src)))
@@ -219,7 +219,7 @@ SEE_PIXELS// if an object is located on an unlit area, but some of its pixels ar
 BLIND     // can't see anything
 */
 /obj/item/clothing/glasses
-	name = "очки"
+	name = "glasses"
 	icon = 'icons/obj/clothing/obj_eyes.dmi'
 	w_class = ITEM_SIZE_SMALL
 	body_parts_covered = EYES
@@ -249,7 +249,7 @@ BLIND     // can't see anything
 ///////////////////////////////////////////////////////////////////////
 //Gloves
 /obj/item/clothing/gloves
-	name = "перчатки"
+	name = "gloves"
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	w_class = ITEM_SIZE_SMALL
 	icon = 'icons/obj/clothing/obj_hands.dmi'

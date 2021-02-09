@@ -141,7 +141,7 @@
 /datum/species/custom/handle_environment_special(var/mob/living/carbon/human/H)
 	return ..()
 
-//Вызывается когда спавним что-то из экипировки с особыми вещами.
+//Called when spawning to equip them with special things.
 /datum/species/custom/equip_survival_gear(var/mob/living/carbon/human/H)
 	/* Example, from Vox:
 	H.equip_to_slot_or_del(new /obj/item/clothing/mask/breath(H), slot_wear_mask)

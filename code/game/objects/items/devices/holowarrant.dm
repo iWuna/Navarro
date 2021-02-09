@@ -12,7 +12,7 @@
 	req_access = list(list(access_heads, access_security))
 	var/datum/computer_file/data/warrant/active
 
-//Посмотри на это
+//look at it
 /obj/item/device/holowarrant/examine(mob/user, distance)
 	. = ..()
 	if(active)
@@ -22,6 +22,7 @@
 	else
 		to_chat(user, "<span class='notice'>You have to be closer if you want to read it.</span>")
 
+// an active warrant with access authorized grants access
 /obj/item/device/holowarrant/GetAccess()
 	. = list()
 
@@ -33,7 +34,7 @@
 
 	. |= active.fields["access"]
 
-//Ударь себя этим
+//hit yourself with it
 /obj/item/device/holowarrant/attack_self(mob/living/user as mob)
 	active = null
 	var/list/warrants = list()

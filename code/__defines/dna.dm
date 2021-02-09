@@ -9,9 +9,9 @@
 #define MUTATION_CLUMSY          4
 #define MUTATION_FAT             5
 #define MUTATION_HUSK            6
-#define MUTATION_LASER           7  // Кликните куда угодно чтобы стрелять лазерами из глаз.
-#define MUTATION_HEAL            8 // Лечим людей руками.
-#define MUTATION_SPACERES        9 // Не получаем урон от давления.
+#define MUTATION_LASER           7  // Harm intent - click anywhere to shoot lasers from eyes.
+#define MUTATION_HEAL            8 // Healing people with hands.
+#define MUTATION_SPACERES        9 // Can't be harmed via pressure damage.
 #define MUTATION_NOCLONE        10
 
 //#define MUTATION_       28
@@ -19,16 +19,16 @@
 #define MUTATION_PLANT         30
 
 // Other Mutations:
-#define mNobreath      100 // Больше не надо дышать.
+#define mNobreath      100 // No need to breathe.
 #define mRemote        101 // Remote viewing.
 #define mRegen         102 // Health regeneration.
-#define mRun           103 // Никакого замедления.
+#define mRun           103 // No slowdown.
 #define mRemotetalk    104 // Remote talking.
 #define mMorph         105 // Hanging appearance.
 #define mBlend         106 // Nothing. (seriously nothing)
-#define mHallucination 107 // Галлюны.
-#define mFingerprints  108 // Теперь у нас нет отпечатков.
-#define mShock         109 // Изоляционные... руки?
+#define mHallucination 107 // Hallucinations.
+#define mFingerprints  108 // No fingerprints.
+#define mShock         109 // Insulated hands.
 #define mSmallsize     110 // Table climbing.
 
 // disabilities
