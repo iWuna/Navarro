@@ -89,7 +89,7 @@ datum/preferences/copy_to(mob/living/carbon/human/character, is_preview_copy = F
 	var/datum/species/selected_species = all_species[species]
 	if(selected_species.selects_bodytype)
 		var/datum/species/custom/CS = character.species
-		var/S = custom_base ? custom_base : "Человек"
+		var/S = custom_base ? custom_base : "Human"
 		var/datum/species/custom/new_CS = CS.produceCopy(S, pos_traits + neu_traits + neg_traits, character)
 
 		//Any additional non-trait settings can be applied here

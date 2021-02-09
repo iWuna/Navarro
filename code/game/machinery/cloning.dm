@@ -145,7 +145,7 @@
 //Used for new human mobs created by cloning/goleming/etc.
 /mob/living/carbon/human/proc/set_cloned_appearance()
 	f_style = "Shaved"
-	if(dna.species == "Человек") //no more xenos losing ears/tentacles
+	if(dna.species == "Human") //no more xenos losing ears/tentacles
 		h_style = pick("Bedhead", "Bedhead 2", "Bedhead 3")
 	worn_underwear.Cut()
 	regenerate_icons()
@@ -156,16 +156,16 @@
 /obj/machinery/clonepod/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/modular_computer/pda))
 		if(!check_access(W))
-			to_chat(user, "<span class='warning'>Доступ запрещён.</span>")
+			to_chat(user, "<span class='warning'>Access Denied.</span>")
 			return
 		if((!locked) || (isnull(occupant)))
 			return
 		if((occupant.health < -20) && (occupant.stat != 2))
-			to_chat(user, "<span class='warning'>Доступ отклонён.</span>")
+			to_chat(user, "<span class='warning'>Access Refused.</span>")
 			return
 		else
 			locked = 0
-			to_chat(user, "Системы разблокированы.")
+			to_chat(user, "System unlocked.")
 	else if(W.iswrench())
 		if(locked && (anchored || occupant))
 			to_chat(user, "<span class='warning'>Can not do that while [src] is in use.</span>")
