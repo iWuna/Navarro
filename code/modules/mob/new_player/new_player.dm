@@ -214,11 +214,7 @@
 			var/DBQuery/query_insert = dbcon.NewQuery(sql)
 			query_insert.Execute()
 			to_chat(usr, "<b>Thank you for your vote!</b>")
-<<<<<<< HEAD
 			show_browser(usr, null,"window=privacypoll")
-=======
-			usr << browse(null,"window=privacypoll")
->>>>>>> parent of ccd0d6b... перевод экзамайна
 
 	if(!ready && href_list["preference"])
 		if(client)
