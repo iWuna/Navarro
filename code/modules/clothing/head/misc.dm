@@ -132,7 +132,7 @@
 	icon_state = "justicepink"
 
 /obj/item/clothing/head/rabbitears
-	name = "кроличьи ушки"
+	name = "rabbit ears"
 	desc = "Wearing these makes you looks useless, and only good for your sex appeal."
 	icon_state = "bunny"
 	body_parts_covered = 0
@@ -148,31 +148,31 @@
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/head/pirate
-	name = "пиратская шляпа"
+	name = "pirate hat"
 	desc = "Yarr."
 	icon_state = "pirate"
 	body_parts_covered = 0
 
 /obj/item/clothing/head/hgpiratecap
-	name = "пиратская фуражка"
+	name = "pirate hat"
 	desc = "Yarr."
 	icon_state = "hgpiratecap"
 	body_parts_covered = 0
 
 /obj/item/clothing/head/bandana
-	name = "пиратская бандана"
+	name = "pirate bandana"
 	desc = "Yarr."
 	icon_state = "bandana"
 	body_parts_covered = 0
 
 /obj/item/clothing/head/bandana/green
-	name = "зелёная бандана"
+	name = "green bandana"
 	desc = "It's a green bandana with some fine nanotech lining."
 	icon_state = "greenbandana"
 	item_state = "greenbandana"
 
 /obj/item/clothing/head/bandana/orange //themij: Taryn Kifer
-	name = "оранжевая бандана"
+	name = "orange bandana"
 	desc = "An orange piece of cloth, worn on the head."
 	icon_state = "orange_bandana"
 
@@ -201,7 +201,7 @@
 	desc = "The ultimate in summer fashion."
 
 /obj/item/clothing/head/fedora
-	name = "федора"
+	name = "fedora"
 	icon_state = "fedora"
 	desc = "A sharp, stylish hat."
 
@@ -211,7 +211,7 @@
 	desc = "A sharp, stylish hat with a feather."
 
 /obj/item/clothing/head/fez
-	name = "феска"
+	name = "fez"
 	icon_state = "fez"
 	desc = "You should wear a fez. Fezzes are cool."
 
@@ -268,27 +268,27 @@
 	body_parts_covered = 0
 
 /obj/item/clothing/head/hijab
-	name = "хиджаб"
+	name = "hijab"
 	desc = "A veil which is wrapped to cover the head and chest."
 	icon_state = "hijab"
 	body_parts_covered = 0
 	flags_inv = BLOCKHAIR
 
 /obj/item/clothing/head/kippa
-	name = "киппа"
+	name = "kippa"
 	desc = "A small, brimless cap."
 	icon_state = "kippa"
 	body_parts_covered = 0
 
 /obj/item/clothing/head/turban
-	name = "тюрбан"
+	name = "turban"
 	desc = "A sturdy cloth, worn around the head."
 	icon_state = "turban"
 	body_parts_covered = 0
 	flags_inv = BLOCKHEADHAIR //Shows beards!
 
 /obj/item/clothing/head/cowboy_hat
-	name = "ковбойская шляпа"
+	name = "cowboy hat"
 	desc = "A wide-brimmed hat, in the prevalent style of America's frontier period. By SolGov law, you are required to wear this hat while watching True Grit."
 	icon_state = "cowboyhat"
 	item_state = "cowboy_hat"
@@ -327,7 +327,7 @@
 	color = "#ae9f79"
 
 /obj/item/clothing/head/beanie
-	name = "шапочка"
+	name = "beanie"
 	desc = "A head-hugging brimless winter cap. This one is tight."
 	icon_state = "beanie"
 	item_state = "beanie"
