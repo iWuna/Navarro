@@ -75,7 +75,7 @@ medals
 	return check_codex_val || ..()
 
 /obj/item/clothing/accessory/solgov/torch_patch
-	name = "нашивка ГЭК Наварро"
+	name = "\improper NTEV Blue Jay mission patch"
 	desc = "A fire resistant shoulder patch, worn by the personnel involved in the Blue Jay Project."
 	icon_state = "torchpatch"
 	on_rolled = list("down" = "none")
@@ -88,7 +88,7 @@ medals
 patches
 *****/
 /obj/item/clothing/accessory/solgov/ec_patch
-	name = "нашивка Исследователя"
+	name = "\improper Observatory patch"
 	desc = "A laminated shoulder patch, carrying the symbol of the Sol Central Government Expeditionary Corpss Observatory, or SCGEO for short, the eyes and ears of the Expeditionary Corps' missions."
 	icon_state = "ecpatch1"
 	on_rolled = list("down" = "none")
@@ -96,41 +96,41 @@ patches
 	check_codex_val = FACTION_EXPEDITIONARY
 
 /obj/item/clothing/accessory/solgov/ec_patch/fieldops
-	name = "нашивка Полевые Операции"
+	name = "\improper Field Operations patch"
 	desc = "A radiation-shielded shoulder patch, carrying the symbol of the Sol Central Government Expeditionary Corps Field Operations, or SCGECFO for short, the hands-on workers of every Expeditionary Corps mission."
 	icon_state = "ecpatch2"
 
 /obj/item/clothing/accessory/solgov/cultex_patch
-	name = "нашивка Культурного Обмена"
+	name = "\improper Cultural Exchange patch"
 	desc = "A radiation-shielded shoulder patch, denoting service in the the Sol Central Government Expeditionary Corps Cultural Exchange program."
 	icon_state = "ecpatch3"
 	slot = ACCESSORY_SLOT_INSIGNIA
 	check_codex_val = FACTION_EXPEDITIONARY
 
 /obj/item/clothing/accessory/solgov/fleet_patch
-	name = "нашивка первого флота"
+	name = "\improper First Fleet patch"
 	desc = "A fancy shoulder patch carrying insignia of First Fleet."
 	icon_state = "fleetpatch1"
 	on_rolled = list("down" = "none")
 	slot = ACCESSORY_SLOT_INSIGNIA
 
 /obj/item/clothing/accessory/solgov/fleet_patch/second
-	name = "нашивка второго флота"
+	name = "\improper Second Fleet patch"
 	desc = "A well-worn shoulder patch carrying insignia of Second Fleet."
 	icon_state = "fleetpatch2"
 
 /obj/item/clothing/accessory/solgov/fleet_patch/third
-	name = "нашивка третьего флота"
+	name = "\improper Third Fleet patch"
 	desc = "A scuffed shoulder patch carrying insignia of Third Fleet."
 	icon_state = "fleetpatch3"
 
 /obj/item/clothing/accessory/solgov/fleet_patch/fourth
-	name = "нашивка четвёртого флота"
+	name = "\improper Fourth Fleet patch"
 	desc = "A pristine shoulder patch carrying insignia of Fourth Fleet."
 	icon_state = "fleetpatch4"
 
 /obj/item/clothing/accessory/solgov/fleet_patch/fifth
-	name = "нашивка пятого флота"
+	name = "\improper Fifth Fleet patch"
 	desc = "A tactical shoulder patch carrying insignia of Fifth Fleet."
 	icon_state = "fleetpatch5"
 
@@ -138,7 +138,7 @@ patches
 scarves
 *****/
 /obj/item/clothing/accessory/solgov/ec_scarf
-	name = "шарф экспедиции"
+	name = "expeditionary scarf"
 	desc = "An SCG blue silk scarf, meant to be worn with Expeditionary Corps uniforms."
 	icon = 'icons/obj/clothing/obj_accessories.dmi'
 	accessory_icons = list(slot_w_uniform_str = 'icons/mob/onmob/onmob_accessories.dmi', slot_wear_suit_str = 'icons/mob/onmob/onmob_accessories.dmi')
@@ -148,12 +148,12 @@ scarves
 	check_codex_val = FACTION_EXPEDITIONARY
 
 /obj/item/clothing/accessory/solgov/ec_scarf/observatory
-	name = "шарф Исследователя"
+	name = "\improper Observatory scarf"
 	desc = "A silk scarf in Expeditionary Corps Observatory section colors, meant to be worn with Expeditionary Corps uniforms."
 	color = "#58bb59"
 
 /obj/item/clothing/accessory/solgov/ec_scarf/fieldops
-	name = "шарф Полевых Операций"
+	name = "\improper Field Operations scarf"
 	desc = "A silk scarf in Expeditionary Corps Field Operations section colors, meant to be worn with Expeditionary Corps uniforms."
 	color = "#9f84b3"
 
@@ -161,7 +161,7 @@ scarves
 ribbons
 ******/
 /obj/item/clothing/accessory/ribbon/solgov
-	name = "знак отличия"
+	name = "ribbon"
 	desc = "A simple military decoration."
 	icon_state = "ribbon_marksman"
 	on_rolled = list("down" = "none")
@@ -171,22 +171,22 @@ ribbons
 	w_class = ITEM_SIZE_TINY
 
 /obj/item/clothing/accessory/ribbon/solgov/marksman
-	name = "знак отличия за меткую стрельбу"
+	name = "marksmanship ribbon"
 	desc = "A military decoration awarded to members of the NTF for good marksmanship scores in training. Common in the days of energy weapons."
 	icon_state = "ribbon_marksman"
 
 /obj/item/clothing/accessory/ribbon/solgov/peace
-	name = "знак отличия за сохранение мира"
+	name = "peacekeeping ribbon"
 	desc = "A military decoration awarded to members of the NTF for service during a peacekeeping operation."
 	icon_state = "ribbon_peace"
 
 /obj/item/clothing/accessory/ribbon/solgov/frontier
-	name = "знак отличия за дальние перелёты"
+	name = "frontier ribbon"
 	desc = "A military decoration awarded to members of the NTF for service along the frontier."
 	icon_state = "ribbon_frontier"
 
 /obj/item/clothing/accessory/ribbon/solgov/instructor
-	name = "знак отличия за инструктаж"
+	name = "instructor ribbon"
 	desc = "A military decoration awarded to members of the NTF for service as an instructor."
 	icon_state = "ribbon_instructor"
 
@@ -194,7 +194,7 @@ ribbons
 specialty pins
 *************/
 /obj/item/clothing/accessory/solgov/specialty
-	name = "знак специальности"
+	name = "speciality blaze"
 	desc = "A color blaze denoting fleet personnel in some special role. This one is silver."
 	icon_state = "marinerank_command"
 	slot = ACCESSORY_SLOT_INSIGNIA
@@ -203,22 +203,22 @@ specialty pins
 	return null
 
 /obj/item/clothing/accessory/solgov/specialty/janitor
-	name = "знак сан.службы"
+	name = "custodial blazes"
 	desc = "Purple blazes denoting a custodial technician."
 	icon_state = "fleetspec_janitor"
 
 /obj/item/clothing/accessory/solgov/specialty/brig
-	name = "знак офицера службы безопасности"
+	name = "brig blazes"
 	desc = "Red blazes denoting a brig chief."
 	icon_state = "fleetspec_brig"
 
 /obj/item/clothing/accessory/solgov/specialty/forensic
-	name = "знак суд-мед эксперта"
+	name = "forensics blazes"
 	desc = "Steel blazes denoting a forensic technician."
 	icon_state = "fleetspec_forensic"
 
 /obj/item/clothing/accessory/solgov/specialty/atmos
-	name = "знак атмосферного техника"
+	name = "atmospherics blazes"
 	desc = "Turquoise blazes denoting an atmospheric technician."
 	icon_state = "fleetspec_atmos"
 
@@ -228,22 +228,22 @@ specialty pins
 	icon_state = "fleetspec_counselor"
 
 /obj/item/clothing/accessory/solgov/specialty/chemist
-	name = "знак фармацефта"
+	name = "pharmacy blazes"
 	desc = "Orange blazes denoting a pharmacist."
 	icon_state = "fleetspec_chemist"
 
 /obj/item/clothing/accessory/solgov/specialty/enlisted
-	name = "брошь квалифицированного призывника"
+	name = "enlisted qualification pin"
 	desc = "An iron pin denoting some special qualification."
 	icon_state = "fleetpin_enlisted"
 
 /obj/item/clothing/accessory/solgov/specialty/officer
-	name = "брошь квалифицированного офицера"
+	name = "officer's qualification pin"
 	desc = "A golden pin denoting some special qualification."
 	icon_state = "fleetpin_officer"
 
 /obj/item/clothing/accessory/solgov/specialty/pilot
-	name = "брошь квалифицированного пилота"
+	name = "pilot's qualification pin"
 	desc = "An iron pin denoting the qualification to fly SCG spacecraft."
 	icon_state = "pin_pilot"
 
@@ -263,7 +263,7 @@ badges
 	badge_string = "NTF"
 
 /obj/item/clothing/accessory/badge/solgov/tags
-	name = "жетоны"
+	name = "dog tags"
 	desc = "Plain identification tags made from a durable metal. They are stamped with a variety of informational details."
 	gender = PLURAL
 	icon_state = "tags"
@@ -289,10 +289,10 @@ badges
 	owner_branch = H.char_branch && H.char_branch.name
 	var/decl/cultural_info/culture = H.get_cultural_value(TAG_RELIGION)
 	var/religion = culture ? culture.name : "Unset"
-	desc = "[initial(desc)]\nИмя: [H.real_name] ([H.get_species()])[H.char_branch ? "\nBranch: [H.char_branch.name]" : ""]\nРелигия: [religion]\nГруппа крови: [H.b_type]"
+	desc = "[initial(desc)]\nName: [H.real_name] ([H.get_species()])[H.char_branch ? "\nBranch: [H.char_branch.name]" : ""]\nReligion: [religion]\nBlood type: [H.b_type]"
 
 /obj/item/clothing/accessory/badge/solgov/representative
-	name = "бейджик представителя"
+	name = "representative's badge"
 	desc = "A leather-backed plastic badge with a variety of information printed on it. Belongs to a representative of the Sol Central Government."
 	icon_state = "solbadge"
 	slot_flags = SLOT_TIE
@@ -568,53 +568,53 @@ ranks - ec
 	return null
 
 /obj/item/clothing/accessory/solgov/rank/ec
-	name = "петлицы экспедиции"
+	name = "explorer ranks"
 	desc = "Insignia denoting rank of some kind. These appear blank."
 	icon_state = "ecrank_e1"
 	on_rolled = list("down" = "none")
 
 /obj/item/clothing/accessory/solgov/rank/ec/enlisted
-	name = "петлицы (E-1 младший исследователь)"
+	name = "ranks (E-1 apprentice explorer)"
 	desc = "Insignia denoting the rank of Apprentice Explorer."
 	icon_state = "ecrank_e1"
 
 /obj/item/clothing/accessory/solgov/rank/ec/enlisted/e3
-	name = "петлицы (E-3 исследователь)"
+	name = "ranks (E-3 explorer)"
 	desc = "Insignia denoting the rank of Explorer."
 	icon_state = "ecrank_e3"
 
 /obj/item/clothing/accessory/solgov/rank/ec/enlisted/e5
-	name = "петлицы (E-5 старший исследователь)"
+	name = "ranks (E-5 senior explorer)"
 	desc = "Insignia denoting the rank of Senior Explorer."
 	icon_state = "ecrank_e5"
 
 /obj/item/clothing/accessory/solgov/rank/ec/enlisted/e7
-	name = "петлицы (E-7 главный исследователь)"
+	name = "ranks (E-7 chief explorer)"
 	desc = "Insignia denoting the rank of Chief Explorer."
 	icon_state = "ecrank_e7"
 
 /obj/item/clothing/accessory/solgov/rank/ec/officer
-	name = "петлицы (O-1 энсин)"
+	name = "ranks (O-1 ensign)"
 	desc = "Insignia denoting the rank of Ensign."
 	icon_state = "ecrank_o1"
 
 /obj/item/clothing/accessory/solgov/rank/ec/officer/o3
-	name = "петлицы (O-3 лейтенант)"
+	name = "ranks (O-3 lieutenant)"
 	desc = "Insignia denoting the rank of Lieutenant."
 	icon_state = "ecrank_o3"
 
 /obj/item/clothing/accessory/solgov/rank/ec/officer/o5
-	name = "петлицы (O-5 коммандер)"
+	name = "ranks (O-5 commander)"
 	desc = "Insignia denoting the rank of Commander."
 	icon_state = "ecrank_o5"
 
 /obj/item/clothing/accessory/solgov/rank/ec/officer/o6
-	name = "петлицы (O-6 капитан)"
+	name = "ranks (O-6 captain)"
 	desc = "Insignia denoting the rank of Captain."
 	icon_state = "ecrank_o6"
 
 /obj/item/clothing/accessory/solgov/rank/ec/officer/o8
-	name = "петлицы (O-8 адмирал)"
+	name = "ranks (O-8 admiral)"
 	desc = "Insignia denoting the rank of Admiral."
 	icon_state = "ecrank_o8"
 
@@ -628,107 +628,107 @@ ranks - fleet
 	on_rolled = list("down" = "none")
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted
-	name = "погоны (E-1 рекрут)"
+	name = "ranks (E-1 crewman recruit)"
 	desc = "Insignia denoting the rank of Crewman Recruit."
 	icon_state = "fleetrank_enlisted"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2
-	name = "погоны (E-2 младший член экипажа)"
+	name = "ranks (E-2 crewman apprentice)"
 	desc = "Insignia denoting the rank of Crewman Apprentice."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3
-	name = "погоны (E-3 член экипажа)"
+	name = "ranks (E-3 crewman)"
 	desc = "Insignia denoting the rank of Crewman."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4
-	name = "погоны (E-4 петти-офицер III класса)"
+	name = "ranks (E-4 petty officer third class)"
 	desc = "Insignia denoting the rank of Petty Officer Third Class."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5
-	name = "погоны (E-5 петти-офицер II класса)"
+	name = "ranks (E-5 petty officer second class)"
 	desc = "Insignia denoting the rank of Petty Officer Second Class."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e6
-	name = "погоны (E-6 петти-офицер I класса)"
+	name = "ranks (E-6 petty officer first class)"
 	desc = "Insignia denoting the rank of Petty Officer First Class."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e7
-	name = "погоны (E-7 старший младший офицер)"
+	name = "ranks (E-7 chief petty officer)"
 	desc = "Insignia denoting the rank of Chief Petty Officer."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e8
-	name = "ranks (E-8 старший чиф-петти-офицер)"
+	name = "ranks (E-8 senior chief petty officer)"
 	desc = "Insignia denoting the rank of Senior Chief Petty Officer."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9
-	name = "ranks (E-9 мастер чиф-петти-офицер)"
+	name = "ranks (E-9 master chief petty officer)"
 	desc = "Insignia denoting the rank of Master Chief Petty Officer."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9_alt1
-	name = "погоны (E-9 главный мастер чиф-петти-офицер)"
+	name = "ranks (E-9 command master chief petty officer)"
 	desc = "Insignia denoting the rank of Command Master Chief Petty Officer."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9_alt2
-	name = "погоны (E-9 главный мастер чиф-петти-офицер флота)"
+	name = "ranks (E-9 fleet master chief petty officer)"
 	desc = "Insignia denoting the rank of Fleet Master Chief Petty Officer."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9_alt3
-	name = "погоны (E-9 мастер чиф-петти-офицер сил)"
+	name = "ranks (E-9 force master chief petty officer)"
 	desc = "Insignia denoting the rank of Force Master Chief Petty Officer."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9_alt4
-	name = "погоны (E-9 мастер чиф-петти офицер флота)"
+	name = "ranks (E-9 master chief petty officer of the Fleet)"
 	desc = "Insignia denoting the rank of Master Chief Petty Officer of the Fleet."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer
-	name = "погоны (O-1 энсин)"
+	name = "ranks (O-1 ensign)"
 	desc = "Insignia denoting the rank of Ensign."
 	icon_state = "fleetrank_officer"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/wo1_monkey
-	name = "makeshift ranks (WO-1 Уорент-офицер 1)"
+	name = "makeshift ranks (WO-1 warrant officer 1)"
 	desc = "Insignia denoting the mythical rank of Warrant Officer. Too bad it's obviously fake."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/o2
-	name = "погоны (O-2 младший лейтенант)"
+	name = "ranks (O-2 sub-lieutenant)"
 	desc = "Insignia denoting the rank of Sub-lieutenant."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/o3
-	name = "погоны (O-3 лейтенант)"
+	name = "ranks (O-3 lieutenant)"
 	desc = "Insignia denoting the rank of Lieutenant."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/o4
-	name = "погоны (O-4 лейтенант-коммандер)"
+	name = "ranks (O-4 lieutenant commander)"
 	desc = "Insignia denoting the rank of Lieutenant Commander."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/o5
-	name = "погоны (O-5 коммандер)"
+	name = "ranks (O-5 commander)"
 	desc = "Insignia denoting the rank of Commander."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/o6
-	name = "погоны (O-6 капитан)"
+	name = "ranks (O-6 captain)"
 	desc = "Insignia denoting the rank of Captain."
 	icon_state = "fleetrank_command"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/flag
-	name = "погоны (O-7 коммодор)"
+	name = "ranks (O-7 commodore)"
 	desc = "Insignia denoting the rank of Commodore."
 	icon_state = "fleetrank_command"
 
 /obj/item/clothing/accessory/solgov/rank/fleet/flag/o8
-	name = "погоны (O-8 контр-адмирал)"
+	name = "ranks (O-8 rear admiral)"
 	desc = "Insignia denoting the rank of Rear Admiral."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/flag/o9
-	name = "погоны (O-9 вице-адмирал)"
+	name = "ranks (O-9 vice admiral)"
 	desc = "Insignia denoting the rank of Vice Admiral."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/flag/o10
-	name = "погоны (O-10 адмирал)"
+	name = "ranks (O-10 admiral)"
 	desc = "Insignia denoting the rank of Admiral."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/flag/o10_alt
-	name = "погоны (O-10 адмирал флота)"
+	name = "ranks (O-10 fleet admiral)"
 	desc = "Insignia denoting the rank of Fleet Admiral."
 
 /**************
@@ -741,96 +741,96 @@ ranks - army
 	on_rolled = list("down" = "none")
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted
-	name = "ranks (E-1 рядовой)"
+	name = "ranks (E-1 private)"
 	desc = "Insignia denoting the rank of Private."
 	icon_state = "armyrank_enlisted"
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e2
-	name = "ranks (E-2 рядовой второго класса)"
+	name = "ranks (E-2 private second class)"
 	desc = "Insignia denoting the rank of Private Second Class."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e3
-	name = "ranks (E-3 рядовой первого класса)"
+	name = "ranks (E-3 private first class)"
 	desc = "Insignia denoting the rank of Private First Class."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e4
-	name = "ranks (E-4 капрал)"
+	name = "ranks (E-4 corporal)"
 	desc = "Insignia denoting the rank of Corporal."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e5
-	name = "ranks (E-5 сержант)"
+	name = "ranks (E-5 sergeant)"
 	desc = "Insignia denoting the rank of Sergeant."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e6
-	name = "ranks (E-6 штаб-сержант)"
+	name = "ranks (E-6 staff sergeant)"
 	desc = "Insignia denoting the rank of Staff Sergeant."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e7
-	name = "ranks (E-7 сержант 1-го класса)"
+	name = "ranks (E-7 sergeant first class)"
 	desc = "Insignia denoting the rank of Sergeant First Class."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e8
-	name = "ranks (E-8 мастер-сержант)"
+	name = "ranks (E-8 master sergeant)"
 	desc = "Insignia denoting the rank of Master Sergeant."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e8_alt
-	name = "ranks (E-8 1-й сержант)"
+	name = "ranks (E-8 first sergeant)"
 	desc = "Insignia denoting the rank of First Sergeant."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e9
-	name = "ranks (E-9 сержант-майор)"
+	name = "ranks (E-9 sergeant major)"
 	desc = "Insignia denoting the rank of Sergeant Major."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e9_alt1
-	name = "ranks (E-9 главный сержант-майор)"
+	name = "ranks (E-9 command sergeant major)"
 	desc = "Insignia denoting the rank of Command Sergeant Major."
 
 /obj/item/clothing/accessory/solgov/rank/army/enlisted/e9_alt2
-	name = "ranks (E-9 сержант-майор Сухопутных войск)"
+	name = "ranks (E-9 sergeant major of the Army)"
 	desc = "Insignia denoting the rank of Sergeant Major of the Army."
 
 /obj/item/clothing/accessory/solgov/rank/army/officer
-	name = "ranks (O-1 второй лейтенант)"
+	name = "ranks (O-1 second lieutenant)"
 	desc = "Insignia denoting the rank of Second Lieutenant."
 	icon_state = "armyrank_officer"
 
 /obj/item/clothing/accessory/solgov/rank/army/officer/o2
-	name = "ranks (O-2 первый лейтенант)"
+	name = "ranks (O-2 first lieutenant)"
 	desc = "Insignia denoting the rank of First Lieutenant."
 
 /obj/item/clothing/accessory/solgov/rank/army/officer/o3
-	name = "ranks (O-3 капитан)"
+	name = "ranks (O-3 captain)"
 	desc = "Insignia denoting the rank of Captain."
 
 /obj/item/clothing/accessory/solgov/rank/army/officer/o4
-	name = "ranks (O-4 майор)"
+	name = "ranks (O-4 major)"
 	desc = "Insignia denoting the rank of Major."
 
 /obj/item/clothing/accessory/solgov/rank/army/officer/o5
-	name = "ranks (O-5 подполковник)"
+	name = "ranks (O-5 lieutenant colonel)"
 	desc = "Insignia denoting the rank of Lieutenant Colonel."
 
 /obj/item/clothing/accessory/solgov/rank/army/officer/o6
-	name = "ranks (O-6 полковник)"
+	name = "ranks (O-6 colonel)"
 	desc = "Insignia denoting the rank of Colonel."
 
 /obj/item/clothing/accessory/solgov/rank/army/flag
-	name = "ranks (O-7 бригадный генерал)"
+	name = "ranks (O-7 brigadier general)"
 	desc = "Insignia denoting the rank of Brigadier General."
 	icon_state = "armyrank_command"
 
 /obj/item/clothing/accessory/solgov/rank/army/flag/o8
-	name = "ranks (O-8 генерал-майор)"
+	name = "ranks (O-8 major general)"
 	desc = "Insignia denoting the rank of Major General."
 
 /obj/item/clothing/accessory/solgov/rank/army/flag/o9
-	name = "ranks (O-9 генерал-лейтенант)"
+	name = "ranks (O-9 lieutenant general)"
 	desc = "Insignia denoting the rank of lieutenant general."
 
 /obj/item/clothing/accessory/solgov/rank/army/flag/o10
-	name = "ranks (O-10 генерал)"
+	name = "ranks (O-10 general)"
 	desc = "Insignia denoting the rank of General."
 
 /obj/item/clothing/accessory/solgov/rank/army/flag/o10_alt
-	name = "ranks (O-10 фельдмаршалл)"
+	name = "ranks (O-10 field marshal)"
 	desc = "Insignia denoting the rank of Field Marshal."

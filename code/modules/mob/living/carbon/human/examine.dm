@@ -48,13 +48,13 @@
 
 	var/is_synth = isSynthetic()
 	if(!(skipjumpsuit && skipface))
-		var/species_name = " "
+		var/species_name = "\improper "
 		if(is_synth && species.cyborg_noun)
 			species_name += "[species.cyborg_noun] "
 		species_name += "[species.name]"
 		if(custom_species)						//BastionStation edit
 			species_name = "[custom_species]"	//BastionStation edit
-		msg += ", <b><font color='[species.get_flesh_colour(src)]'> [species_name]!</font></b>[(user.can_use_codex() && SScodex.get_codex_entry(get_codex_value())) ?  SPAN_NOTICE(" \[<a href='?src=\ref[SScodex];show_examined_info=\ref[src];show_to=\ref[user]'>?</a>\]") : ""]"
+		msg += ", <b><font color='[species.get_flesh_colour(src)]'>\a [species_name]!</font></b>[(user.can_use_codex() && SScodex.get_codex_entry(get_codex_value())) ?  SPAN_NOTICE(" \[<a href='?src=\ref[SScodex];show_examined_info=\ref[src];show_to=\ref[user]'>?</a>\]") : ""]"
 
 	var/extra_species_text = species.get_additional_examine_text(src)
 	if(extra_species_text)
@@ -68,7 +68,7 @@
 
 	//head
 	if(head)
-		msg += "[T.He] носит [head.get_examine_line()] на своей голове.\n"
+		msg += "[T.He] носит [head.get_examine_line()] на [T.his] голове.\n"
 
 	//suit/armour
 	if(wear_suit)
@@ -111,7 +111,7 @@
 
 	//eyes
 	if(glasses && !skipeyes)
-		msg += "[T.He] [T.has] [glasses.get_examine_line()] на своих глазах.\n"
+		msg += "[T.He] [T.has] [glasses.get_examine_line()] скрывающий глаза.\n"
 
 	//left ear
 	if(l_ear && !skipears)
@@ -123,8 +123,7 @@
 
 	//ID
 	if(wear_id)
-		msg += "[T.He] имеет при себе свою карточку.\n"
-//		msg += "[T.He] имеет при себе [wear_id.get_examine_line()].\n" временно убираю этот вариант.
+		msg += "[T.He] носит [wear_id.get_examine_line()].\n"
 
 	//handcuffed?
 	if(handcuffed)

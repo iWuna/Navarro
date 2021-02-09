@@ -127,7 +127,7 @@
 //Dress
 
 /obj/item/clothing/head/solgov/dress
-	name = "парадная фуражка"
+	name = "dress cover"
 	desc = "A dress uniform cover."
 	icon_state = "greenwheelcap"
 	item_state_slots = list(
@@ -358,19 +358,19 @@
 	icon_state_up = "ecushankaup"
 
 /obj/item/clothing/head/ushanka/solgov/fleet
-	name = "ушанка флота"
+	name = "fleet fur hat"
 	desc = "A Private Fleet synthfur-lined hat for operating in cold environments."
 	icon_state = "flushankadown"
 	icon_state_up = "flushankaup"
 
 /obj/item/clothing/head/ushanka/solgov/army
-	name = "ушанка армии"
+	name = "army fur hat"
 	desc = "An SCG Army synthfur-lined hat for operating in cold environments."
 	icon_state = "barushankadown"
 	icon_state_up = "barushankaup"
 
 /obj/item/clothing/head/ushanka/solgov/army/green
-	name = "ушанка Морской Пехоты"
+	name = "green army fur hat"
 	desc = "An SCG Army synthfur-lined hat for operating in cold environments."
 	icon_state = "arushankadown"
 	icon_state_up = "mcushankaup"
