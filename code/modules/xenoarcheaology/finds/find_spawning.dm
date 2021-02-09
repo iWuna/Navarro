@@ -404,7 +404,7 @@
 	else
 		new_gun.power_supply.charge = 0
 
-	additional_desc = "Это анткивкарный лазерный пистолет, вы даже не уверены, стреляет он или нет."
+	additional_desc = "This is an antique energy weapon, you're not sure if it will fire or not."
 
 	return new_gun
 
@@ -434,7 +434,7 @@
 				A.caliber = new_gun.caliber
 				A.desc = "A bullet casing of unknown caliber."
 
-	additional_desc = "Это анткивкарный пистолет, вы даже не уверены, стреляет он или нет."
+	additional_desc = "This is an antique weapon, you're not sure if it will fire or not."
 
 	return new_gun
 

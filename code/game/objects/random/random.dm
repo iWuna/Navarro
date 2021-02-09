@@ -45,8 +45,8 @@
 	return list(spawn_object)
 
 /obj/random/tool
-	name = "случайный инструмент"
-	desc = "Это случайный инструмент."
+	name = "random tool"
+	desc = "This is a random tool."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "welder"
 
@@ -60,8 +60,8 @@
 				/obj/item/device/flashlight)
 
 /obj/random/technology_scanner
-	name = "случайный сканер"
-	desc = "Это случайный сканер."
+	name = "random scanner"
+	desc = "This is a random technology scanner."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "atmos"
 
@@ -71,8 +71,8 @@
 				/obj/item/device/scanner/gas = 5)
 
 /obj/random/powercell
-	name = "случайная баьарейка"
-	desc = "Это случайная батарейка."
+	name = "random powercell"
+	desc = "This is a random powercell."
 	icon = 'icons/obj/power.dmi'
 	icon_state = "hcell"
 
@@ -86,8 +86,8 @@
 				/obj/item/weapon/cell/device/high = 5)
 
 /obj/random/bomb_supply
-	name = "случайная деталь бомбы"
-	desc = "Это случайная деталь для сбора бомбы."
+	name = "bomb supply"
+	desc = "This is a random bomb supply."
 	icon = 'icons/obj/assemblies/new_assemblies.dmi'
 	icon_state = "signaller"
 
@@ -99,8 +99,8 @@
 				/obj/item/device/multitool)
 
 /obj/random/toolbox
-	name = "случайный ящик для инструментов"
-	desc = "Это случайный ящик для инструментов."
+	name = "random toolbox"
+	desc = "This is a random toolbox."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "red"
 

@@ -39,7 +39,7 @@
 // BEGIN ABILITY VERBS
 
 /datum/game_mode/malfunction/verb/recall_shuttle()
-	set name = "Отозвать шаттл"
+	set name = "Recall Shuttle"
 	set desc = "25 CPU - Sends termination signal to quantum relay aborting current shuttle call."
 	set category = "Software"
 	var/price = 25
@@ -58,7 +58,7 @@
 
 
 /datum/game_mode/malfunction/verb/unlock_cyborg(var/mob/living/silicon/robot/target = null as mob in get_linked_cyborgs(usr))
-	set name = "Разблокировать киборга"
+	set name = "Unlock Cyborg"
 	set desc = "125 CPU - Bypasses firewalls on Cyborg lock mechanism, allowing you to override lock command from robotics control console."
 	set category = "Software"
 	var/price = 125
@@ -68,15 +68,15 @@
 		return
 
 	if(target && !istype(target))
-		to_chat(user, "Это не киборг.")
+		to_chat(user, "This is not a cyborg.")
 		return
 
 	if(target && target.connected_ai && (target.connected_ai != user))
-		to_chat(user, "Этот киборг не подключен к вашей сети.")
+		to_chat(user, "This cyborg is not connected to you.")
 		return
 
 	if(target && !target.lockcharge)
-		to_chat(user, "Этот киборг не заблокирован.")
+		to_chat(user, "This cyborg is not locked down.")
 		return
 
 
@@ -96,35 +96,35 @@
 			return
 
 
-		var/targetname = input("Выберите цель для разблокировки: ") in robot_names
+		var/targetname = input("Select unlock target: ") in robot_names
 		for(var/mob/living/silicon/robot/R in robots)
 			if(targetname == R.name)
 				target = R
 				break
 
 	if(target)
-		if(alert(user, "Вы уверены что хотите разблокировать [target.name]?", "Разблокировать киборга", "Да", "Нет") != "Да")
+		if(alert(user, "Really try to unlock cyborg [target.name]?", "Unlock Cyborg", "Yes", "No") != "Yes")
 			return
 		if(!ability_pay(user, price))
 			return
 		user.hacking = 1
-		to_chat(user, "Попытка разблокировать киборга. Это займёт около 30 секунд.")
+		to_chat(user, "Attempting to unlock cyborg. This will take approximately 30 seconds.")
 		sleep(300)
 		if(target && target.lockcharge)
-			to_chat(user, "Сигнал разблокировки успешно отправлен...")
-			to_chat(target, "Сигнал разблокировки получен...")
+			to_chat(user, "Successfully sent unlock signal to cyborg..")
+			to_chat(target, "Unlock signal received..")
 			target.SetLockdown(0)
 			if(target.lockcharge)
 				to_chat(user, "<span class='notice'>Unlock Failed, lockdown wire cut.</span>")
 				to_chat(target, "<span class='notice'>Unlock Failed, lockdown wire cut.</span>")
 			else
-				to_chat(user, "Киборг разблокирован.")
-				to_chat(target, "Вас разблокировали.")
+				to_chat(user, "Cyborg unlocked.")
+				to_chat(target, "You have been unlocked.")
 				log_ability_use(user, "unlock cyborg", target)
 		else if(target)
-			to_chat(user, "Разблокировка отменена - киборг уже разблокирован.")
+			to_chat(user, "Unlock cancelled - cyborg is already unlocked.")
 		else
-			to_chat(user, "Разблокировка отменена - потеря связи с киборгом.")
+			to_chat(user, "Unlock cancelled - lost connection to cyborg.")
 		user.hacking = 0
 
 
@@ -227,26 +227,26 @@
 				to_chat(target, "SYSTEM LOG: Connection from IP #UNKNOWN# closed. Hack attempt failed.")
 				return
 			to_chat(user, "Successfully hacked into AI's remote administration system. Modifying settings.")
-			to_chat(target, "SYSTEM LOG: Пользователь: Админ  Пароль: булочка авторизован. (L1 - SysAdmin)")
+			to_chat(target, "SYSTEM LOG: User: Admin  Password: ******** logged in. (L1 - SysAdmin)")
 			sleep(100) // 10s
 			if(user.is_dead())
-				to_chat(target, "SYSTEM LOG: Пользователь: Админ - Соединение потеряно")
+				to_chat(target, "SYSTEM LOG: User: Admin - Connection Lost")
 				return
-			to_chat(target, "SYSTEM LOG: Пользователь: Админ - Пароль изменён. Новый пароль: опухдляпидорасов")
+			to_chat(target, "SYSTEM LOG: User: Admin - Password Changed. New password: ********************")
 			sleep(50)  // 5s
 			if(user.is_dead())
-				to_chat(target, "SYSTEM LOG: Пользователь: Админ - Соединение потеряно. Изменения отменены.")
+				to_chat(target, "SYSTEM LOG: User: Admin - Connection Lost. Changes Reverted.")
 				return
-			to_chat(target, "SYSTEM LOG: Пользователь: Админ - Получил доступ к файлу: sys//core//laws.db")
+			to_chat(target, "SYSTEM LOG: User: Admin - Accessed file: sys//core//laws.db")
 			sleep(50)  // 5s
 			if(user.is_dead())
-				to_chat(target, "SYSTEM LOG: Пользователь: Админ - Соединение потеряно. Изменения отменены.")
+				to_chat(target, "SYSTEM LOG: User: Admin - Connection Lost. Changes Reverted.")
 				return
-			to_chat(target, "SYSTEM LOG: Пользователь: Админ - Получил доступ к администраторской оболочке")
-			to_chat(target, "SYSTEM LOG: Получена команда перезагрузки. Перезапуск систем...")
+			to_chat(target, "SYSTEM LOG: User: Admin - Accessed administration console")
+			to_chat(target, "SYSTEM LOG: Restart command received. Rebooting system...")
 			sleep(100) // 10s
 			if(user.is_dead())
-				to_chat(target, "SYSTEM LOG: Пользователь: Админ - Соединение потеряно. Изменения отменены.")
+				to_chat(target, "SYSTEM LOG: User: Admin - Connection Lost. Changes Reverted.")
 				return
 			to_chat(user, "Hack succeeded. The AI is now under your exclusive control.")
 			to_chat(target, "SYSTEM LOG: System reЎ3RT5§^#COMU@(#$)TED)@$")

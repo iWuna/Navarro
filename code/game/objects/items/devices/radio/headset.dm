@@ -1,6 +1,6 @@
 /obj/item/device/radio/headset
-	name = "наушник"
-	desc = "Обновлённый, компактный интерком. Может принимать ключи шифрования."
+	name = "radio headset"
+	desc = "An updated, modular intercom that fits over the head. Takes encryption keys."
 	var/radio_desc = ""
 	icon_state = "headset"
 	item_state = "headset"
@@ -43,7 +43,7 @@
 	if(distance > 1 || !radio_desc)
 		return
 
-	to_chat(user, "Следующие каналы доступны:")
+	to_chat(user, "The following channels are available:")
 	to_chat(user, radio_desc)
 
 /obj/item/device/radio/headset/handle_message_mode(mob/living/M as mob, message, channel)
@@ -91,51 +91,51 @@
 	ks1type = /obj/item/device/encryptionkey/binary
 
 /obj/item/device/radio/headset/headset_sec
-	name = "наушник службы безопасности"
-	desc = "Используется элитными силами безопасности."
+	name = "security radio headset"
+	desc = "This is used by your elite security force."
 	icon_state = "sec_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/headset_sec
 
 /obj/item/device/radio/headset/headset_sec/alt
-	name = "наушник службы безопасности с шумоподавлением"
+	name = "security bowman headset"
 	icon_state = "sec_headset_alt"
 	item_state = "sec_headset_alt"
 
 /obj/item/device/radio/headset/headset_eng
-	name = "наушник инженерных служб"
-	desc = "Иногда даже инженеры любят вести разговоры по наушникам как Кэти Перри."
+	name = "engineering radio headset"
+	desc = "When the engineers wish to chat like girls."
 	icon_state = "eng_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/headset_eng
 
 /obj/item/device/radio/headset/headset_eng/alt
-	name = "наушник инженерных служб с шумоподавлением"
+	name = "engineering bowman headset"
 	icon_state = "eng_headset_alt"
 	item_state = "eng_headset_alt"
 
 /obj/item/device/radio/headset/headset_rob
-	name = "наушник научного отдела - роботист"
-	desc = "Изобретён специально для тех роботистов, что не желают бегать по разным отделам."
+	name = "robotics radio headset"
+	desc = "Made specifically for the roboticists who cannot decide between departments."
 	icon_state = "rob_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/headset_rob
 
 /obj/item/device/radio/headset/headset_med
-	name = "наушник медицинской службы"
-	desc = "Наушник для мед.персонала."
+	name = "medical radio headset"
+	desc = "A headset for the trained staff of the medbay."
 	icon_state = "med_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/headset_med
 
 /obj/item/device/radio/headset/headset_med/alt
-	name = "наушник медицинской службы с шумоподавлением"
+	name = "medical bowman headset"
 	icon_state = "med_headset_alt"
 	item_state = "med_headset_alt"
 
 /obj/item/device/radio/headset/headset_sci
-	name = "наушник научного отдела"
-	desc = "Наушник для научного персонала."
+	name = "science radio headset"
+	desc = "A sciency headset. Like usual."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/headset_sci
@@ -148,14 +148,14 @@
 	ks1type = /obj/item/device/encryptionkey/headset_medsci
 
 /obj/item/device/radio/headset/headset_com
-	name = "наушник офицеров"
+	name = "command radio headset"
 	desc = "A headset with a commanding channel."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/headset_com
 
 /obj/item/device/radio/headset/headset_com/alt
-	name = "наушник офицеров с шумоподавлением"
+	name = "command bowman headset"
 	desc = "A headset with a commanding channel."
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
@@ -163,14 +163,14 @@
 	max_keys = 3
 
 /obj/item/device/radio/headset/heads/captain
-	name = "наушник капитана"
-	desc = "Наушник капитана. Истинного босса."
+	name = "captain's headset"
+	desc = "The headset of the boss."
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/heads/captain
 
 /obj/item/device/radio/headset/heads/captain/alt
-	name = "наушник капитана с шумоподавлением"
+	name = "captain's bowman headset"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 	max_keys = 3
@@ -323,16 +323,17 @@
 				encryption_keys -= ekey
 
 			recalculateChannels(1)
-			to_chat(user, "Вы изъяли шифровальный ключ из наушника!")
+			to_chat(user, "You pop out the encryption keys in the headset!")
+
 		else
-			to_chat(user, "Наушник не имеет шифровального ключа!  Он бесполезен...")
+			to_chat(user, "This headset doesn't have any encryption keys!  How useless...")
 
 	if(istype(W, /obj/item/device/encryptionkey/))
 		if(encryption_keys.len >= max_keys)
-			to_chat(user, "Наушник не может держать в себе еще один шифровальный ключ!")
+			to_chat(user, "The headset can't hold another key!")
 			return
 		if(user.unEquip(W, target = src))
-			to_chat(user, "<span class='notice'>Вы вставили [W] в [src].</span>")
+			to_chat(user, "<span class='notice'>You put \the [W] into \the [src].</span>")
 			encryption_keys += W
 			recalculateChannels(1)
 
@@ -352,7 +353,7 @@
 		if(!radio_controller)
 			sleep(30) // Waiting for the radio_controller to be created.
 		if(!radio_controller)
-			src.SetName("сломанный наушник")
+			src.SetName("broken radio headset")
 			return
 		secure_radio_connections[ch_name] = radio_controller.add_object(src, radiochannels[ch_name],  RADIO_CHAT)
 

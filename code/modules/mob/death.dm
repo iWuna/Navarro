@@ -43,7 +43,7 @@
 	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
 
 
-/mob/proc/death(gibbed,deathmessage="seizes up and falls limp...", show_dead_message = "Вы умерли.")
+/mob/proc/death(gibbed,deathmessage="seizes up and falls limp...", show_dead_message = "You have died.")
 
 	if(stat == DEAD)
 		return 0
@@ -51,7 +51,7 @@
 	facing_dir = null
 
 	if(!gibbed && deathmessage != "no message") // This is gross, but reliable. Only brains use it.
-		src.visible_message("<b>[src.name]</b> [deathmessage]")
+		src.visible_message("<b>\The [src.name]</b> [deathmessage]")
 
 	set_stat(DEAD)
 	adjust_stamina(-100)
@@ -81,7 +81,7 @@
 
 	timeofdeath = world.time
 	if(mind)
-		mind.StoreMemory("Время смерти: [stationtime2text()]", /decl/memory_options/system)
+		mind.StoreMemory("Time of death: [stationtime2text()]", /decl/memory_options/system)
 	switch_from_living_to_dead_mob_list()
 
 	update_icon()

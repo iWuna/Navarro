@@ -13,15 +13,15 @@
 	var/key
 	var/formal_term
 
-	var/He   = "Они"
-	var/he   = "они"
-	var/His  = "Их"
-	var/his  = "их"
-	var/him  = "мх"
-	var/has  = "имеют"
-	var/is   = ""
-	var/does = "делает"
-	var/self = "себе"
+	var/He   = "They"
+	var/he   = "they"
+	var/His  = "Their"
+	var/his  = "their"
+	var/him  = "them"
+	var/has  = "have"
+	var/is   = "are"
+	var/does = "do"
+	var/self = "themselves"
 
 /datum/gender/plural
 	key  = PLURAL
@@ -30,39 +30,39 @@
 /datum/gender/male
 	key  = MALE
 
-	He   = "Он"
-	he   = "он"
-	His  = "Его"
-	his  = "свое"
-	him  = "его"
-	has  = "имеет"
-	is   = "это"
-	does = "делает"
-	self = "сам себе"
+	He   = "He"
+	he   = "he"
+	His  = "His"
+	his  = "his"
+	him  = "him"
+	has  = "has"
+	is   = "is"
+	does = "does"
+	self = "himself"
 
 /datum/gender/female
 	key  = FEMALE
 
-	He   = "Она"
-	he   = "она"
-	His  = "Её"
-	his  = "её"
-	him  = "её"
-	has  = "имеет"
-	is   = "это"
-	does = "делает"
-	self = "сама себе"
+	He   = "She"
+	he   = "she"
+	His  = "Her"
+	his  = "her"
+	him  = "her"
+	has  = "has"
+	is   = "is"
+	does = "does"
+	self = "herself"
 
 /datum/gender/neuter
 	key = NEUTER
 	formal_term = "other"
 
-	He   = "Оно"
-	he   = "оно"
-	His  = "Это"
-	his  = "это"
-	him  = "это"
-	has  = "имеет"
-	is   = "это"
-	does = "делает"
-	self = "само себе"
+	He   = "It"
+	he   = "it"
+	His  = "Its"
+	his  = "its"
+	him  = "it"
+	has  = "has"
+	is   = "is"
+	does = "does"
+	self = "itself"
