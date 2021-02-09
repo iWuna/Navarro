@@ -465,11 +465,11 @@ proc/is_blind(A)
 			name = C.key
 		var/diedat = ""
 		if(C.mob.lastarea)
-			diedat = " в [C.mob.lastarea]"
+			diedat = " at [C.mob.lastarea]"
 		if(joined_ghosts)
-			message = "Дух <span class='name'>[name]</span> теперь среди мёртвых[diedat]. [message]"
+			message = "The ghost of <span class='name'>[name]</span> now [pick("skulks","lurks","prowls","creeps","stalks")] among the dead[diedat]. [message]"
 		else
-			message = "<span class='name'>[name]</span> больше не обитает в мире мёртвых. [message]"
+			message = "<span class='name'>[name]</span> no longer [pick("skulks","lurks","prowls","creeps","stalks")] in the realm of the dead. [message]"
 		communicate(/decl/communication_channel/dsay, C || O, message, /decl/dsay_communication/direct)
 
 /mob/proc/switch_to_camera(var/obj/machinery/camera/C)

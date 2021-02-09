@@ -1,6 +1,6 @@
 //microscope code itself
 /obj/machinery/microscope
-	name = "микроскоп"
+	name = "high powered electron microscope"
 	desc = "A highly advanced microscope capable of zooming up to 3000x."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "microscope"
@@ -25,14 +25,14 @@
 		if(istype(W, /obj/item/weapon/evidencebag))
 			var/obj/item/weapon/evidencebag/B = W
 			if(B.stored_item)
-				to_chat(user, "<span class='notice'>Вы вставили [B.stored_item] из [B] под микроскоп.</span>")
+				to_chat(user, "<span class='notice'>You insert \the [B.stored_item] from \the [B] into the microscope.</span>")
 				B.stored_item.forceMove(src)
 				sample = B.stored_item
 				B.empty()
 				return
 		if(!user.unEquip(W, src))
 			return
-		to_chat(user, "<span class='notice'>Вы вставили [W] под микроскоп.</span>")
+		to_chat(user, "<span class='notice'>You insert \the [W] into the microscope.</span>")
 		sample = W
 		update_icon()
 

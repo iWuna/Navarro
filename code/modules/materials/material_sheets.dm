@@ -153,7 +153,7 @@
 		icon_state = base_state
 
 /obj/item/stack/material/iron
-	name = "железо"
+	name = "iron"
 	icon_state = "ingot"
 	plural_icon_state = "ingot-mult"
 	max_icon_state = "ingot-max"
@@ -180,7 +180,7 @@
 	amount = 50
 
 /obj/item/stack/material/diamond
-	name = "алмаз"
+	name = "diamond"
 	icon_state = "diamond"
 	plural_icon_state = "diamond-mult"
 	max_icon_state = "diamond-max"
@@ -215,7 +215,7 @@
 	amount = 50
 
 /obj/item/stack/material/plastic
-	name = "пластик"
+	name = "plastic"
 	icon_state = "sheet-plastic"
 	plural_icon_state = "sheet-plastic-mult"
 	max_icon_state = "sheet-plastic-max"
@@ -228,7 +228,7 @@
 	amount = 50
 
 /obj/item/stack/material/gold
-	name = "золото"
+	name = "gold"
 	icon_state = "ingot"
 	plural_icon_state = "ingot-mult"
 	max_icon_state = "ingot-max"
@@ -238,7 +238,7 @@
 	amount = 10
 
 /obj/item/stack/material/silver
-	name = "серебро"
+	name = "silver"
 	icon_state = "ingot"
 	plural_icon_state = "ingot-mult"
 	max_icon_state = "ingot-max"
@@ -249,7 +249,7 @@
 
 //Valuable resource, cargo can sell it.
 /obj/item/stack/material/platinum
-	name = "платина"
+	name = "platinum"
 	icon_state = "ingot"
 	plural_icon_state = "ingot-mult"
 	max_icon_state = "ingot-max"
@@ -308,7 +308,7 @@
 
 // Fusion fuel.
 /obj/item/stack/material/deuterium
-	name = "дейтерий"
+	name = "deuterium"
 	icon_state = "puck"
 	plural_icon_state = "puck-mult"
 	max_icon_state = "puck-max"
@@ -318,7 +318,7 @@
 	amount = 50
 
 /obj/item/stack/material/steel
-	name = "сталь"
+	name = "steel"
 	icon_state = "sheet"
 	plural_icon_state = "sheet-mult"
 	max_icon_state = "sheet-max"
@@ -331,7 +331,7 @@
 	amount = 50
 
 /obj/item/stack/material/aluminium
-	name = "алюминий"
+	name = "aluminium"
 	icon_state = "sheet-sheen"
 	item_state = "sheet-shiny"
 	plural_icon_state = "sheet-sheen-mult"
@@ -345,7 +345,7 @@
 	amount = 50
 
 /obj/item/stack/material/titanium
-	name = "титан"
+	name = "titanium"
 	icon_state = "sheet"
 	plural_icon_state = "sheet-mult"
 	default_type = MATERIAL_TITANIUM
@@ -357,7 +357,7 @@
 	amount = 50
 
 /obj/item/stack/material/plasteel
-	name = "пласталь"
+	name = "plasteel"
 	icon_state = "sheet-reinf"
 	item_state = "sheet-metal"
 	plural_icon_state = "sheet-reinf-mult"
@@ -444,12 +444,12 @@
 	amount = 25
 
 /obj/item/stack/material/cloth
-	name = "ткань"
+	name = "cloth"
 	icon_state = "sheet-cloth"
 	default_type = MATERIAL_CLOTH
 
 /obj/item/stack/material/cardboard
-	name = "картон"
+	name = "cardboard"
 	icon_state = "sheet-card"
 	plural_icon_state = "sheet-card-mult"
 	max_icon_state = "sheet-card-max"
@@ -463,14 +463,14 @@
 	amount = 50
 
 /obj/item/stack/material/leather
-	name = "кожа"
+	name = "leather"
 	desc = "The by-product of mob grinding."
 	icon_state = "sheet-leather"
 	default_type = MATERIAL_LEATHER_GENERIC
 	material_flags = USE_MATERIAL_SINGULAR_NAME|USE_MATERIAL_PLURAL_NAME
 
 /obj/item/stack/material/glass
-	name = "стекло"
+	name = "glass"
 	icon_state = "sheet-clear"
 	plural_icon_state = "sheet-clear-mult"
 	max_icon_state = "sheet-clear-max"
@@ -544,16 +544,16 @@
 	if(material) color = material.icon_colour
 
 /obj/item/stack/material/generic/skin
-	icon_state = "кожа"
+	icon_state = "skin"
 	plural_icon_state = "skin-mult"
 	max_icon_state = "skin-max"
 
 /obj/item/stack/material/generic/bone
-	icon_state = "кость"
+	icon_state = "bone"
 	plural_icon_state = "bone-mult"
 	max_icon_state = "bone-max"
 
 /obj/item/stack/material/generic/brick
-	icon_state = "кирпич"
+	icon_state = "brick"
 	plural_icon_state = "brick-mult"
 	max_icon_state = "brick-max"

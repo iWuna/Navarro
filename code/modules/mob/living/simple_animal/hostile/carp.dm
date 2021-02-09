@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/carp
-	name = "космический карп"
+	name = "space carp"
 	desc = "A ferocious, fang-bearing creature that resembles a fish."
 	icon = 'icons/mob/simple_animal/carp.dmi'
 	icon_state = "carp" //for mapping purposes
@@ -16,7 +16,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 10
 	melee_damage_upper = 20
-	attacktext = "кусает"
+	attacktext = "bitten"
 	attack_sound = 'sound/weapons/bite.ogg'
 	pry_time = 10 SECONDS
 	melee_damage_flags = DAM_SHARP

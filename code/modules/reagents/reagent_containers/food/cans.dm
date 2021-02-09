@@ -7,7 +7,7 @@
 //DRINKS
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/cola
-	name = "Космо-Кола"
+	name = "\improper Space Cola"
 	desc = "Cola. in space."
 	icon_state = "cola"
 	center_of_mass = "x=16;y=10"
@@ -130,7 +130,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/cans/sodawater/New()
 	..()
 	reagents.add_reagent(/datum/reagent/drink/sodawater, 30)
-
+	
 /obj/item/weapon/reagent_containers/food/drinks/cans/beastenergy
 	name = "Beast Energy"
 	desc = "100% pure energy, and 150% pure liver disease."

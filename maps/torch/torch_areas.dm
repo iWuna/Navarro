@@ -1204,7 +1204,7 @@
 // Command
 
 /area/bridge
-	name = "Мостик ГЭК Наварро"
+	name = "\improper NTEV Blue Jay Bridge"
 	icon_state = "bridge"
 	req_access = list(access_bridge)
 

@@ -242,7 +242,7 @@
 				playsound(source, 'sound/effects/stairs_step.ogg', 50)
 				playsound(target, 'sound/effects/stairs_step.ogg', 50)
 	else
-		to_chat(A, "<span class='warning'>Что-то блокирует путь.</span>")
+		to_chat(A, "<span class='warning'>Something blocks the path.</span>")
 
 /obj/structure/stairs/proc/upperStep(var/turf/T)
 	return (T == loc)

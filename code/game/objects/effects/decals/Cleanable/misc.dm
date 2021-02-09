@@ -1,12 +1,12 @@
 /obj/effect/decal/cleanable/generic
-	name = "беспорядок"
+	name = "clutter"
 	desc = "Someone should clean that up."
 	gender = PLURAL
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "shards"
 
 /obj/effect/decal/cleanable/ash
-	name = "пепел"
+	name = "ashes"
 	desc = "Ashes to ashes, dust to dust, and into space."
 	gender = PLURAL
 	icon = 'icons/obj/objects.dmi'
@@ -24,7 +24,7 @@
 	addtimer(CALLBACK(src, /datum/proc/qdel_self), 2 MINUTES)
 
 /obj/effect/decal/cleanable/dirt
-	name = "грязь"
+	name = "dirt"
 	desc = "Someone should clean that up."
 	gender = PLURAL
 	icon = 'icons/effects/effects.dmi'
@@ -33,7 +33,7 @@
 	persistent = TRUE
 
 /obj/effect/decal/cleanable/flour
-	name = "мука"
+	name = "flour"
 	desc = "It's still good. Four second rule!"
 	gender = PLURAL
 	icon = 'icons/effects/effects.dmi'
@@ -51,7 +51,7 @@
 	generic_filth = TRUE
 
 /obj/effect/decal/cleanable/cobweb
-	name = "паутина"
+	name = "cobweb"
 	desc = "Somebody should remove that."
 	layer = ABOVE_HUMAN_LAYER
 	icon = 'icons/effects/effects.dmi'
@@ -66,7 +66,7 @@
 	generic_filth = TRUE
 
 /obj/effect/decal/cleanable/cobweb2
-	name = "паутина"
+	name = "cobweb"
 	desc = "Somebody should remove that."
 	layer = ABOVE_HUMAN_LAYER
 	icon = 'icons/effects/effects.dmi'
@@ -74,8 +74,8 @@
 
 //Vomit (sorry)
 /obj/effect/decal/cleanable/vomit
-	name = "блевотина"
-	desc = "Боже, как неультурно."
+	name = "vomit"
+	desc = "Gosh, how unpleasant."
 	gender = PLURAL
 	icon = 'icons/effects/vomit.dmi'
 	icon_state = "vomit_1"
@@ -105,7 +105,7 @@
 	generic_filth = TRUE
 
 /obj/effect/decal/cleanable/egg_smudge
-	name = "разбитое яйцо"
+	name = "smashed egg"
 	desc = "Seems like this one won't hatch."
 	icon = 'icons/effects/tomatodecal.dmi'
 	random_icon_states = list("smashed_egg1", "smashed_egg2", "smashed_egg3")
@@ -113,7 +113,7 @@
 	generic_filth = TRUE
 
 /obj/effect/decal/cleanable/pie_smudge //honk
-	name = "размазанный пирог"
+	name = "smashed pie"
 	desc = "It's pie cream from a cream pie."
 	icon = 'icons/effects/tomatodecal.dmi'
 	random_icon_states = list("smashed_pie")
@@ -121,7 +121,7 @@
 	generic_filth = TRUE
 
 /obj/effect/decal/cleanable/fruit_smudge
-	name = "пятно"
+	name = "smudge"
 	desc = "Some kind of fruit smear."
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "mfloor1"

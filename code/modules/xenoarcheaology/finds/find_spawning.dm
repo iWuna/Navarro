@@ -28,11 +28,11 @@
 		M.set_material(MATERIAL_ALIENALLOY)
 		source_material = "alien alloy"
 	else
-		source_material = pick("cordite","quadrinium","сталь","титан","алюминий","ferritic-alloy","пласталь","дюраниум")
+		source_material = pick("cordite","quadrinium","steel","titanium","aluminium","ferritic-alloy","plasteel","duranium")
 
 	var/decorations = ""
 	if(apply_material_decorations)
-		source_material = pick("cordite","quadrinium","сталь","титан","алюминий","ferritic-alloy","пласталь","дюраниум")
+		source_material = pick("cordite","quadrinium","steel","titanium","aluminium","ferritic-alloy","plasteel","duranium")
 		desc = "A [material_descriptor ? "[material_descriptor] " : ""][item_type] made of [source_material], all craftsmanship is of [pick("the lowest","low","average","high","the highest")] quality."
 
 		var/list/descriptors = list()
@@ -45,11 +45,11 @@
 		if(prob(30))
 			descriptors.Add("menaces with spikes of [pick("solid phoron","uranium","white pearl","black steel")]")
 		if(descriptors.len > 0)
-			decorations = "Это "
+			decorations = "It "
 			for(var/index=1, index <= descriptors.len, index++)
 				if(index > 1)
 					if(index == descriptors.len)
-						decorations += " и "
+						decorations += " and "
 					else
 						decorations += ", "
 				decorations += descriptors[index]

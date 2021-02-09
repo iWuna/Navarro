@@ -39,7 +39,7 @@
 		return 0
 	return cell && cell.use(amount)
 
-/obj/item/organ/internal/cell/proc/get_power_drain()
+/obj/item/organ/internal/cell/proc/get_power_drain()	
 	var/damage_factor = 1 + 10 * damage/max_damage
 	return servo_cost * damage_factor
 
@@ -84,7 +84,7 @@
 				to_chat(user, "<span class ='warning'>There is a power cell already installed.</span>")
 			else if(user.unEquip(W, src))
 				cell = W
-				to_chat(user, "<span class = 'notice'>Вы вставили [cell].</span>")
+				to_chat(user, "<span class = 'notice'>You insert \the [cell].</span>")
 
 /obj/item/organ/internal/cell/replaced()
 	..()

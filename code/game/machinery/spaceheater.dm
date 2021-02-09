@@ -4,7 +4,7 @@
 	density = 1
 	icon = 'icons/obj/atmos.dmi'
 	icon_state = "sheater-off"
-	name = "обогреватель"
+	name = "space heater"
 	desc = "Made by Space Amish using traditional space techniques, this heater is guaranteed not to set anything, or anyone, on fire."
 	var/obj/item/weapon/cell/cell
 	var/on = 0
@@ -44,7 +44,7 @@
 
 	to_chat(user, "The heater is [on ? "on" : "off"] and the hatch is [panel_open ? "open" : "closed"].")
 	if(panel_open)
-		to_chat(user, "Источник питания [cell ? "установлен" : "отсутствует"].")
+		to_chat(user, "The power cell is [cell ? "installed" : "missing"].")
 	else
 		to_chat(user, "The charge meter reads [cell ? round(cell.percent(),1) : 0]%")
 
@@ -91,15 +91,15 @@
 /obj/machinery/space_heater/interact(mob/user)
 	if(panel_open)
 		var/list/dat = list()
-		dat += "Источник питания: "
+		dat += "Power cell: "
 		if(cell)
-			dat += "<A href='byond://?src=\ref[src];op=cellremove'>Установлен</A><BR>"
+			dat += "<A href='byond://?src=\ref[src];op=cellremove'>Installed</A><BR>"
 		else
-			dat += "<A href='byond://?src=\ref[src];op=cellinstall'>Отсутствует</A><BR>"
+			dat += "<A href='byond://?src=\ref[src];op=cellinstall'>Removed</A><BR>"
 
-		dat += "Уровень питания: [cell ? round(cell.percent(),1) : 0]%<BR><BR>"
+		dat += "Power Level: [cell ? round(cell.percent(),1) : 0]%<BR><BR>"
 
-		dat += "Установить температуру: "
+		dat += "Set Temperature: "
 
 		dat += "<A href='?src=\ref[src];op=temp;val=-5'>-</A>"
 
@@ -116,7 +116,7 @@
 /obj/machinery/space_heater/physical_attack_hand(mob/user)
 	if(!panel_open)
 		on = !on
-		user.visible_message("<span class='notice'>[user] [on ? "включает" : "выключает"] [src].</span>","<span class='notice'>Вы [on ? "включили" : "выключили"] [src].</span>")
+		user.visible_message("<span class='notice'>[user] switches [on ? "on" : "off"] the [src].</span>","<span class='notice'>You switch [on ? "on" : "off"] the [src].</span>")
 		update_icon()
 		return TRUE
 
@@ -136,7 +136,7 @@
 
 		if("cellremove")
 			if(panel_open && cell && !usr.get_active_hand())
-				usr.visible_message("<span class='notice'>[usr] изымает [cell] из [src].</span>", "<span class='notice'>Вы изъяли [cell] из [src].</span>")
+				usr.visible_message("<span class='notice'>\The usr] removes \the [cell] from \the [src].</span>", "<span class='notice'>You remove \the [cell] from \the [src].</span>")
 				cell.update_icon()
 				usr.put_in_hands(cell)
 				cell.add_fingerprint(usr)
@@ -152,7 +152,7 @@
 					cell = C
 					C.add_fingerprint(usr)
 					power_change()
-					usr.visible_message("<span class='notice'>[usr] вставляет [C] в [src].</span>", "<span class='notice'>Вы вставили [C] в [src].</span>")
+					usr.visible_message("<span class='notice'>[usr] inserts \the [C] into \the [src].</span>", "<span class='notice'>You insert \the [C] into \the [src].</span>")
 
 	updateDialog()
 

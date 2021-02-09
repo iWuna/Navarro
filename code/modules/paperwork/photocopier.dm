@@ -107,7 +107,7 @@
 			if(!user.unEquip(O, src))
 				return
 			copyitem = O
-			to_chat(user, "<span class='notice'>Вы вставили [O] в [src].</span>")
+			to_chat(user, "<span class='notice'>You insert \the [O] into \the [src].</span>")
 			flick(insert_anim, src)
 			updateUsrDialog()
 		else

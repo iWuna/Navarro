@@ -350,7 +350,7 @@
 	pose =  sanitize(input(usr, "Это [src]. [get_visible_gender() == MALE ? "Он" : get_visible_gender() == FEMALE ? "Она" : "Они"]...", "Поза", null)  as text)
 
 /mob/living/carbon/human/verb/set_flavor()
-	set name = "Установить флавор"
+	set name = "Set Flavour Text"
 	set desc = "Sets an extended description of your character's features."
 	set category = "IC"
 
