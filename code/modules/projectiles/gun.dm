@@ -208,7 +208,7 @@
 
 	if(world.time < next_fire_time)
 		if (world.time % 3) //to prevent spam
-			to_chat(user, "<span class='warning'>Оружие не готово к стрельбе!</span>")
+			to_chat(user, "<span class='warning'>[src] is not ready to fire again!</span>")
 		return
 
 	last_safety_check = world.time
@@ -264,9 +264,9 @@
 //called if there was no projectile to shoot
 /obj/item/weapon/gun/proc/handle_click_empty(mob/user)
 	if (user)
-		user.visible_message("*клик клик*", "<span class='danger'>*клик*</span>")
+		user.visible_message("*click click*", "<span class='danger'>*click*</span>")
 	else
-		src.visible_message("*клик клик*")
+		src.visible_message("*click click*")
 	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
 
 //called after successfully firing
@@ -277,14 +277,14 @@
 	if(!silenced)
 		if(reflex)
 			user.visible_message(
-				"<span class='reflex_shoot'><b>[user] рефлекторно стреляет из [src][pointblank ? " в упор [target]":""]!</b></span>",
-				"<span class='reflex_shoot'>Вы рефлекторно стреляете из [src]!</span>",
+				"<span class='reflex_shoot'><b>\The [user] fires \the [src][pointblank ? " point blank at \the [target]":""] by reflex!</b></span>",
+				"<span class='reflex_shoot'>You fire \the [src] by reflex!</span>",
 				"You hear a [fire_sound_text]!"
 			)
 		else
 			user.visible_message(
-				"<span class='danger'>[user] стреляет из [src][pointblank ? " в упор [target]":""]!</span>",
-				"<span class='warning'>Вы стреляете из [src]!</span>",
+				"<span class='danger'>\The [user] fires \the [src][pointblank ? " point blank at \the [target]":""]!</span>",
+				"<span class='warning'>You fire \the [src]!</span>",
 				"You hear a [fire_sound_text]!"
 				)
 

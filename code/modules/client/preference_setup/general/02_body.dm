@@ -192,21 +192,21 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/organ_name = null
 		switch(name)
 			if(BP_L_ARM)
-				organ_name = "левая рука"
+				organ_name = "left arm"
 			if(BP_R_ARM)
-				organ_name = "правая рука"
+				organ_name = "right arm"
 			if(BP_L_LEG)
-				organ_name = "левая нога"
+				organ_name = "left leg"
 			if(BP_R_LEG)
-				organ_name = "правая нога"
+				organ_name = "right leg"
 			if(BP_L_FOOT)
-				organ_name = "левая ступна"
+				organ_name = "left foot"
 			if(BP_R_FOOT)
-				organ_name = "правая ступня"
+				organ_name = "right foot"
 			if(BP_L_HAND)
-				organ_name = "левая ладонь"
+				organ_name = "left hand"
 			if(BP_R_HAND)
-				organ_name = "правая ладонь"
+				organ_name = "right hand"
 			if(BP_HEART)
 				organ_name = BP_HEART
 			if(BP_EYES)
@@ -222,11 +222,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			if(BP_STOMACH)
 				organ_name = BP_STOMACH
 			if(BP_CHEST)
-				organ_name = "туловище"
+				organ_name = "upper body"
 			if(BP_GROIN)
-				organ_name = "таз"
+				organ_name = "lower body"
 			if(BP_HEAD)
-				organ_name = "голова"
+				organ_name = "head"
 
 		if(status == "cyborg")
 			++ind

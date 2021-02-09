@@ -100,16 +100,16 @@
 
 /datum/extension/holster/proc/examine_holster(mob/user)
 	if (holstered)
-		to_chat(user, "[holstered] занимает слот.")
+		to_chat(user, "\A [holstered] is holstered here.")
 	else
-		to_chat(user, "Пусто.")
+		to_chat(user, "It is empty.")
 
 /datum/extension/holster/proc/check_holster()
 	if(holstered.loc != storage)
 		clear_holster()
 
 /atom/proc/holster_verb(var/holster_name in get_holsters())
-	set name = "В кобуру"
+	set name = "Holster"
 	set category = "Object"
 	set src in usr
 

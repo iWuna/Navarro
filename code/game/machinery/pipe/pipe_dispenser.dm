@@ -63,7 +63,7 @@
 	return TRUE
 
 /obj/machinery/pipedispenser/interact(mob/user)
-	var/datum/browser/popup = new (user, "Список труб", "[src] Панель Управления")
+	var/datum/browser/popup = new (user, "Pipe List", "[src] Control Panel")
 	popup.set_content(get_console_data(GLOB.all_pipe_datums_by_category, TRUE))
 	popup.open()
 
@@ -71,7 +71,7 @@
 	if (istype(W, /obj/item/pipe) || istype(W, /obj/item/pipe_meter))
 		if(!user.unEquip(W))
 			return
-		to_chat(user, "<span class='notice'>Вы вставили [W] обратно в [src].</span>")
+		to_chat(user, "<span class='notice'>You put \the [W] back into \the [src].</span>")
 		add_fingerprint(user)
 		qdel(W)
 		return

@@ -300,7 +300,7 @@
 	if(!item || !isturf(item.loc))
 		return
 
-	var/message = "[src] кидает [item]."
+	var/message = "\The [src] has thrown \the [item]."
 	var/skill_mod = 0.2
 	if(!skill_check(SKILL_HAULING, min(round(itemsize - ITEM_SIZE_HUGE) + 2, SKILL_MAX)))
 		if(prob(30))
@@ -355,10 +355,10 @@
 	return
 
 /mob/living/carbon/verb/mob_sleep()
-	set name = "Спать"
+	set name = "Sleep"
 	set category = "IC"
 
-	if(alert("Вы уверены что хотите [player_triggered_sleeping ? "проснуться?" : "поспать? Используйте 'спать' чтобы проснуться"]", "Спать", "Нет", "Да") == "Да")
+	if(alert("Are you sure you want to [player_triggered_sleeping ? "wake up?" : "sleep for a while? Use 'sleep' again to wake up"]", "Sleep", "No", "Yes") == "Yes")
 		player_triggered_sleeping = !player_triggered_sleeping
 
 /mob/living/carbon/Bump(var/atom/movable/AM, yes)
@@ -373,7 +373,7 @@
 	if(buckled)
 		return FALSE
 	stop_pulling()
-	to_chat(src, SPAN_WARNING("Вы подскользнулись на [slipped_on]!"))
+	to_chat(src, SPAN_WARNING("You slipped on [slipped_on]!"))
 	playsound(loc, 'sound/misc/slip.ogg', 50, 1, -3)
 	Weaken(Floor(stun_duration/2))
 	return TRUE
@@ -410,14 +410,14 @@
 	var/dat = {"
 	<B><HR><FONT size=3>[name]</FONT></B>
 	<BR><HR>
-	<BR><B>Голова(Маска):</B> <A href='?src=\ref[src];item=mask'>[(wear_mask ? wear_mask : "Ничего")]</A>
-	<BR><B>Левая рука:</B> <A href='?src=\ref[src];item=l_hand'>[(l_hand ? l_hand  : "Ничего")]</A>
-	<BR><B>Правая рука:</B> <A href='?src=\ref[src];item=r_hand'>[(r_hand ? r_hand : "Ничего")]</A>
-	<BR><B>Спина:</B> <A href='?src=\ref[src];item=back'>[(back ? back : "Ничего")]</A> [((istype(wear_mask, /obj/item/clothing/mask) && istype(back, /obj/item/weapon/tank) && !( internal )) ? text(" <A href='?src=\ref[];item=internal'>Set Internal</A>", src) : "")]
+	<BR><B>Head(Mask):</B> <A href='?src=\ref[src];item=mask'>[(wear_mask ? wear_mask : "Nothing")]</A>
+	<BR><B>Left Hand:</B> <A href='?src=\ref[src];item=l_hand'>[(l_hand ? l_hand  : "Nothing")]</A>
+	<BR><B>Right Hand:</B> <A href='?src=\ref[src];item=r_hand'>[(r_hand ? r_hand : "Nothing")]</A>
+	<BR><B>Back:</B> <A href='?src=\ref[src];item=back'>[(back ? back : "Nothing")]</A> [((istype(wear_mask, /obj/item/clothing/mask) && istype(back, /obj/item/weapon/tank) && !( internal )) ? text(" <A href='?src=\ref[];item=internal'>Set Internal</A>", src) : "")]
 	<BR>[(internal ? text("<A href='?src=\ref[src];item=internal'>Remove Internal</A>") : "")]
 	<BR><A href='?src=\ref[src];item=pockets'>Empty Pockets</A>
-	<BR><A href='?src=\ref[user];refresh=1'>Обновить</A>
-	<BR><A href='?src=\ref[user];mach_close=mob[name]'>Закрыть</A>
+	<BR><A href='?src=\ref[user];refresh=1'>Refresh</A>
+	<BR><A href='?src=\ref[user];mach_close=mob[name]'>Close</A>
 	<BR>"}
 	user << browse(dat, text("window=mob[];size=325x500", name))
 	onclose(user, "mob[name]")

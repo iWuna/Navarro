@@ -565,7 +565,7 @@
 /obj/machinery/portable_atmospherics/hydroponics/examine(mob/user)
 	. = ..(user)
 	if(!seed)
-		to_chat(user, "[src] пуст.")
+		to_chat(user, "\The [src] is empty.")
 		return
 
 	to_chat(user, "<span class='notice'>\An [seed.display_name] plant is growing here.</span>")

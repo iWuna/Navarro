@@ -25,9 +25,9 @@
 	. = ..()
 	to_chat(user, "It has a capacity of [volume] units.")
 	if(reagents.total_volume <= 0)
-		to_chat(user, "Пусто.")
+		to_chat(user, "It is empty.")
 	else
-		to_chat(user, "Содержит [reagents.total_volume] ед. жидкости.")
+		to_chat(user, "It contains [reagents.total_volume] units of liquid.")
 	if(!is_open_container())
 		to_chat(user, "The cap is sealed.")
 

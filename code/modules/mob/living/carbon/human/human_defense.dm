@@ -318,7 +318,7 @@ meteor_act
 				return
 
 		if(!zone)
-			visible_message("<span class='notice'>[O] промахивается стреляя в [src]!</span>")
+			visible_message("<span class='notice'>\The [O] misses [src] narrowly!</span>")
 			return
 
 		var/obj/item/organ/external/affecting = get_organ(zone)

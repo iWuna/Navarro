@@ -24,7 +24,7 @@
 	if(!..())
 		return 0
 
-	usr.visible_message("<b>[src]</b> указывает на [A]")
+	usr.visible_message("<b>[src]</b> points to [A]")
 	return 1
 
 /*one proc, four uses
@@ -562,7 +562,7 @@ default behaviour is:
 	if(!can_pull())
 		stop_pulling()
 		return
-
+	
 	if (!isliving(pulling))
 		step(pulling, get_dir(pulling.loc, old_loc))
 	else

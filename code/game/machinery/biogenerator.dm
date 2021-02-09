@@ -105,14 +105,14 @@
 		if(!hadPlants)
 			to_chat(user, "<span class='notice'>\The [P] has no produce inside.</span>")
 		else if(ingredients < capacity)
-			to_chat(user, "<span class='notice'>Вы опустошили [P] в [src].</span>")
+			to_chat(user, "<span class='notice'>You empty \the [P] into \the [src].</span>")
 
 
 	else if(!istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown))
-		to_chat(user, "<span class='notice'>Вы не можете положить в [src].</span>")
+		to_chat(user, "<span class='notice'>You cannot put this in \the [src].</span>")
 	else if(user.unEquip(O, src))
 		ingredients++
-		to_chat(user, "<span class='notice'>Вы кладёте [O] в [src]</span>")
+		to_chat(user, "<span class='notice'>You put \the [O] in \the [src]</span>")
 	update_icon()
 
 /**

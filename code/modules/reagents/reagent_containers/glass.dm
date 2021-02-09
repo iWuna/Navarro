@@ -48,21 +48,21 @@
 	. = ..()
 	if(distance > 2)
 		return
-
+	
 	if(reagents && reagents.reagent_list.len)
-		to_chat(user, "<span class='notice'>Содержит [reagents.total_volume] ед. жидкости.</span>")
+		to_chat(user, "<span class='notice'>It contains [reagents.total_volume] units of liquid.</span>")
 	else
-		to_chat(user, "<span class='notice'>Он пуст.</span>")
+		to_chat(user, "<span class='notice'>It is empty.</span>")
 	if(!is_open_container())
 		to_chat(user, "<span class='notice'>The airtight lid seals it completely.</span>")
 
 /obj/item/weapon/reagent_containers/glass/attack_self()
 	..()
 	if(is_open_container())
-		to_chat(usr, "<span class = 'notice'>Вы прикрутили крышку на [src].</span>")
+		to_chat(usr, "<span class = 'notice'>You put the lid on \the [src].</span>")
 		atom_flags ^= ATOM_FLAG_OPEN_CONTAINER
 	else
-		to_chat(usr, "<span class = 'notice'>Вы открутили крышку с [src].</span>")
+		to_chat(usr, "<span class = 'notice'>You take the lid off \the [src].</span>")
 		atom_flags |= ATOM_FLAG_OPEN_CONTAINER
 	update_icon()
 
@@ -75,14 +75,14 @@
 
 /obj/item/weapon/reagent_containers/glass/standard_feed_mob(var/mob/user, var/mob/target)
 	if(!is_open_container())
-		to_chat(user, "<span class='notice'>Сначала необходимо открыть [src].</span>")
+		to_chat(user, "<span class='notice'>You need to open \the [src] first.</span>")
 		return 1
 	if(user.a_intent == I_HURT)
 		return 1
 	return ..()
 
 /obj/item/weapon/reagent_containers/glass/self_feed_message(var/mob/user)
-	to_chat(user, "<span class='notice'>Вы сделали небольшой глоток из [src].</span>")
+	to_chat(user, "<span class='notice'>You swallow a gulp from \the [src].</span>")
 	if(user.has_personal_goal(/datum/goal/achievement/specific_object/drink))
 		for(var/datum/reagent/R in reagents.reagent_list)
 			user.update_personal_goal(/datum/goal/achievement/specific_object/drink, R.type)
@@ -101,14 +101,14 @@
 		if(standard_splash_mob(user,target))
 			return 1
 		if(reagents && reagents.total_volume)
-			to_chat(user, "<span class='notice'>Вы вылили содержимое [src] на [target].</span>") //They are on harm intent, aka wanting to spill it.
+			to_chat(user, "<span class='notice'>You splash the contents of \the [src] onto [target].</span>") //They are on harm intent, aka wanting to spill it.
 			reagents.splash(target, reagents.total_volume)
 			return 1
 	..()
 
 /obj/item/weapon/reagent_containers/glass/beaker
-	name = "мезурка"
-	desc = "Обычная мезурка."
+	name = "beaker"
+	desc = "A beaker."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "beaker"
 	item_state = "beaker"
@@ -117,7 +117,7 @@
 
 	New()
 		..()
-		desc += " Может держать в себе до [volume] ед."
+		desc += " It can hold up to [volume] units."
 
 	on_reagent_change()
 		update_icon()
@@ -158,7 +158,7 @@
 			overlays += lid
 
 /obj/item/weapon/reagent_containers/glass/beaker/large
-	name = "большая мезурка"
+	name = "large beaker"
 	desc = "A large beaker."
 	icon_state = "beakerlarge"
 	center_of_mass = "x=16;y=10"
@@ -192,7 +192,7 @@
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_OPEN_CONTAINER | ATOM_FLAG_NO_REACT
 
 /obj/item/weapon/reagent_containers/glass/beaker/bluespace
-	name = "квантовая мезурка"
+	name = "bluespace beaker"
 	desc = "A bluespace beaker, powered by experimental bluespace technology."
 	icon_state = "beakerbluespace"
 	center_of_mass = "x=16;y=10"
@@ -203,7 +203,7 @@
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 
 /obj/item/weapon/reagent_containers/glass/beaker/vial
-	name = "пробирка"
+	name = "vial"
 	desc = "A small glass vial."
 	icon_state = "vial"
 	center_of_mass = "x=15;y=8"
@@ -244,8 +244,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bucket
-	name = "ведро"
-	desc = "Обычное пластиковое ведро."
+	name = "bucket"
+	desc = "It's a bucket."
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "bucket"
 	item_state = "bucket"
@@ -259,8 +259,8 @@
 	unacidable = 0
 
 /obj/item/weapon/reagent_containers/glass/bucket/wood
-	name = "ведро"
-	desc = "Обычное деревянное ведро. Постойте, деревянное ведро в 22 веке?"
+	name = "bucket"
+	desc = "It's a wooden bucket. How rustic."
 	icon_state = "wbucket"
 	item_state = "wbucket"
 	matter = list(MATERIAL_WOOD = 280)
@@ -269,10 +269,10 @@
 /obj/item/weapon/reagent_containers/glass/bucket/attackby(var/obj/D, mob/user as mob)
 	if(istype(D, /obj/item/weapon/mop))
 		if(reagents.total_volume < 1)
-			to_chat(user, "<span class='warning'>[src] пустое!</span>")
+			to_chat(user, "<span class='warning'>\The [src] is empty!</span>")
 		else
 			reagents.trans_to_obj(D, 5)
-			to_chat(user, "<span class='notice'>Вы намочили [D] в [src].</span>")
+			to_chat(user, "<span class='notice'>You wet \the [D] in \the [src].</span>")
 			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 		return
 	else

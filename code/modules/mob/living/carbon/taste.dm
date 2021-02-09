@@ -6,7 +6,7 @@
 
 		var/text_output = temp.generate_taste_message(src)
 		if(text_output != last_taste_text || last_taste_time + 100 < world.time) //We dont want to spam the same message over and over again at the person. Give it a bit of a buffer.
-			to_chat(src, "<span class='notice'>Вы чувствуете вкус [text_output].</span>")//no taste means there are too many tastes and not enough flavor.
+			to_chat(src, "<span class='notice'>You can taste [text_output].</span>")//no taste means there are too many tastes and not enough flavor.
 
 			last_taste_time = world.time
 			last_taste_text = text_output
@@ -51,17 +51,17 @@ calculate text size per text.
 			var/percent = tastes[taste_desc]/total_taste * 100
 			if(percent < minimum_percent)
 				continue
-			var/intensity_desc = "нотку"
+			var/intensity_desc = "a hint of"
 			if(percent > minimum_percent * 2 || percent == 100)
 				intensity_desc = ""
 			else if(percent > minimum_percent * 3)
-				intensity_desc = "сильный привкус"
+				intensity_desc = "the strong flavor of"
 			if(intensity_desc == "")
 				out += "[taste_desc]"
 			else
 				out += "[intensity_desc] [taste_desc]"
 
-	return english_list(out, "чего-то неописуемого")
+	return english_list(out, "something indescribable")
 
 /mob/living/carbon/proc/get_fullness()
 	return nutrition + (reagents.get_reagent_amount(/datum/reagent/nutriment) * 25)

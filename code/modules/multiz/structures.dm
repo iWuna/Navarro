@@ -101,19 +101,19 @@
 	if(!target_ladder)
 		return
 	if(!M.Move(get_turf(src)))
-		to_chat(M, "<span class='notice'>Вы не можете достать до [src].</span>")
+		to_chat(M, "<span class='notice'>You fail to reach \the [src].</span>")
 		return
 
 	for (var/obj/item/grab/G in M)
 		G.adjust_position()
 
-	var/direction = target_ladder == target_up ? "вверх" : "вниз"
+	var/direction = target_ladder == target_up ? "up" : "down"
 
-	M.visible_message("<span class='notice'>[M] начинает взбираться [direction] по лестнице!</span>",
-	"Вы начинаете взибраться [direction] по лестнице!",
-	"Вы слишите как кто-то пользуется лестницей.")
+	M.visible_message("<span class='notice'>\The [M] begins climbing [direction] \the [src]!</span>",
+	"You begin climbing [direction] \the [src]!",
+	"You hear the grunting and clanging of a metal ladder being used.")
 
-	target_ladder.audible_message("<span class='notice'>Вы слышите как что-то взбирается [direction] по лестнице</span>")
+	target_ladder.audible_message("<span class='notice'>You hear something coming [direction] \the [src]</span>")
 
 	if(do_after(M, climb_time, src))
 		climbLadder(M, target_ladder, I)
